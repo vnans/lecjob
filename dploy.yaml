@@ -1,0 +1,9 @@
+dev:
+    scheme: ftp
+    host: ftp.moser-ci.com
+    port: 21
+    user: cjob1@cjob.alcalis.tech
+    pass: @lc@lis18
+    check: true
+    path:
+        remote: /

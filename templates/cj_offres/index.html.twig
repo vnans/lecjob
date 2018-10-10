@@ -1,0 +1,127 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Offres d'emploi{% endblock %}
+
+{% block body %}
+ <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Emplois et stages </h3>
+         {#  <p>
+
+           
+              <form  action=" {{ path('search') }} " method="POST">
+                  <div class="form-group">
+                     {{ form(form) }}
+                </div>
+            
+              </form>
+              cjob l'emploi a porté de main 
+              cjob le service qui lutte contre le chomage 
+              La plateforme de l'emploi et des stages
+              votre bien etre , notre priorité
+              Cjob , votre assistance conseil
+
+          </p> #}
+        </header>
+
+        <div class="row about-cols">
+ {% for cj_offre in cj_offres %}
+          <div class="col-md-4 wow fadeInUp">
+            <div class="about-col">
+              <div class="img">
+               <a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}"><img src=" {{asset('img/offres/') }}{{ cj_offre.image }} " alt="" class="img-fluid"></a> 
+               {#  <div class="icon"><i class="ion-chatbox-working"> </i></div>#}
+              </div>
+              <h2 class="title"><a href=" {{ path('cj_offres_show', {'id': cj_offre.id}) }} ">{{ cj_offre.type }} : {{ cj_offre.libelle }} </a></h2>
+              <p>
+                {{ cj_offre.metier }}
+              </p>
+               <p>
+                {{ cj_offre.recruteur }}
+              </p>
+              <p>
+                {{ cj_offre.dateFin ? cj_offre.dateFin|date('Y-m-d H:i:s') : '' }}
+              </p>
+
+              {% if is_granted('ROLE_ADMIN')  %}
+               <a href="{{ path('cj_offres_edit', {'id': cj_offre.id}) }}"> <button class="btn btn-primary" > Modifier cette offre</button> </a>         
+              {% endif %}
+
+              {# 
+               <a href="{{ path('cj_offres_edit', {'id': cj_offre.id}) }}">modifier</a> #}
+              
+            </div>
+          </div>
+
+     {% endfor %}      
+
+        </div>
+<div class="pagination">
+    {{ knp_pagination_render(cj_offres) }}
+</div>
+      </div>
+    </section><!-- #about -->
+ 
+              {% if is_granted('ROLE_ADMIN')  %}
+  <a href="{{ path('cj_offres_new') }}">  <button class="btn btn-primary" >Ajouter une offre</button> </a>             
+            <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Libelle</th>
+                <th>Metier</th>
+                <th>Niveau</th>
+                <th>Experience</th>
+                <th>Lieu</th>
+                <th>Description</th>
+                <th>Recruteur</th>
+                <th>Tel</th>
+                <th>Email</th>
+                <th>Dossier</th>
+                <th>DateAjout</th>
+                <th>DateFin</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cj_offre in cj_offres %}
+            <tr>
+                <td>{{ cj_offre.id }}</td>
+                <td>{{ cj_offre.type }}</td>
+                <td>{{ cj_offre.libelle }}</td>
+                <td>{{ cj_offre.metier }}</td>
+                <td>{{ cj_offre.niveau }}</td>
+                <td>{{ cj_offre.experience }}</td>
+                <td>{{ cj_offre.lieu }}</td>
+                <td>{{ cj_offre.description }}</td>
+                <td>{{ cj_offre.recruteur }}</td>
+                <td>{{ cj_offre.tel }}</td>
+                <td>{{ cj_offre.email }}</td>
+                <td>{{ cj_offre.dossier }}</td>
+                <td>{{ cj_offre.dateAjout ? cj_offre.dateAjout|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ cj_offre.dateFin ? cj_offre.dateFin|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ cj_offre.image }}</td>
+                <td>
+                    <a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}">show</a>
+                    <a href="{{ path('cj_offres_edit', {'id': cj_offre.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="16">aucune donnée trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+   <a href="{{ path('cj_offres_new') }}">  <button class="btn btn-primary" >Ajouter une offre</button> </a>      
+              {% endif %}
+   
+{% endblock %}

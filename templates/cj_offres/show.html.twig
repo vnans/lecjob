@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cjob Offres{% endblock %}
+
+
+{% block body %}
+
+    <h3> <b>{{ cj_offre.type }}</b> : {{ cj_offre.libelle }} </h3>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="img">
+               <img src=" {{asset('img/offres/') }}{{ cj_offre.image }}" alt="" class="img-fluid"> 
+                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+              </div>
+        </div>
+
+        <div class="col-md-8">
+           <table class="table table-striped">
+        <tbody>
+           
+            <tr>
+                <th>Metier</th>
+                <td>{{ cj_offre.metier }}</td>
+            </tr>
+            <tr>
+                <th>Niveau</th>
+                <td>{{ cj_offre.niveau }}</td>
+            </tr>
+            <tr>
+                <th>Experience</th>
+                <td>{{ cj_offre.experience }}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ cj_offre.lieu }}</td>
+            </tr>
+            
+            <tr>
+                <th>Recruteur</th>
+                <td>{{ cj_offre.recruteur }}</td>
+            </tr>
+            <tr>
+                <th>Contact du recruteur </th>
+                <td>Tel :{{ cj_offre.tel }} //  Email :{{ cj_offre.email }}</td>
+            </tr>
+            
+                <th>Dossier</th>
+                <td>{{ cj_offre.dossier }}</td>
+            </tr>
+            <tr>
+                <th>DateAjout</th>
+                <td>{{ cj_offre.dateAjout ? cj_offre.dateAjout|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateFin</th>
+                <td>{{ cj_offre.dateFin ? cj_offre.dateFin|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <a href="{{ path('cj_offres_index') }}">  <button class="btn btn-primary">  Retour à la liste des offres</button> </a> 
+
+   <div>
+    {% if is_granted('ROLE_ADMIN') %}
+
+    <a href="{{ path('cj_offres_edit', {'id': cj_offre.id}) }}"> <button class="btn btn-success">Modifier cette offre</button>  </a>
+
+{% endif %}
+     
+  
+   </div> 
+        </div>
+    </div>
+    <section id="about">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Description de l'offres</h3>
+          <p>{{ cj_offre.description }}</p>
+        </header>
+    </section>
+
+   
+    {# <section >
+      <div class="container">
+        <h3>Offres similaires</h3>
+        
+
+      </div>
+    </section> #}<!-- #clients -->
+
+   {#  {{ include('cj_offres/_delete_form.html.twig') }} #}
+{% endblock %}

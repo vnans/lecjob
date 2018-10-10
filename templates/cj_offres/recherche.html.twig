@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %} 
+
+ {% block body %}
+
+{% for offre in cj_offres %}
+<div>
+	{{ offre.libelle }}
+</div>
+
+{% endfor %}
+
+{% endblock %}

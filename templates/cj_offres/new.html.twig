@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New CjOffres{% endblock %}
+
+{% block body %}
+    <h1>Create new CjOffres</h1>
+
+    {{ include('cj_offres/_form.html.twig') }}
+
+    <a href="{{ path('cj_offres_index') }}">back to list</a>
+{% endblock %}

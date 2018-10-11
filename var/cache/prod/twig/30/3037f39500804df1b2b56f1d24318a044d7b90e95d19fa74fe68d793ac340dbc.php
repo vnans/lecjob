@@ -26,7 +26,7 @@ class __TwigTemplate_0f47f0185cbef07e68111a8280aafa3ffe8cd3716266a8876c10fc44a4e
     {
         // line 1
         echo "<!DOCTYPE html>
-<html lang=\"en\">
+<html lang=\"fr\">
 <head>
   <meta charset=\"utf-8\">
   <title>";
@@ -55,14 +55,14 @@ class __TwigTemplate_0f47f0185cbef07e68111a8280aafa3ffe8cd3716266a8876c10fc44a4e
         <h1><a href=\"";
         // line 44
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("default");
-        echo "\" class=\"scrollto\">Cjob</a></h1>
+        echo "\" class=\"scrollto\">CJOB</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href=\"#intro\"><img src=\"img/logo.png\" alt=\"\" title=\"\" /></a>-->
       </div>
 
       <nav id=\"nav-menu-container\">
         <ul class=\"nav-menu\">
-          <li class=\"menu-active\"><a href=\"#\">Envoyer par SMS, CJOB au 98025 pour creer un compte </a></li>
+          <li class=\"menu-active\"><a href=\"#\">Envoyer, CJOB au 98025 par SMS pour creer un compte </a></li>
           ";
         // line 53
         echo "          <li>
@@ -80,7 +80,7 @@ class __TwigTemplate_0f47f0185cbef07e68111a8280aafa3ffe8cd3716266a8876c10fc44a4e
             // line 59
             echo "            <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_login");
-            echo "\" > Se conneter</a>
+            echo "\" > Connexion</a>
           ";
         }
         // line 61
@@ -160,7 +160,7 @@ class __TwigTemplate_0f47f0185cbef07e68111a8280aafa3ffe8cd3716266a8876c10fc44a4e
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        echo " Cjob ";
+        echo " CJOB";
     }
 
     // line 9

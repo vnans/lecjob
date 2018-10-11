@@ -32,7 +32,7 @@ class __TwigTemplate_95548766c3411bb4d6c9e828aa78b1aadfb352db61514b95ba22e2cea0f
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        echo "Accueil-cjob!";
+        echo "Accueil--CJOB!";
     }
 
     // line 5
@@ -61,7 +61,7 @@ class __TwigTemplate_95548766c3411bb4d6c9e828aa78b1aadfb352db61514b95ba22e2cea0f
                 <a href=\"";
         // line 25
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
-        echo "\" class=\"btn-get-started scrollto\">Consulter toutes les offres </a>
+        echo "\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
                 ";
         // line 35
         echo "                <p>
@@ -111,11 +111,11 @@ class __TwigTemplate_95548766c3411bb4d6c9e828aa78b1aadfb352db61514b95ba22e2cea0f
             <div class=\"carousel-container\">
               <div class=\"carousel-content\">
                 <h2>Votre assistance conseil </h2>
-                <p>Nous nous rapprochons de vous par notre boite de dialogue </p>
+                <p>Nous nous rapprochons de vous par notre chat direct </p>
                 <a href=\"";
         // line 83
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
-        echo "\" class=\"btn-get-started scrollto\">Consulter les nouvelles offres </a>
+        echo "\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
                 ";
         // line 93
         echo "                <p>
@@ -169,7 +169,7 @@ class __TwigTemplate_95548766c3411bb4d6c9e828aa78b1aadfb352db61514b95ba22e2cea0f
                 <a href=\"";
         // line 141
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
-        echo "\" class=\"btn-get-started scrollto\">Consulter les nouvelles offres </a>
+        echo "\" class=\"btn-get-started scrollto\">Consulter toutes nos offres </a>
                 ";
         // line 151
         echo "                <p>
@@ -222,7 +222,7 @@ class __TwigTemplate_95548766c3411bb4d6c9e828aa78b1aadfb352db61514b95ba22e2cea0f
                 <a href=\"";
         // line 198
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
-        echo "\" class=\"btn-get-started scrollto\">Consulter les nouvelles offres </a>
+        echo "\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
                 ";
         // line 208
         echo "                <p>
@@ -247,7 +247,7 @@ class __TwigTemplate_95548766c3411bb4d6c9e828aa78b1aadfb352db61514b95ba22e2cea0f
 
                         <div class=\"col-lg-3 col-6 text-center\">
                           <span data-toggle=\"counter-up\">320</span>
-                          <p> Stages  </p>
+                          <p> Stages </p>
                         </div>
 
                         <div class=\"col-lg-3 col-6 text-center\">
@@ -275,7 +275,7 @@ class __TwigTemplate_95548766c3411bb4d6c9e828aa78b1aadfb352db61514b95ba22e2cea0f
                 <a href=\"";
         // line 255
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
-        echo "\" class=\"btn-get-started scrollto\">Consulter les nouvelles offres </a>
+        echo "\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
                 ";
         // line 265
         echo "                <p>
@@ -300,7 +300,7 @@ class __TwigTemplate_95548766c3411bb4d6c9e828aa78b1aadfb352db61514b95ba22e2cea0f
 
                         <div class=\"col-lg-3 col-6 text-center\">
                           <span data-toggle=\"counter-up\">320</span>
-                          <p> Stagess   </p>
+                          <p> Stages</p>
                         </div>
 
                         <div class=\"col-lg-3 col-6 text-center\">

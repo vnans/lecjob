@@ -80,7 +80,7 @@ class __TwigTemplate_0f47f0185cbef07e68111a8280aafa3ffe8cd3716266a8876c10fc44a4e
             // line 59
             echo "            <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_login");
-            echo "\" > Connexion</a>
+            echo "\" >Se connecter</a>
           ";
         }
         // line 61

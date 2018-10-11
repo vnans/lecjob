@@ -271,7 +271,7 @@ class __TwigTemplate_95548766c3411bb4d6c9e828aa78b1aadfb352db61514b95ba22e2cea0f
             <div class=\"carousel-container\">
               <div class=\"carousel-content\">
                 <h2>Des offres d'emplois publiées chaque jours</h2>
-                <p>Le service qui lutte contre le chomage</p>
+                <p>Le service qui lutte contre le chomage en Cote d'Ivoire</p>
                 <a href=\"";
         // line 255
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");

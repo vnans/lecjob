@@ -7,16 +7,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<!-- Include the above in your HEAD tag ->
 
-
-<html>
-  <head>
-
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<! Include the above in your HEAD tag -->
   </head>
 <body id="LoginForm">
 <div class="container">
@@ -31,28 +22,44 @@
  
 <div class="login-form">
 <div class="main-div">
+
     <div class="panel">
    <h2>Connectez vous</h2>
    </div>
+<div class="row">
+  <div class="col-md-12 col-sm-12">
+
     <form action="{{ path("fos_user_security_check") }}" method="post">
     {% if csrf_token %}
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
     {% endif %}
 
     <label for="username">Numéro de téléphone</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+    <div class="form-group">
+      <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+    </div>
+    
 
     <label for="password">{{ 'security.login.password'|trans }}</label>
-    <input type="password" id="password" name="_password" required="required" autocomplete="current-password" /></br>
-
-    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label> </br>
-     <p>Vous n'avez pas de compte ? c'est simple, envoyer par SMS, CJOB au 98025 </br> <i><b>(206/15 jr)</b> </i></p>
+    <div class="form-group">
+       <input type="password" id="password" name="_password" required="required" autocomplete="current-password" />
+    </div>
+   <div class="form-group">
+     <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+     <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label> </br>
+   </div>    
+    
+     <p class="text-primary" >Vous n'avez pas de compte ? envoyer simplement <mark>CJOB au 98025</mark> par SMS. </p>
+     <p class="text-pri">206 Fcfa/15 jr</p>
 
     <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
 </form>
+  </div>
+</div>
+
+    
     </div>
-<p class="botto-text"></p>
+
 </div></div></div>
 
 

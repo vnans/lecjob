@@ -49,18 +49,18 @@
                 <td>{{ cj_offre.dossier }}</td>
             </tr>
             <tr>
-                <th>DateAjout</th>
+                <th>Date d'Ajout</th>
                 <td>{{ cj_offre.dateAjout ? cj_offre.dateAjout|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>DateFin</th>
+                <th>Date limite</th>
                 <td>{{ cj_offre.dateFin ? cj_offre.dateFin|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             
         </tbody>
     </table>
 
-    <a href="{{ path('cj_offres_index') }}">  <button class="btn btn-primary">  Retour à la liste des offres</button> </a> 
+    <a href="{{ path('cj_offres_index') }}">  <button class="btn btn-primary">  Retourner à la liste des offres</button> </a> 
 
    <div>
     {% if is_granted('ROLE_ADMIN') %}

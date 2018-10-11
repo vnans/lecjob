@@ -81,6 +81,7 @@ class CjOffresController extends AbstractController
        if ($authChecker->IsGranted('ROLE_ADMIN')) {
 
             $session->set('admin','connexion_admin'); 
+            
             $admin=$session->get('admin'); 
 
         return $this->render('cj_offres/show.html.twig',['cj_offre' => $cjOffre,'admin' => $admin]);

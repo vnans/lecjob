@@ -35,16 +35,7 @@ class __TwigTemplate_c27179319b7d42a490dbdd192d3598d1e41c1d404ada49bf72c7ee0c155
 <link href=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\">
 <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js\"></script>
 <script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js\"></script>
-<!-- Include the above in your HEAD tag ->
 
-
-<html>
-  <head>
-
-  <link href=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\">
-<script src=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js\"></script>
-<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
-<! Include the above in your HEAD tag -->
   </head>
 <body id=\"LoginForm\">
 <div class=\"container\">
@@ -59,50 +50,66 @@ class __TwigTemplate_c27179319b7d42a490dbdd192d3598d1e41c1d404ada49bf72c7ee0c155
  
 <div class=\"login-form\">
 <div class=\"main-div\">
+
     <div class=\"panel\">
    <h2>Connectez vous</h2>
    </div>
+<div class=\"row\">
+  <div class=\"col-md-12 col-sm-12\">
+
     <form action=\"";
-        // line 37
+        // line 32
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_check");
         echo "\" method=\"post\">
     ";
-        // line 38
+        // line 33
         if (($context["csrf_token"] ?? null)) {
-            // line 39
+            // line 34
             echo "        <input type=\"hidden\" name=\"_csrf_token\" value=\"";
             echo twig_escape_filter($this->env, ($context["csrf_token"] ?? null), "html", null, true);
             echo "\" />
     ";
         }
-        // line 41
+        // line 36
         echo "
     <label for=\"username\">Numéro de téléphone</label>
-    <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 43
+    <div class=\"form-group\">
+      <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
+        // line 39
         echo twig_escape_filter($this->env, ($context["last_username"] ?? null), "html", null, true);
         echo "\" required=\"required\" autocomplete=\"username\" />
+    </div>
+    
 
     <label for=\"password\">";
-        // line 45
+        // line 43
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("security.login.password", array(), "FOSUserBundle"), "html", null, true);
         echo "</label>
-    <input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" autocomplete=\"current-password\" /></br>
-
-    <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
-    <label for=\"remember_me\">";
+    <div class=\"form-group\">
+       <input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" autocomplete=\"current-password\" />
+    </div>
+   <div class=\"form-group\">
+     <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
+     <label for=\"remember_me\">";
         // line 49
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("security.login.remember_me", array(), "FOSUserBundle"), "html", null, true);
         echo "</label> </br>
-     <p>Vous n'avez pas de compte ? c'est simple, envoyer par SMS, CJOB au 98025 </br> <i><b>(206/15 jr)</b> </i></p>
+   </div>    
+    
+     <p class=\"text-primary\" >Vous n'avez pas de compte ? envoyer simplement <mark>CJOB au 98025</mark> par SMS. </p>
+     <p class=\"text-pri\">206 Fcfa/15 jr</p>
 
     <input type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
-        // line 52
+        // line 55
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("security.login.submit", array(), "FOSUserBundle"), "html", null, true);
         echo "\" />
 </form>
+  </div>
+</div>
+
+    
     </div>
-<p class=\"botto-text\"></p>
+
 </div></div></div>
 
 
@@ -150,7 +157,7 @@ class __TwigTemplate_c27179319b7d42a490dbdd192d3598d1e41c1d404ada49bf72c7ee0c155
 
     public function getDebugInfo()
     {
-        return array (  101 => 52,  95 => 49,  88 => 45,  83 => 43,  79 => 41,  73 => 39,  71 => 38,  67 => 37,  34 => 6,  28 => 4,  26 => 3,  23 => 2,);
+        return array (  104 => 55,  95 => 49,  86 => 43,  79 => 39,  74 => 36,  68 => 34,  66 => 33,  62 => 32,  34 => 6,  28 => 4,  26 => 3,  23 => 2,);
     }
 
     public function getSourceContext()

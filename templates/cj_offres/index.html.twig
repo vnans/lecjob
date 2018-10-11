@@ -37,15 +37,15 @@
                <a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}"><img src=" {{asset('img/offres/') }}{{ cj_offre.image }} " alt="" class="img-fluid"></a> 
                {#  <div class="icon"><i class="ion-chatbox-working"> </i></div>#}
               </div>
-              <h2 class="title"><a href=" {{ path('cj_offres_show', {'id': cj_offre.id}) }} ">{{ cj_offre.type }} : {{ cj_offre.libelle }} </a></h2>
+              <h2 class="title"><a href=" {{ path('cj_offres_show', {'id': cj_offre.id}) }} "> <b>Type d'offre :</b> {{ cj_offre.type }} : {{ cj_offre.libelle }} </a></h2>
               <p>
-                {{ cj_offre.metier }}
+                <b>Métier :</b> {{ cj_offre.metier }}
               </p>
                <p>
-                {{ cj_offre.recruteur }}
+                <b>Récruteur :</b> {{ cj_offre.recruteur }}
               </p>
               <p>
-                {{ cj_offre.dateFin ? cj_offre.dateFin|date('Y-m-d H:i:s') : '' }}
+                <b>Date limite :</b> {{ cj_offre.dateFin ? cj_offre.dateFin|date('Y-m-d H:i:s') : '' }}
               </p>
 
               {% if is_granted('ROLE_ADMIN')  %}
@@ -85,7 +85,7 @@
                 <th>Email</th>
                 <th>Dossier</th>
                 <th>DateAjout</th>
-                <th>DateFin</th>
+                <th>Date limite</th>
                 <th>Image</th>
                 <th>actions</th>
             </tr>
@@ -109,13 +109,13 @@
                 <td>{{ cj_offre.dateFin ? cj_offre.dateFin|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ cj_offre.image }}</td>
                 <td>
-                    <a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}">show</a>
-                    <a href="{{ path('cj_offres_edit', {'id': cj_offre.id}) }}">edit</a>
+                    <a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}">Détails</a>
+                    <a href="{{ path('cj_offres_edit', {'id': cj_offre.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="16">aucune donnée trouvée</td>
+                <td colspan="16">Aucune donnée trouvée</td>
             </tr>
         {% endfor %}
         </tbody>

@@ -1459,7 +1459,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 
-/** add **/
+/** add  login form  1 **/
 body#LoginForm{ background-image:url("https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg"); background-repeat:no-repeat; background-position:center; background-size:cover; padding:10px;}
 
 .form-heading { color:#fff; font-size:23px;}
@@ -1513,3 +1513,17 @@ body#LoginForm{ background-image:url("https://hdwallsource.com/img/2014/9/blur-2
 }
 .back { text-align: left; margin-top:10px;}
 .back a {color: #444444; font-size: 13px;text-decoration: none;}
+
+
+
+/*** login form  2 **/ 
+.modal-content{
+      background-color: darkcyan;
+    }
+    .btn-link{
+      color:white;
+    }
+    .modal-heading h2{
+      color:#ffffff;
+    }
+

@@ -1,17 +1,8 @@
 {% trans_default_domain 'FOSUserBundle' %}
-
-{% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
-  </head>
+<h3><a href="{{ path('cj_offres_index') }}">Accueil</a> </h3> 
 <body id="LoginForm">
 <div class="container">
-<h1 class="form-heading"> 
+<h1 class="form-heading">
   <div class="row">
   <div class="alert alert-danger alert-dismissible" role="alert">
   <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
@@ -19,48 +10,58 @@
 </div>
   </div>
 </h1>
- 
-<div class="login-form">
-<div class="main-div">
 
-    <div class="panel">
-   <h2>Connectez vous</h2>
-   </div>
-<div class="row">
-  <div class="col-md-12 col-sm-12">
-
-    <form action="{{ path("fos_user_security_check") }}" method="post">
-    {% if csrf_token %}
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-heading">
+        <h2 class="text-center">Connectez-vous</h2>
+      </div>
+      <hr />
+      <div class="modal-body">
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+          {% if csrf_token %}
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
     {% endif %}
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">
+              <span class="glyphicon glyphicon-user"></span>
+              </span>
+              <input type="text" class="form-control" placeholder="Numéro de téléphone"  id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+              </span>
+              <input type="password" class="form-control" placeholder="Mot de passe" id="password" name="_password" required="required" autocomplete="current-password" />
 
-    <label for="username">Numéro de téléphone</label>
-    <div class="form-group">
-      <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+            </div>
+
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+           <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+          </div>
+           
+
+          <div class="form-group text-center">
+            <input type="submit" id="_submit" name="_submit" class="btn btn-success btn-lg" value="{{ 'security.login.submit'|trans }}" />
+          </div>
+          <p class="text-primary text-center" >Vous n'avez pas de compte ? envoyer simplement par SMS </p>
+          <p class="text-primary text-center" ><mark>CJOB au 98025</mark> </p>
+          <p class="text-primary text-center">206 Fcfa/15 jr</p>
+          {% if error %}
+             <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+          {% endif %}
+
+
+        </form>
+      </div>
     </div>
-    
-
-    <label for="password">{{ 'security.login.password'|trans }}</label>
-    <div class="form-group">
-       <input type="password" id="password" name="_password" required="required" autocomplete="current-password" />
-    </div>
-   <div class="form-group">
-     <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-     <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label> </br>
-   </div>    
-    
-     <p class="text-primary" >Vous n'avez pas de compte ? envoyer simplement <mark>CJOB au 98025</mark> par SMS. </p>
-     <p class="text-pri">206 Fcfa/15 jr</p>
-
-    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
-</form>
   </div>
 </div>
-
-    
-    </div>
-
-</div></div></div>
 
 
 </body>

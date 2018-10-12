@@ -20,26 +20,12 @@ class __TwigTemplate_c27179319b7d42a490dbdd192d3598d1e41c1d404ada49bf72c7ee0c155
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 2
-        echo "
-";
-        // line 3
-        if (($context["error"] ?? null)) {
-            // line 4
-            echo "    <div>";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, ($context["error"] ?? null), "messageKey", array()), twig_get_attribute($this->env, $this->source, ($context["error"] ?? null), "messageData", array()), "security"), "html", null, true);
-            echo "</div>
-";
-        }
-        // line 6
-        echo "
-<link href=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\">
-<script src=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js\"></script>
-<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js\"></script>
-
-  </head>
+        echo "<h3><a href=\"";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
+        echo "\">Accueil</a> </h3> 
 <body id=\"LoginForm\">
 <div class=\"container\">
-<h1 class=\"form-heading\"> 
+<h1 class=\"form-heading\">
   <div class=\"row\">
   <div class=\"alert alert-danger alert-dismissible\" role=\"alert\">
   <button type=\"button\" onclick=\"this.parentNode.parentNode.removeChild(this.parentNode);\" class=\"close\" data-dismiss=\"alert\"><span aria-hidden=\"true\">×</span><span class=\"sr-only\">Close</span></button>
@@ -47,70 +33,84 @@ class __TwigTemplate_c27179319b7d42a490dbdd192d3598d1e41c1d404ada49bf72c7ee0c155
 </div>
   </div>
 </h1>
- 
-<div class=\"login-form\">
-<div class=\"main-div\">
 
-    <div class=\"panel\">
-   <h2>Connectez vous</h2>
-   </div>
-<div class=\"row\">
-  <div class=\"col-md-12 col-sm-12\">
-
-    <form action=\"";
-        // line 32
+<div class=\"modal-dialog\">
+    <div class=\"modal-content\">
+      <div class=\"modal-heading\">
+        <h2 class=\"text-center\">Connectez-vous</h2>
+      </div>
+      <hr />
+      <div class=\"modal-body\">
+        <form action=\"";
+        // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_check");
         echo "\" method=\"post\">
-    ";
-        // line 33
+          ";
+        // line 22
         if (($context["csrf_token"] ?? null)) {
-            // line 34
+            // line 23
             echo "        <input type=\"hidden\" name=\"_csrf_token\" value=\"";
             echo twig_escape_filter($this->env, ($context["csrf_token"] ?? null), "html", null, true);
             echo "\" />
     ";
         }
-        // line 36
-        echo "
-    <label for=\"username\">Numéro de téléphone</label>
-    <div class=\"form-group\">
-      <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 39
+        // line 25
+        echo "          <div class=\"form-group\">
+            <div class=\"input-group\">
+              <span class=\"input-group-addon\">
+              <span class=\"glyphicon glyphicon-user\"></span>
+              </span>
+              <input type=\"text\" class=\"form-control\" placeholder=\"Numéro de téléphone\"  id=\"username\" name=\"_username\" value=\"";
+        // line 30
         echo twig_escape_filter($this->env, ($context["last_username"] ?? null), "html", null, true);
         echo "\" required=\"required\" autocomplete=\"username\" />
-    </div>
-    
+            </div>
+          </div>
+          <div class=\"form-group\">
+            <div class=\"input-group\">
+              <span class=\"input-group-addon\">
+              <span class=\"glyphicon glyphicon-lock\"></span>
+              </span>
+              <input type=\"password\" class=\"form-control\" placeholder=\"Mot de passe\" id=\"password\" name=\"_password\" required=\"required\" autocomplete=\"current-password\" />
 
-    <label for=\"password\">";
-        // line 43
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("security.login.password", array(), "FOSUserBundle"), "html", null, true);
-        echo "</label>
-    <div class=\"form-group\">
-       <input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" autocomplete=\"current-password\" />
-    </div>
-   <div class=\"form-group\">
-     <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
-     <label for=\"remember_me\">";
-        // line 49
+            </div>
+
+          </div>
+          <div class=\"form-group\">
+            <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
+           <label for=\"remember_me\">";
+        // line 45
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("security.login.remember_me", array(), "FOSUserBundle"), "html", null, true);
-        echo "</label> </br>
-   </div>    
-    
-     <p class=\"text-primary\" >Vous n'avez pas de compte ? envoyer simplement <mark>CJOB au 98025</mark> par SMS. </p>
-     <p class=\"text-pri\">206 Fcfa/15 jr</p>
+        echo "</label>
+          </div>
+           
 
-    <input type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
-        // line 55
+          <div class=\"form-group text-center\">
+            <input type=\"submit\" id=\"_submit\" name=\"_submit\" class=\"btn btn-success btn-lg\" value=\"";
+        // line 50
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("security.login.submit", array(), "FOSUserBundle"), "html", null, true);
         echo "\" />
-</form>
+          </div>
+          <p class=\"text-primary text-center\" >Vous n'avez pas de compte ? envoyer simplement par SMS </p>
+          <p class=\"text-primary text-center\" ><mark>CJOB au 98025</mark> </p>
+          <p class=\"text-primary text-center\">206 Fcfa/15 jr</p>
+          ";
+        // line 55
+        if (($context["error"] ?? null)) {
+            // line 56
+            echo "             <div>";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, ($context["error"] ?? null), "messageKey", array()), twig_get_attribute($this->env, $this->source, ($context["error"] ?? null), "messageData", array()), "security"), "html", null, true);
+            echo "</div>
+          ";
+        }
+        // line 58
+        echo "
+
+        </form>
+      </div>
+    </div>
   </div>
 </div>
-
-    
-    </div>
-
-</div></div></div>
 
 
 </body>
@@ -157,7 +157,7 @@ class __TwigTemplate_c27179319b7d42a490dbdd192d3598d1e41c1d404ada49bf72c7ee0c155
 
     public function getDebugInfo()
     {
-        return array (  104 => 55,  95 => 49,  86 => 43,  79 => 39,  74 => 36,  68 => 34,  66 => 33,  62 => 32,  34 => 6,  28 => 4,  26 => 3,  23 => 2,);
+        return array (  107 => 58,  101 => 56,  99 => 55,  91 => 50,  83 => 45,  65 => 30,  58 => 25,  52 => 23,  50 => 22,  46 => 21,  23 => 2,);
     }
 
     public function getSourceContext()

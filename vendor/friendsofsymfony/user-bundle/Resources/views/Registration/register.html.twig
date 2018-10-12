@@ -1,5 +1,18 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
 {% block fos_user_content %}
-{% include "@FOSUser/Registration/register_content.html.twig" %}
+	      {% if is_granted('ROLE_ADMIN')  %}
+            {% include "@FOSUser/Registration/register_content.html.twig" %}
+          {% else %}
+          	<h1 class="form-heading">
+			  <div class="row">
+			  <div class="alert alert-danger alert-dismissible" role="alert">
+			  <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			  <strong><i class="fa fa-warning"></i>Zone privé ! </strong> <marquee><p style="font-family: Impact; font-size: 18pt">Vous n'est pas le bienvenue ici ! </p> <a href="{{ path('cj_offres_index') }}">Rétour à l'accueil</a> </marquee>
+			  </div>
+			  </div>
+			</h1>
+ 
+          {% endif %}
+
 {% endblock fos_user_content %}

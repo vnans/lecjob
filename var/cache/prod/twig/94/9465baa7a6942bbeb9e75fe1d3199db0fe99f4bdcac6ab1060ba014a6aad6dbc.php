@@ -44,7 +44,7 @@ class __TwigTemplate_c27179319b7d42a490dbdd192d3598d1e41c1d404ada49bf72c7ee0c155
         <form action=\"";
         // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_check");
-        echo "\" method=\"post\">
+        echo "\" method=\"POST\">
           ";
         // line 22
         if (($context["csrf_token"] ?? null)) {
@@ -52,7 +52,7 @@ class __TwigTemplate_c27179319b7d42a490dbdd192d3598d1e41c1d404ada49bf72c7ee0c155
             echo "        <input type=\"hidden\" name=\"_csrf_token\" value=\"";
             echo twig_escape_filter($this->env, ($context["csrf_token"] ?? null), "html", null, true);
             echo "\" />
-    ";
+          ";
         }
         // line 25
         echo "          <div class=\"form-group\">
@@ -115,32 +115,6 @@ class __TwigTemplate_c27179319b7d42a490dbdd192d3598d1e41c1d404ada49bf72c7ee0c155
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ";
     }

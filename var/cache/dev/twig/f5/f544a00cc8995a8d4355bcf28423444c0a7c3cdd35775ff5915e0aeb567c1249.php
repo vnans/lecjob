@@ -76,7 +76,7 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
       <div class=\"container\">
 
         <header class=\"section-header\">
-          <h3>Les toutes dernieres offres </h3>
+          <h3>Emplois et stages </h3>
          ";
         // line 30
         echo "        </header>
@@ -95,7 +95,7 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
             // line 37
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_show", array("id" => twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()))), "html", null, true);
             echo "\"><img src=\" ";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/offres/"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("public/img/offres"), "html", null, true);
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "image", array()), "html", null, true);
             echo " \" alt=\"\" class=\"img-fluid\"></a> 
                ";
@@ -104,25 +104,25 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
               <h2 class=\"title\"><a href=\" ";
             // line 40
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_show", array("id" => twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()))), "html", null, true);
-            echo " \">";
+            echo " \"> <b>Type d'offre :</b> ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "type", array()), "html", null, true);
             echo " : ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "libelle", array()), "html", null, true);
             echo " </a></h2>
               <p>
-                ";
+                <b>Métier :</b> ";
             // line 42
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "metier", array()), "html", null, true);
             echo "
               </p>
                <p>
-                ";
+                <b>Récruteur :</b> ";
             // line 45
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "recruteur", array()), "html", null, true);
             echo "
               </p>
               <p>
-                ";
+                <b>Date limite :</b> ";
             // line 48
             echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dateFin", array())) ? (twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dateFin", array()), "Y-m-d H:i:s")) : ("")), "html", null, true);
             echo "
@@ -186,7 +186,7 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
                 <th>Email</th>
                 <th>Dossier</th>
                 <th>DateAjout</th>
-                <th>DateFin</th>
+                <th>Date limite</th>
                 <th>Image</th>
                 <th>actions</th>
             </tr>
@@ -264,11 +264,11 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
                     <a href=\"";
                 // line 112
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_show", array("id" => twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()))), "html", null, true);
-                echo "\">show</a>
+                echo "\">Détails</a>
                     <a href=\"";
                 // line 113
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()))), "html", null, true);
-                echo "\">edit</a>
+                echo "\">Modifier</a>
                 </td>
             </tr>
         ";
@@ -277,7 +277,7 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
             if (!$context['_iterated']) {
                 // line 117
                 echo "            <tr>
-                <td colspan=\"16\">no records found</td>
+                <td colspan=\"16\">Aucune donnée trouvée</td>
             </tr>
         ";
             }
@@ -334,7 +334,7 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
       <div class=\"container\">
 
         <header class=\"section-header\">
-          <h3>Les toutes dernieres offres </h3>
+          <h3>Emplois et stages </h3>
          {#  <p>
 
            
@@ -358,18 +358,18 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
           <div class=\"col-md-4 wow fadeInUp\">
             <div class=\"about-col\">
               <div class=\"img\">
-               <a href=\"{{ path('cj_offres_show', {'id': cj_offre.id}) }}\"><img src=\" {{asset('img/offres/') }}{{ cj_offre.image }} \" alt=\"\" class=\"img-fluid\"></a> 
+               <a href=\"{{ path('cj_offres_show', {'id': cj_offre.id}) }}\"><img src=\" {{asset('public/img/offres') }}{{ cj_offre.image }} \" alt=\"\" class=\"img-fluid\"></a> 
                {#  <div class=\"icon\"><i class=\"ion-chatbox-working\"> </i></div>#}
               </div>
-              <h2 class=\"title\"><a href=\" {{ path('cj_offres_show', {'id': cj_offre.id}) }} \">{{ cj_offre.type }} : {{ cj_offre.libelle }} </a></h2>
+              <h2 class=\"title\"><a href=\" {{ path('cj_offres_show', {'id': cj_offre.id}) }} \"> <b>Type d'offre :</b> {{ cj_offre.type }} : {{ cj_offre.libelle }} </a></h2>
               <p>
-                {{ cj_offre.metier }}
+                <b>Métier :</b> {{ cj_offre.metier }}
               </p>
                <p>
-                {{ cj_offre.recruteur }}
+                <b>Récruteur :</b> {{ cj_offre.recruteur }}
               </p>
               <p>
-                {{ cj_offre.dateFin ? cj_offre.dateFin|date('Y-m-d H:i:s') : '' }}
+                <b>Date limite :</b> {{ cj_offre.dateFin ? cj_offre.dateFin|date('Y-m-d H:i:s') : '' }}
               </p>
 
               {% if is_granted('ROLE_ADMIN')  %}
@@ -409,7 +409,7 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
                 <th>Email</th>
                 <th>Dossier</th>
                 <th>DateAjout</th>
-                <th>DateFin</th>
+                <th>Date limite</th>
                 <th>Image</th>
                 <th>actions</th>
             </tr>
@@ -433,13 +433,13 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
                 <td>{{ cj_offre.dateFin ? cj_offre.dateFin|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ cj_offre.image }}</td>
                 <td>
-                    <a href=\"{{ path('cj_offres_show', {'id': cj_offre.id}) }}\">show</a>
-                    <a href=\"{{ path('cj_offres_edit', {'id': cj_offre.id}) }}\">edit</a>
+                    <a href=\"{{ path('cj_offres_show', {'id': cj_offre.id}) }}\">Détails</a>
+                    <a href=\"{{ path('cj_offres_edit', {'id': cj_offre.id}) }}\">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan=\"16\">no records found</td>
+                <td colspan=\"16\">Aucune donnée trouvée</td>
             </tr>
         {% endfor %}
         </tbody>

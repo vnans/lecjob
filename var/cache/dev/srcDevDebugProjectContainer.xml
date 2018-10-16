@@ -83,7 +83,7 @@
     <parameter key="container.dumper.inline_class_loader">true</parameter>
     <parameter key="env(DATABASE_URL)"></parameter>
     <parameter key="locale">fr</parameter>
-    <parameter key="images_directory">/var/www/lecjob/public/img/offres</parameter>
+    <parameter key="images_directory">/var/www/lecjob/img/offres</parameter>
     <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">%env(APP_SECRET)%</parameter>

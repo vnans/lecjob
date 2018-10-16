@@ -59,16 +59,29 @@
             <a href="{{ path('fos_user_security_login')}}" >Se connecter</a>
           {% endif %}
           </li>
-          <li>
+        
             {% if is_granted('ROLE_ADMIN')  %}
-            <a href="{{ path('fos_user_security_logout')}}">Se déconnecter</a>  
+            <li class="menu-has-children"><a href="">Mon Profil</a>
+              <ul>
+                <li><a href="{{ path('fos_user_profile_show') }}">Mes infos.</a></li>
+                <li><a href="{{ path('fos_user_change_password') }}">Modifier mon mot de passe</a></li>
+                <li><a href="{{ path('fos_user_security_logout')}}">se déconnecter</a></li>
+              </ul>
+          </li>
+         
           {% elseif is_granted('ROLE_USER') %}
-            <a href="{{ path('fos_user_security_logout')}}">Se déconnecter</a>  
+           <li class="menu-has-children"><a href="">Mon Profile</a>
+              <ul>
+                <li><a href="{{ path('fos_user_profile_show') }}">Mes infos.</a></li>
+                <li><a href="{{ path('fos_user_change_password') }}">Modifier mon mot de passe</a></li>
+                <li><a href="{{ path('fos_user_security_logout')}}">se déconnecter</a></li>
+              </ul>
+          </li>  
           {% else %}
            
           {% endif %}
             
-          </li>
+         
          
         </ul>
       </nav><!-- #nav-menu-container -->

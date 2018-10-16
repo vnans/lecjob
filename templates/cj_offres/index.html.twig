@@ -34,7 +34,7 @@
           <div class="col-md-4 wow fadeInUp">
             <div class="about-col">
               <div class="img">
-               <a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}"><img src=" {{asset('img/offres/') }}{{ cj_offre.image }} " alt="" class="img-fluid"></a> 
+               <a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}"><img src=" {{asset('public/img/offres') }}{{ cj_offre.image }} " alt="" class="img-fluid"></a> 
                {#  <div class="icon"><i class="ion-chatbox-working"> </i></div>#}
               </div>
               <h2 class="title"><a href=" {{ path('cj_offres_show', {'id': cj_offre.id}) }} "> <b>Type d'offre :</b> {{ cj_offre.type }} : {{ cj_offre.libelle }} </a></h2>

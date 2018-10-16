@@ -50,7 +50,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Accueil-cjob!";
+        echo "Accueil--CJOB!";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -91,7 +91,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
                 <a href=\"";
         // line 25
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
-        echo "\" class=\"btn-get-started scrollto\">Consulter toutes les offres </a>
+        echo "\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
                 ";
         // line 35
         echo "                <p>
@@ -141,11 +141,11 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
             <div class=\"carousel-container\">
               <div class=\"carousel-content\">
                 <h2>Votre assistance conseil </h2>
-                <p>Nous nous rapprochons de vous par notre boite de dialogue </p>
+                <p>Nous nous rapprochons de vous par notre chat direct </p>
                 <a href=\"";
         // line 83
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
-        echo "\" class=\"btn-get-started scrollto\">Consulter les nouvelles offres </a>
+        echo "\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
                 ";
         // line 93
         echo "                <p>
@@ -199,7 +199,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
                 <a href=\"";
         // line 141
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
-        echo "\" class=\"btn-get-started scrollto\">Consulter les nouvelles offres </a>
+        echo "\" class=\"btn-get-started scrollto\">Consulter toutes nos offres </a>
                 ";
         // line 151
         echo "                <p>
@@ -252,7 +252,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
                 <a href=\"";
         // line 198
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
-        echo "\" class=\"btn-get-started scrollto\">Consulter les nouvelles offres </a>
+        echo "\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
                 ";
         // line 208
         echo "                <p>
@@ -277,7 +277,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
 
                         <div class=\"col-lg-3 col-6 text-center\">
                           <span data-toggle=\"counter-up\">320</span>
-                          <p> Stages  </p>
+                          <p> Stages </p>
                         </div>
 
                         <div class=\"col-lg-3 col-6 text-center\">
@@ -301,11 +301,11 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
             <div class=\"carousel-container\">
               <div class=\"carousel-content\">
                 <h2>Des offres d'emplois publiées chaque jours</h2>
-                <p>Le service qui lutte contre le chomage</p>
+                <p>Le service qui lutte contre le chomage en Cote d'Ivoire</p>
                 <a href=\"";
         // line 255
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
-        echo "\" class=\"btn-get-started scrollto\">Consulter les nouvelles offres </a>
+        echo "\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
                 ";
         // line 265
         echo "                <p>
@@ -330,7 +330,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
 
                         <div class=\"col-lg-3 col-6 text-center\">
                           <span data-toggle=\"counter-up\">320</span>
-                          <p> Stagess   </p>
+                          <p> Stages</p>
                         </div>
 
                         <div class=\"col-lg-3 col-6 text-center\">
@@ -401,7 +401,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
 
-{% block title %}Accueil-cjob!{% endblock %}
+{% block title %}Accueil--CJOB!{% endblock %}
 
 {% block body %}
 
@@ -423,7 +423,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
               <div class=\"carousel-content\">
                 <h2>CJOB AU 98025</h2>
                 <p>L'emploi à porté de main .</p>
-                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Consulter toutes les offres </a>
+                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
                 {# <p>
                   
                   <ul class=\"nav-menu\">
@@ -480,8 +480,8 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
             <div class=\"carousel-container\">
               <div class=\"carousel-content\">
                 <h2>Votre assistance conseil </h2>
-                <p>Nous nous rapprochons de vous par notre boite de dialogue </p>
-                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Consulter les nouvelles offres </a>
+                <p>Nous nous rapprochons de vous par notre chat direct </p>
+                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
                 {# <p>
                   
                   <ul class=\"nav-menu\">
@@ -539,7 +539,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
               <div class=\"carousel-content\">
                 <h2> Insertion professionnelle </h2>
                 <p>La plateforme de l'emploi et des stages</p>
-                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Consulter les nouvelles offres </a>
+                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Consulter toutes nos offres </a>
                 {# <p>
                   
                   <ul class=\"nav-menu\">
@@ -596,7 +596,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
               <div class=\"carousel-content\">
                 <h2>Merci CJOB</h2>
                 <p>votre bien etre , notre priorité</p>
-                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Consulter les nouvelles offres </a>
+                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
                 {# <p>
                   
                   <ul class=\"nav-menu\">
@@ -628,7 +628,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
 
                         <div class=\"col-lg-3 col-6 text-center\">
                           <span data-toggle=\"counter-up\">320</span>
-                          <p> Stages  </p>
+                          <p> Stages </p>
                         </div>
 
                         <div class=\"col-lg-3 col-6 text-center\">
@@ -652,8 +652,8 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
             <div class=\"carousel-container\">
               <div class=\"carousel-content\">
                 <h2>Des offres d'emplois publiées chaque jours</h2>
-                <p>Le service qui lutte contre le chomage</p>
-                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Consulter les nouvelles offres </a>
+                <p>Le service qui lutte contre le chomage en Cote d'Ivoire</p>
+                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
                 {# <p>
                   
                   <ul class=\"nav-menu\">
@@ -685,7 +685,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
 
                         <div class=\"col-lg-3 col-6 text-center\">
                           <span data-toggle=\"counter-up\">320</span>
-                          <p> Stagess   </p>
+                          <p> Stages</p>
                         </div>
 
                         <div class=\"col-lg-3 col-6 text-center\">

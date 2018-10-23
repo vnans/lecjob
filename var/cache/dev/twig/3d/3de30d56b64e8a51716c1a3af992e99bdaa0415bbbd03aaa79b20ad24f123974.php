@@ -61,7 +61,10 @@ class __TwigTemplate_4ab4af3fb4cac0b61d77173feb0dadc8bba6f8609b9e902aace27941602
 
       <nav id=\"nav-menu-container\">
         <ul class=\"nav-menu\">
-          <li class=\"menu-active\"><a href=\"#\">Envoyer, CJOB au 98025 par SMS pour creer un compte </a></li>
+          <li>  <a href=\"";
+        // line 44
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("apropos");
+        echo "\" >A propos</a></li>
           ";
         // line 46
         echo "          <li>
@@ -349,7 +352,7 @@ class __TwigTemplate_4ab4af3fb4cac0b61d77173feb0dadc8bba6f8609b9e902aace27941602
 
     public function getDebugInfo()
     {
-        return array (  331 => 120,  322 => 119,  310 => 30,  304 => 27,  300 => 26,  296 => 25,  292 => 24,  288 => 23,  282 => 20,  276 => 17,  269 => 12,  260 => 11,  242 => 6,  229 => 121,  227 => 119,  223 => 117,  220 => 116,  214 => 115,  205 => 112,  200 => 111,  195 => 110,  190 => 109,  188 => 108,  184 => 106,  176 => 104,  170 => 101,  166 => 100,  161 => 99,  159 => 98,  135 => 76,  131 => 74,  124 => 70,  120 => 69,  116 => 68,  112 => 66,  104 => 61,  100 => 60,  96 => 59,  92 => 57,  90 => 56,  86 => 54,  80 => 52,  76 => 50,  72 => 48,  70 => 47,  67 => 46,  56 => 37,  49 => 32,  47 => 11,  39 => 6,  32 => 1,);
+        return array (  334 => 120,  325 => 119,  313 => 30,  307 => 27,  303 => 26,  299 => 25,  295 => 24,  291 => 23,  285 => 20,  279 => 17,  272 => 12,  263 => 11,  245 => 6,  232 => 121,  230 => 119,  226 => 117,  223 => 116,  217 => 115,  208 => 112,  203 => 111,  198 => 110,  193 => 109,  191 => 108,  187 => 106,  179 => 104,  173 => 101,  169 => 100,  164 => 99,  162 => 98,  138 => 76,  134 => 74,  127 => 70,  123 => 69,  119 => 68,  115 => 66,  107 => 61,  103 => 60,  99 => 59,  95 => 57,  93 => 56,  89 => 54,  83 => 52,  79 => 50,  75 => 48,  73 => 47,  70 => 46,  66 => 44,  56 => 37,  49 => 32,  47 => 11,  39 => 6,  32 => 1,);
     }
 
     public function getSourceContext()
@@ -397,7 +400,7 @@ class __TwigTemplate_4ab4af3fb4cac0b61d77173feb0dadc8bba6f8609b9e902aace27941602
 
       <nav id=\"nav-menu-container\">
         <ul class=\"nav-menu\">
-          <li class=\"menu-active\"><a href=\"#\">Envoyer, CJOB au 98025 par SMS pour creer un compte </a></li>
+          <li>  <a href=\"{{ path('apropos')}}\" >A propos</a></li>
           {# <li><a href=\"#about\">C'est quoi CJOB ?</a></li> #}
           <li>
           {% if is_granted('ROLE_ADMIN')  %}

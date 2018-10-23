@@ -1,12 +1,11 @@
 {% trans_default_domain 'FOSUserBundle' %}
-<h3><a href="{{ path('cj_offres_index') }}">Accueil</a> </h3> 
 <body id="LoginForm">
 <div class="container">
 <h1 class="form-heading">
   <div class="row">
-  <div class="alert alert-danger alert-dismissible" role="alert">
-  <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-  <strong><i class="fa fa-warning"></i>FLASH-CJOB! </strong> <marquee><p style="font-family: Impact; font-size: 18pt">NE PAYER JAMAIS A PERSONNE,SOUS AUCUN PRETEXTE,UNE QUELCONQUE SOMME D'ARGENT POUR UN TEST DE CANDIDATURE OU UNE ENTREVUE. (ALCALIS TECHNOLOGIES) </p></marquee>
+  <div class="alert alert-default alert-dismissible" role="alert">
+  <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close" data-dismiss="alert"><span style="color: black;" aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+  <strong><i class="fa fa-warning"></i>FLASH-CJOB! </strong> <marquee><p style="font-family: Impact; font-size: 18pt;color: #fff;">NE PAYER JAMAIS A PERSONNE,SOUS AUCUN PRETEXTE,UNE QUELCONQUE SOMME D'ARGENT POUR UN TEST DE CANDIDATURE OU UNE ENTREVUE. (ALCALIS TECHNOLOGIES) </p></marquee>
 </div>
   </div>
 </h1>
@@ -16,7 +15,6 @@
       <div class="modal-heading">
         <h2 class="text-center">Connectez-vous</h2>
       </div>
-      <hr />
       <div class="modal-body">
         <form action="{{ path("fos_user_security_check") }}" method="POST">
           {% if csrf_token %}
@@ -43,20 +41,19 @@
           <div class="form-group">
             <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
            <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
-          </div>
-           
+          </div>       
 
           <div class="form-group text-center">
-            <input type="submit" id="_submit" name="_submit" class="btn btn-success btn-lg" value="{{ 'security.login.submit'|trans }}" />
+            <input type="submit" id="_submit" name="_submit" class="btn btn-primary btn-lg" value="{{ 'security.login.submit'|trans }}" />
           </div>
           <p class="text-primary text-center" >Vous n'avez pas de compte ? envoyer simplement par SMS </p>
-          <p class="text-primary text-center" ><mark>CJOB au 98025</mark> </p>
-          <p class="text-primary text-center">206 Fcfa/15 jr</p>
+          <p class="text-primary text-center" ><mark>CJOB au 98025</mark> 206 Fcfa/15 Jours</p>
+
           {% if error %}
              <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
           {% endif %}
 
-
+          <p class="text-center" > <img src="img/orangeMTN.jpg" alt="operateurs"> </p>
         </form>
       </div>
     </div>

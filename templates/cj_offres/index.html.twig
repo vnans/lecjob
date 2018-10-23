@@ -5,39 +5,53 @@
 {% block body %}
  <!--==========================
       About Us Section
-    ============================-->
+    ============================--> 
     <section id="about">
       <div class="container">
 
         <header class="section-header">
-          <h3>Emplois et stages </h3>
-         {#  <p>
+          <h3>Emplois et stages </h3> 
+    
+          <p>
 
-           
+           {% form_theme  formSearch 'bootstrap_4_layout.html.twig' %} 
+
               <form  action=" {{ path('search') }} " method="POST">
-                  <div class="form-group">
-                     {{ form(form) }}
-                </div>
-            
-              </form>
-              cjob l'emploi a porté de main 
-              cjob le service qui lutte contre le chomage 
-              La plateforme de l'emploi et des stages
-              votre bien etre , notre priorité
-              Cjob , votre assistance conseil
+                  {{ form_start(formSearch)}}
+          <div class="row">
+            <div class=" form-group col-md-4"> {{ form_widget(formSearch.Type) }}</div>
+            <div class=" form-group col-md-4">{{ form_widget(formSearch.Niveau) }}
+</div>
+            <div class=" form-group col-md-4">{{ form_widget(formSearch.Metier) }}
+</div>
+          </div>
+                     {{ form_widget(formSearch) }}
 
-          </p> #}
+                  {{ form_end(formSearch)}}
+              
+              </form>
+              
+          </p>
         </header>
+
+<div>
+ 
+
+     
+ 
+</div>
+
+
 
         <div class="row about-cols">
  {% for cj_offre in cj_offres %}
           <div class="col-md-4 wow fadeInUp">
             <div class="about-col">
               <div class="img">
-               <a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}"><img src=" {{asset('public/img/offres') }}{{ cj_offre.image }} " alt="" class="img-fluid"></a> 
+               <a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}"><img src=" {{asset('public/img/offres/') }}{{ cj_offre.image }} " alt="" class="img-fluid"></a> 
                {#  <div class="icon"><i class="ion-chatbox-working"> </i></div>#}
               </div>
-              <h2 class="title"><a href=" {{ path('cj_offres_show', {'id': cj_offre.id}) }} "> <b>Type d'offre :</b> {{ cj_offre.type }} : {{ cj_offre.libelle }} </a></h2>
+              <h2 class="title"><a href=" {{ path('cj_offres_show', {'id': cj_offre.id}) }} "> <b>Type d'offre :</b> {{ cj_offre.type }}  {{ cj_offre.libelle }} </a></h2>
               <p>
                 <b>Métier :</b> {{ cj_offre.metier }}
               </p>
@@ -47,6 +61,7 @@
               <p>
                 <b>Date limite :</b> {{ cj_offre.dateFin ? cj_offre.dateFin|date('Y-m-d H:i:s') : '' }}
               </p>
+              <p><a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}"> <button class="btn btn-primary" >Suite</button> </a>  </p>
 
               {% if is_granted('ROLE_ADMIN')  %}
                <a href="{{ path('cj_offres_edit', {'id': cj_offre.id}) }}"> <button class="btn btn-primary" > Modifier cette offre</button> </a>         
@@ -61,11 +76,16 @@
      {% endfor %}      
 
         </div>
+
+
+
 <div class="pagination">
     {{ knp_pagination_render(cj_offres) }}
 </div>
       </div>
     </section><!-- #about -->
+
+
  
               {% if is_granted('ROLE_ADMIN')  %}
   <a href="{{ path('cj_offres_new') }}">  <button class="btn btn-primary" >Ajouter une offre</button> </a>             

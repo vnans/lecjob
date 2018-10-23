@@ -4,11 +4,25 @@
 
 {% block body %}
 
-  <!--==========================
+<div class="container-fluid">
+    
+  
+  <!-- Heading Row -->
+      <div class="row my-4">
+        <div class="col-lg-2">
+          {# <h1>ESPACE A LOUER</h1>
+          <p>VOTRE ESPACE PUB</p> #}
+          <img src="img/eal3.jpg" alt=""> 
+        {#   <a class="btn btn-primary btn-lg" href="#">Call to Action!</a> #}
+        </div>
+        <div class="col-lg-8">
+          <!--==========================
     Intro Section
   ============================-->
   <section id="intro">
+
     <div class="intro-container">
+
       <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
 
         <ol class="carousel-indicators"></ol>
@@ -20,9 +34,9 @@
             <div class="carousel-background"><img src="img/intro-carousel/1.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>CJOB AU 98025</h2>
-                <p>L'emploi à porté de main .</p>
-                <a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">Consulter toutes nos offres  </a>
+                <h2 style="color:#000 ;">CJOB AU 98025</h2>
+                <p style="color:#000;">Reçevez des offres d'emploi par SMS</p>
+                <a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">POSTULER ICI</a>
                 {# <p>
                   
                   <ul class="nav-menu">
@@ -33,40 +47,7 @@
                   </ul>
                 </p> #}
                 <p>
-                    <section id="facts"  class="wow fadeIn">
-                    <div class="container">
-
-                      <header class="section-header">
-                        
-                      </header>
-
-                      <div class="row counters">
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">274</span>
-                          <p>Entreprises partenaires</p>
-                        </div>
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">259</span>
-                          <p>Emplois</p>
-                        </div>
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">320</span>
-                          <p> Stagess</p>
-                        </div>
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">401</span>
-                          <p>Insertions professionnelles </p>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-                  </section><!-- #facts -->
+                   
                   
                 </p>
                 
@@ -75,127 +56,12 @@
           </div>
 
           <div class="carousel-item">
-            <div class="carousel-background"><img src="img/intro-carousel/2.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2>Votre assistance conseil </h2>
-                <p>Nous nous rapprochons de vous par notre chat direct </p>
-                <a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">Consulter toutes nos offres  </a>
-                {# <p>
-                  
-                  <ul class="nav-menu">
-                  <li class=""><a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">Informatique</a> </li>
-                  <li><a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">banque</a></li>
-                  <li><a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">Communication</a></li>
-         
-                  </ul>
-                </p> #}
-                <p>
-                    <section id="facts"  class="wow fadeIn">
-                    <div class="container">
-
-                      <header class="section-header">
-                        
-                      </header>
-
-                      <div class="row counters">
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">274</span>
-                          <p>Entreprises partenaires</p>
-                        </div>
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">259</span>
-                          <p>Emplois  </p>
-                        </div>
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">320</span>
-                          <p> Stages  </p>
-                        </div>
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">401</span>
-                          <p>Insertions professionnelles</p>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-                  </section><!-- #facts -->
-                  
-                </p>
-              </div>
-              
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="carousel-background"><img src="img/intro-carousel/3.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2> Insertion professionnelle </h2>
-                <p>La plateforme de l'emploi et des stages</p>
-                <a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">Consulter toutes nos offres </a>
-                {# <p>
-                  
-                  <ul class="nav-menu">
-                  <li class=""><a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">Informatique</a> </li>
-                  <li><a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">banque</a></li>
-                  <li><a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">Communication</a></li>
-         
-                  </ul>
-                </p> #}
-                <p>
-                    <section id="facts"  class="wow fadeIn">
-                    <div class="container">
-
-                      <header class="section-header">
-                        
-                      </header>
-
-                      <div class="row counters">
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">274</span>
-                          <p>Entreprises partenaires</p>
-                        </div>
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">259</span>
-                          <p>Emplois  </p>
-                        </div>
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">320</span>
-                          <p> Stages  </p>
-                        </div>
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">401 </span>
-                          <p>Insertions professionnelles  </p>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-                  </section><!-- #facts -->
-                  
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item">
             <div class="carousel-background"><img src="img/intro-carousel/4.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Merci CJOB</h2>
-                <p>votre bien etre , notre priorité</p>
-                <a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">Consulter toutes nos offres  </a>
+                {# <h2 style="color:#000 ;">CJOB AU 98025</h2>
+                <p style="color:#000;">Reçevez des offres d'emploi par SMS</p> #}
+                <a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">POSTULER ICI  </a>
                 {# <p>
                   
                   <ul class="nav-menu">
@@ -206,40 +72,7 @@
                   </ul>
                 </p> #}
                 <p>
-                    <section id="facts"  class="wow fadeIn">
-                    <div class="container">
-
-                      <header class="section-header">
-                        
-                      </header>
-
-                      <div class="row counters">
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">274</span>
-                          <p>Entreprises partenaires</p>
-                        </div>
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">259</span>
-                          <p>Emplois  </p>
-                        </div>
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">320</span>
-                          <p> Stages </p>
-                        </div>
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">401</span>
-                          <p>Insertions professionnelles  </p>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-                  </section><!-- #facts -->
+                    
                   
                 </p>
               </div>
@@ -250,53 +83,21 @@
             <div class="carousel-background"><img src="img/intro-carousel/5.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Des offres d'emplois publiées chaque jours</h2>
-                <p>Le service qui lutte contre le chomage en Cote d'Ivoire</p>
-                <a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">Consulter toutes nos offres  </a>
+                {# <h2 style="color:#000 ;">CJOB AU 98025</h2>
+                <p style="color:#000;">Reçevez des offres d'emploi par SMS</p> #}
+                <a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">POSTULER ICI  </a>
                 {# <p>
                   
                   <ul class="nav-menu">
                   <li class=""><a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">Informatique</a> </li>
-                  <li><a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">banque</a></li>
+                  <li><a hre
+                  f="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">banque</a></li>
                   <li><a href="{{ path('cj_offres_index') }}" class="btn-get-started scrollto">Communication</a></li>
          
                   </ul>
                 </p> #}
                 <p>
-                    <section id="facts"  class="wow fadeIn">
-                    <div class="container">
-
-                      <header class="section-header">
-                        
-                      </header>
-
-                      <div class="row counters">
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">274</span>
-                          <p>Entreprises partenaires</p>
-                        </div>
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">259</span>
-                          <p>Emplois  </p>
-                        </div>
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">320</span>
-                          <p> Stages</p>
-                        </div>
-
-                        <div class="col-lg-3 col-6 text-center">
-                          <span data-toggle="counter-up">401</span>
-                          <p>Insertions professionnelles  </p>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-                  </section><!-- #facts -->
+                   
                   
                 </p>
               </div>
@@ -327,7 +128,22 @@
     </section> #}<!-- #facts -->
 
     </div>
+   
   </section><!-- #intro -->
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-2">
+           <img src="img/eal3.jpg" alt="">
+        </div>
+        <!-- /.col-md-4 -->
+      </div>
+      <!-- /.row -->
+
+
+   
+
+</div>
+  
 
   
     

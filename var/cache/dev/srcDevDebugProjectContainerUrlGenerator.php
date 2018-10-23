@@ -26,6 +26,8 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         'cj_offres_edit' => array(array('id'), array('_controller' => 'App\\Controller\\CjOffresController::edit'), array(), array(array('text', '/edit'), array('variable', '/', '[^/]++', 'id'), array('text', '/cj/offres')), array(), array()),
         'cj_offres_delete' => array(array('id'), array('_controller' => 'App\\Controller\\CjOffresController::delete'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/cj/offres')), array(), array()),
         'default' => array(array(), array('_controller' => 'App\\Controller\\DefaultController::index'), array(), array(array('text', '/')), array(), array()),
+        'apropos' => array(array(), array('_controller' => 'App\\Controller\\DefaultController::apropos'), array(), array(array('text', '/apropos')), array(), array()),
+        'contact' => array(array(), array('_controller' => 'App\\Controller\\DefaultController::contact'), array(), array(array('text', '/contact')), array(), array()),
         'search' => array(array(), array('_controller' => 'App\\Controller\\SearchController::recherche'), array(), array(array('text', '/search')), array(), array()),
         '_twig_error_test' => array(array('code', '_format'), array('_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'), array('code' => '\\d+'), array(array('variable', '.', '[^/]++', '_format'), array('variable', '/', '\\d+', 'code'), array('text', '/_error')), array(), array()),
         '_wdt' => array(array('token'), array('_controller' => 'web_profiler.controller.profiler::toolbarAction'), array(), array(array('variable', '/', '[^/]++', 'token'), array('text', '/_wdt')), array(), array()),

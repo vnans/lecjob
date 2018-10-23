@@ -39,17 +39,18 @@ public function ReturnData($request){
 }
 
 //public function ReturnResearch(Request $request)
-public function ReturnResearch( Request $request)
+public function ReturnResearch( string  $valeur1,$valeur2,$valeur3 )
 {
     
     $em = $this->em;
 
-    $motcle=$request->request->get('form')['recherche'];
+   // $motcle=$request->request->get('form')['recherche'];
+  // $motcle=$valeur;
 
-    $sql   = "SELECT o FROM App\Entity\CjOffres o WHERE o.slug LIKE '%$motcle%' ";
+    // $sql   = "SELECT o FROM App\Entity\CjOffres o WHERE o.slug LIKE '%$motcle%' ";.
+     $sql   = "SELECT o FROM App\Entity\CjOffres o WHERE o.type = $valeur1  AND o.niveau = $valeur2 AND o.metier = $valeur3 "; 
     $query = $em->createQuery($sql);   
     $result = $query->getResult();
-  
  //   return ($result);
     return ( $result);
  

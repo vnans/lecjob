@@ -8,24 +8,46 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello </h1>
+    <section id="about">
+      <div class="container">
 
-    This friendly message is coming from:
-    <ul>
-    	<div>
-    		
-        <ul>
-            {% for resultat in offres %}
-            <li>{{ resultat.type }} :{{ resultat.libelle }}</li>
-           {% endfor %}
-        </ul>
+        <header class="section-header">
+          <h3>Résultat de la recherche </h3>           
+        </header>
 
-    			
-    		
-    	</div>
-       {#  <li>Your controller at <code><a href="{{ 'src/Controller/SearchController.php'|file_link(0) }}">src/Controller/SearchController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/search/index.html.twig'|file_link(0) }}">templates/search/index.html.twig</a></code></li> #}
-    </ul>
-</div>
+        <div class="row about-cols">
+ {% for cj_offre in offres %}
+          <div class="col-md-4 wow fadeInUp">
+            <div class="about-col">
+              <div class="img">
+               <a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}"><img src=" {{asset('public/img/offres') }}{{ cj_offre.image }} " alt="" class="img-fluid"></a> 
+               {#  <div class="icon"><i class="ion-chatbox-working"> </i></div>#}
+              </div>
+              <h2 class="title"><a href=" {{ path('cj_offres_show', {'id': cj_offre.id}) }} "> <b>Type d'offre :</b> {{ cj_offre.type }}  {{ cj_offre.libelle }} </a></h2>
+              <p>
+                <b>Métier :</b> {{ cj_offre.metier }}
+              </p>
+               <p>
+                <b>Récruteur :</b> {{ cj_offre.recruteur }}
+              </p>
+              <p>
+                <b>Date limite :</b> {{ cj_offre.dateFin ? cj_offre.dateFin|date('Y-m-d H:i:s') : '' }}
+              </p>
+
+              {% if is_granted('ROLE_ADMIN')  %}
+               <a href="{{ path('cj_offres_edit', {'id': cj_offre.id}) }}"> <button class="btn btn-primary" > Modifier cette offre</button> </a>         
+              {% endif %}
+
+              {# 
+               <a href="{{ path('cj_offres_edit', {'id': cj_offre.id}) }}">modifier</a> #}
+              
+            </div>
+          </div>
+
+     {% endfor %}      
+
+        </div>
+
+      </div>
+
 {% endblock %}

@@ -71,76 +71,132 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
         // line 6
         echo " <!--==========================
       About Us Section
-    ============================-->
+    ============================--> 
     <section id=\"about\">
       <div class=\"container\">
 
         <header class=\"section-header\">
-          <h3>Emplois et stages </h3>
-         ";
+          <h3>Emplois et stages </h3> 
+    
+          <p>
+
+           ";
+        // line 17
+        $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme((isset($context["formSearch"]) || array_key_exists("formSearch", $context) ? $context["formSearch"] : (function () { throw new Twig_Error_Runtime('Variable "formSearch" does not exist.', 17, $this->source); })()), array(0 => "bootstrap_4_layout.html.twig"), true);
+        echo " 
+
+              <form  action=\" ";
+        // line 19
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("search");
+        echo " \" method=\"POST\">
+                  ";
+        // line 20
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formSearch"]) || array_key_exists("formSearch", $context) ? $context["formSearch"] : (function () { throw new Twig_Error_Runtime('Variable "formSearch" does not exist.', 20, $this->source); })()), 'form_start');
+        echo "
+          <div class=\"row\">
+            <div class=\" form-group col-md-4\"> ";
+        // line 22
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formSearch"]) || array_key_exists("formSearch", $context) ? $context["formSearch"] : (function () { throw new Twig_Error_Runtime('Variable "formSearch" does not exist.', 22, $this->source); })()), "Type", array()), 'widget');
+        echo "</div>
+            <div class=\" form-group col-md-4\">";
+        // line 23
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formSearch"]) || array_key_exists("formSearch", $context) ? $context["formSearch"] : (function () { throw new Twig_Error_Runtime('Variable "formSearch" does not exist.', 23, $this->source); })()), "Niveau", array()), 'widget');
+        echo "
+</div>
+            <div class=\" form-group col-md-4\">";
+        // line 25
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formSearch"]) || array_key_exists("formSearch", $context) ? $context["formSearch"] : (function () { throw new Twig_Error_Runtime('Variable "formSearch" does not exist.', 25, $this->source); })()), "Metier", array()), 'widget');
+        echo "
+</div>
+          </div>
+                     ";
+        // line 28
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["formSearch"]) || array_key_exists("formSearch", $context) ? $context["formSearch"] : (function () { throw new Twig_Error_Runtime('Variable "formSearch" does not exist.', 28, $this->source); })()), 'widget');
+        echo "
+
+                  ";
         // line 30
-        echo "        </header>
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formSearch"]) || array_key_exists("formSearch", $context) ? $context["formSearch"] : (function () { throw new Twig_Error_Runtime('Variable "formSearch" does not exist.', 30, $this->source); })()), 'form_end');
+        echo "
+              
+              </form>
+              
+          </p>
+        </header>
+
+<div>
+ 
+
+     
+ 
+</div>
+
+
 
         <div class=\"row about-cols\">
  ";
-        // line 33
+        // line 47
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["cj_offres"]) || array_key_exists("cj_offres", $context) ? $context["cj_offres"] : (function () { throw new Twig_Error_Runtime('Variable "cj_offres" does not exist.', 33, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["cj_offres"]) || array_key_exists("cj_offres", $context) ? $context["cj_offres"] : (function () { throw new Twig_Error_Runtime('Variable "cj_offres" does not exist.', 47, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["cj_offre"]) {
-            // line 34
+            // line 48
             echo "          <div class=\"col-md-4 wow fadeInUp\">
             <div class=\"about-col\">
               <div class=\"img\">
                <a href=\"";
-            // line 37
+            // line 51
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_show", array("id" => twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()))), "html", null, true);
             echo "\"><img src=\" ";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("public/img/offres"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("public/img/offres/"), "html", null, true);
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "image", array()), "html", null, true);
             echo " \" alt=\"\" class=\"img-fluid\"></a> 
                ";
-            // line 39
+            // line 53
             echo "              </div>
               <h2 class=\"title\"><a href=\" ";
-            // line 40
+            // line 54
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_show", array("id" => twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()))), "html", null, true);
             echo " \"> <b>Type d'offre :</b> ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "type", array()), "html", null, true);
-            echo " : ";
+            echo "  ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "libelle", array()), "html", null, true);
             echo " </a></h2>
               <p>
                 <b>Métier :</b> ";
-            // line 42
+            // line 56
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "metier", array()), "html", null, true);
             echo "
               </p>
                <p>
                 <b>Récruteur :</b> ";
-            // line 45
+            // line 59
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "recruteur", array()), "html", null, true);
             echo "
               </p>
               <p>
                 <b>Date limite :</b> ";
-            // line 48
+            // line 62
             echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dateFin", array())) ? (twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dateFin", array()), "Y-m-d H:i:s")) : ("")), "html", null, true);
             echo "
               </p>
+              <p><a href=\"";
+            // line 64
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_show", array("id" => twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()))), "html", null, true);
+            echo "\"> <button class=\"btn btn-primary\" >Suite</button> </a>  </p>
 
               ";
-            // line 51
+            // line 66
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 52
+                // line 67
                 echo "               <a href=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()))), "html", null, true);
                 echo "\"> <button class=\"btn btn-primary\" > Modifier cette offre</button> </a>         
               ";
             }
-            // line 54
+            // line 69
             echo "
               ";
-            // line 57
+            // line 72
             echo "              
             </div>
           </div>
@@ -150,23 +206,28 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['cj_offre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 61
+        // line 76
         echo "      
 
         </div>
+
+
+
 <div class=\"pagination\">
     ";
-        // line 65
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["cj_offres"]) || array_key_exists("cj_offres", $context) ? $context["cj_offres"] : (function () { throw new Twig_Error_Runtime('Variable "cj_offres" does not exist.', 65, $this->source); })()));
+        // line 83
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["cj_offres"]) || array_key_exists("cj_offres", $context) ? $context["cj_offres"] : (function () { throw new Twig_Error_Runtime('Variable "cj_offres" does not exist.', 83, $this->source); })()));
         echo "
 </div>
       </div>
     </section><!-- #about -->
+
+
  
               ";
-        // line 70
+        // line 90
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 71
+            // line 91
             echo "  <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_new");
             echo "\">  <button class=\"btn btn-primary\" >Ajouter une offre</button> </a>             
@@ -193,80 +254,80 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
         </thead>
         <tbody>
         ";
-            // line 94
+            // line 114
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["cj_offres"]) || array_key_exists("cj_offres", $context) ? $context["cj_offres"] : (function () { throw new Twig_Error_Runtime('Variable "cj_offres" does not exist.', 94, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["cj_offres"]) || array_key_exists("cj_offres", $context) ? $context["cj_offres"] : (function () { throw new Twig_Error_Runtime('Variable "cj_offres" does not exist.', 114, $this->source); })()));
             $context['_iterated'] = false;
             foreach ($context['_seq'] as $context["_key"] => $context["cj_offre"]) {
-                // line 95
+                // line 115
                 echo "            <tr>
                 <td>";
-                // line 96
+                // line 116
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 97
+                // line 117
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "type", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 98
+                // line 118
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "libelle", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 99
+                // line 119
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "metier", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 100
+                // line 120
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "niveau", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 101
+                // line 121
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "experience", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 102
+                // line 122
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "lieu", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 103
+                // line 123
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "description", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 104
+                // line 124
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "recruteur", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 105
+                // line 125
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "tel", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 106
+                // line 126
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "email", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 107
+                // line 127
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dossier", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 108
+                // line 128
                 echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dateAjout", array())) ? (twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dateAjout", array()), "Y-m-d H:i:s")) : ("")), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 109
+                // line 129
                 echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dateFin", array())) ? (twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dateFin", array()), "Y-m-d H:i:s")) : ("")), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 110
+                // line 130
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "image", array()), "html", null, true);
                 echo "</td>
                 <td>
                     <a href=\"";
-                // line 112
+                // line 132
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_show", array("id" => twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()))), "html", null, true);
                 echo "\">Détails</a>
                     <a href=\"";
-                // line 113
+                // line 133
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()))), "html", null, true);
                 echo "\">Modifier</a>
                 </td>
@@ -275,7 +336,7 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
                 $context['_iterated'] = true;
             }
             if (!$context['_iterated']) {
-                // line 117
+                // line 137
                 echo "            <tr>
                 <td colspan=\"16\">Aucune donnée trouvée</td>
             </tr>
@@ -284,17 +345,17 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['cj_offre'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 121
+            // line 141
             echo "        </tbody>
     </table>
 
    <a href=\"";
-            // line 124
+            // line 144
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_new");
             echo "\">  <button class=\"btn btn-primary\" >Ajouter une offre</button> </a>      
               ";
         }
-        // line 126
+        // line 146
         echo "   
 ";
         
@@ -317,7 +378,7 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
 
     public function getDebugInfo()
     {
-        return array (  298 => 126,  293 => 124,  288 => 121,  279 => 117,  270 => 113,  266 => 112,  261 => 110,  257 => 109,  253 => 108,  249 => 107,  245 => 106,  241 => 105,  237 => 104,  233 => 103,  229 => 102,  225 => 101,  221 => 100,  217 => 99,  213 => 98,  209 => 97,  205 => 96,  202 => 95,  197 => 94,  170 => 71,  168 => 70,  160 => 65,  154 => 61,  144 => 57,  141 => 54,  135 => 52,  133 => 51,  127 => 48,  121 => 45,  115 => 42,  106 => 40,  103 => 39,  96 => 37,  91 => 34,  87 => 33,  82 => 30,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
+        return array (  359 => 146,  354 => 144,  349 => 141,  340 => 137,  331 => 133,  327 => 132,  322 => 130,  318 => 129,  314 => 128,  310 => 127,  306 => 126,  302 => 125,  298 => 124,  294 => 123,  290 => 122,  286 => 121,  282 => 120,  278 => 119,  274 => 118,  270 => 117,  266 => 116,  263 => 115,  258 => 114,  231 => 91,  229 => 90,  219 => 83,  210 => 76,  200 => 72,  197 => 69,  191 => 67,  189 => 66,  184 => 64,  179 => 62,  173 => 59,  167 => 56,  158 => 54,  155 => 53,  148 => 51,  143 => 48,  139 => 47,  119 => 30,  114 => 28,  108 => 25,  103 => 23,  99 => 22,  94 => 20,  90 => 19,  85 => 17,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -329,39 +390,53 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
 {% block body %}
  <!--==========================
       About Us Section
-    ============================-->
+    ============================--> 
     <section id=\"about\">
       <div class=\"container\">
 
         <header class=\"section-header\">
-          <h3>Emplois et stages </h3>
-         {#  <p>
+          <h3>Emplois et stages </h3> 
+    
+          <p>
 
-           
+           {% form_theme  formSearch 'bootstrap_4_layout.html.twig' %} 
+
               <form  action=\" {{ path('search') }} \" method=\"POST\">
-                  <div class=\"form-group\">
-                     {{ form(form) }}
-                </div>
-            
-              </form>
-              cjob l'emploi a porté de main 
-              cjob le service qui lutte contre le chomage 
-              La plateforme de l'emploi et des stages
-              votre bien etre , notre priorité
-              Cjob , votre assistance conseil
+                  {{ form_start(formSearch)}}
+          <div class=\"row\">
+            <div class=\" form-group col-md-4\"> {{ form_widget(formSearch.Type) }}</div>
+            <div class=\" form-group col-md-4\">{{ form_widget(formSearch.Niveau) }}
+</div>
+            <div class=\" form-group col-md-4\">{{ form_widget(formSearch.Metier) }}
+</div>
+          </div>
+                     {{ form_widget(formSearch) }}
 
-          </p> #}
+                  {{ form_end(formSearch)}}
+              
+              </form>
+              
+          </p>
         </header>
+
+<div>
+ 
+
+     
+ 
+</div>
+
+
 
         <div class=\"row about-cols\">
  {% for cj_offre in cj_offres %}
           <div class=\"col-md-4 wow fadeInUp\">
             <div class=\"about-col\">
               <div class=\"img\">
-               <a href=\"{{ path('cj_offres_show', {'id': cj_offre.id}) }}\"><img src=\" {{asset('public/img/offres') }}{{ cj_offre.image }} \" alt=\"\" class=\"img-fluid\"></a> 
+               <a href=\"{{ path('cj_offres_show', {'id': cj_offre.id}) }}\"><img src=\" {{asset('public/img/offres/') }}{{ cj_offre.image }} \" alt=\"\" class=\"img-fluid\"></a> 
                {#  <div class=\"icon\"><i class=\"ion-chatbox-working\"> </i></div>#}
               </div>
-              <h2 class=\"title\"><a href=\" {{ path('cj_offres_show', {'id': cj_offre.id}) }} \"> <b>Type d'offre :</b> {{ cj_offre.type }} : {{ cj_offre.libelle }} </a></h2>
+              <h2 class=\"title\"><a href=\" {{ path('cj_offres_show', {'id': cj_offre.id}) }} \"> <b>Type d'offre :</b> {{ cj_offre.type }}  {{ cj_offre.libelle }} </a></h2>
               <p>
                 <b>Métier :</b> {{ cj_offre.metier }}
               </p>
@@ -371,6 +446,7 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
               <p>
                 <b>Date limite :</b> {{ cj_offre.dateFin ? cj_offre.dateFin|date('Y-m-d H:i:s') : '' }}
               </p>
+              <p><a href=\"{{ path('cj_offres_show', {'id': cj_offre.id}) }}\"> <button class=\"btn btn-primary\" >Suite</button> </a>  </p>
 
               {% if is_granted('ROLE_ADMIN')  %}
                <a href=\"{{ path('cj_offres_edit', {'id': cj_offre.id}) }}\"> <button class=\"btn btn-primary\" > Modifier cette offre</button> </a>         
@@ -385,11 +461,16 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
      {% endfor %}      
 
         </div>
+
+
+
 <div class=\"pagination\">
     {{ knp_pagination_render(cj_offres) }}
 </div>
       </div>
     </section><!-- #about -->
+
+
  
               {% if is_granted('ROLE_ADMIN')  %}
   <a href=\"{{ path('cj_offres_new') }}\">  <button class=\"btn btn-primary\" >Ajouter une offre</button> </a>             

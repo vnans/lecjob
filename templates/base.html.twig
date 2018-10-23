@@ -42,14 +42,17 @@
 
       <div id="logo" class="pull-left">
         <h1><a href="{{ path('default') }}" class="scrollto">CJOB</a></h1>
+        <h4  style="color:#fff"> L'emploi à portée de main </h4>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#">Envoyer, CJOB au 98025 par SMS pour creer un compte </a></li>
-          {# <li><a href="#about">C'est quoi CJOB ?</a></li> #}
+
+         {#  <li class="menu-active"><a href="#">Envoyer, CJOB au 98025 par SMS pour creer un compte </a></li> #}
+          <li><a href=" {{ path('apropos') }} ">A propos</a></li> 
+          <li><a href="{{ path('contact') }}">Contacts</a></li>
           <li>
           {% if is_granted('ROLE_ADMIN')  %}
             Bonjour Admin !

@@ -70,11 +70,26 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
 
         // line 6
         echo "
-  <!--==========================
+<div class=\"container-fluid\">
+    
+  
+  <!-- Heading Row -->
+      <div class=\"row my-4\">
+        <div class=\"col-lg-2\">
+          ";
+        // line 15
+        echo "          <img src=\"img/eal3.jpg\" alt=\"\"> 
+        ";
+        // line 17
+        echo "        </div>
+        <div class=\"col-lg-8\">
+          <!--==========================
     Intro Section
   ============================-->
   <section id=\"intro\">
+
     <div class=\"intro-container\">
+
       <div id=\"introCarousel\" class=\"carousel  slide carousel-fade\" data-ride=\"carousel\">
 
         <ol class=\"carousel-indicators\"></ol>
@@ -86,49 +101,16 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
             <div class=\"carousel-background\"><img src=\"img/intro-carousel/1.jpg\" alt=\"\"></div>
             <div class=\"carousel-container\">
               <div class=\"carousel-content\">
-                <h2>CJOB AU 98025</h2>
-                <p>L'emploi à porté de main .</p>
+                <h2 style=\"color:#000 ;\">CJOB AU 98025</h2>
+                <p style=\"color:#000;\">Reçevez des offres d'emploi par SMS</p>
                 <a href=\"";
-        // line 25
+        // line 39
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
-        echo "\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
+        echo "\" class=\"btn-get-started scrollto\">POSTULER ICI</a>
                 ";
-        // line 35
+        // line 49
         echo "                <p>
-                    <section id=\"facts\"  class=\"wow fadeIn\">
-                    <div class=\"container\">
-
-                      <header class=\"section-header\">
-                        
-                      </header>
-
-                      <div class=\"row counters\">
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">274</span>
-                          <p>Entreprises partenaires</p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">259</span>
-                          <p>Emplois</p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">320</span>
-                          <p> Stagess</p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">401</span>
-                          <p>Insertions professionnelles </p>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-                  </section><!-- #facts -->
+                   
                   
                 </p>
                 
@@ -137,159 +119,18 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
           </div>
 
           <div class=\"carousel-item\">
-            <div class=\"carousel-background\"><img src=\"img/intro-carousel/2.jpg\" alt=\"\"></div>
-            <div class=\"carousel-container\">
-              <div class=\"carousel-content\">
-                <h2>Votre assistance conseil </h2>
-                <p>Nous nous rapprochons de vous par notre chat direct </p>
-                <a href=\"";
-        // line 83
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
-        echo "\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
-                ";
-        // line 93
-        echo "                <p>
-                    <section id=\"facts\"  class=\"wow fadeIn\">
-                    <div class=\"container\">
-
-                      <header class=\"section-header\">
-                        
-                      </header>
-
-                      <div class=\"row counters\">
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">274</span>
-                          <p>Entreprises partenaires</p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">259</span>
-                          <p>Emplois  </p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">320</span>
-                          <p> Stages  </p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">401</span>
-                          <p>Insertions professionnelles</p>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-                  </section><!-- #facts -->
-                  
-                </p>
-              </div>
-              
-            </div>
-          </div>
-
-          <div class=\"carousel-item\">
-            <div class=\"carousel-background\"><img src=\"img/intro-carousel/3.jpg\" alt=\"\"></div>
-            <div class=\"carousel-container\">
-              <div class=\"carousel-content\">
-                <h2> Insertion professionnelle </h2>
-                <p>La plateforme de l'emploi et des stages</p>
-                <a href=\"";
-        // line 141
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
-        echo "\" class=\"btn-get-started scrollto\">Consulter toutes nos offres </a>
-                ";
-        // line 151
-        echo "                <p>
-                    <section id=\"facts\"  class=\"wow fadeIn\">
-                    <div class=\"container\">
-
-                      <header class=\"section-header\">
-                        
-                      </header>
-
-                      <div class=\"row counters\">
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">274</span>
-                          <p>Entreprises partenaires</p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">259</span>
-                          <p>Emplois  </p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">320</span>
-                          <p> Stages  </p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">401 </span>
-                          <p>Insertions professionnelles  </p>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-                  </section><!-- #facts -->
-                  
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class=\"carousel-item\">
             <div class=\"carousel-background\"><img src=\"img/intro-carousel/4.jpg\" alt=\"\"></div>
             <div class=\"carousel-container\">
               <div class=\"carousel-content\">
-                <h2>Merci CJOB</h2>
-                <p>votre bien etre , notre priorité</p>
-                <a href=\"";
-        // line 198
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
-        echo "\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
                 ";
-        // line 208
+        // line 64
+        echo "                <a href=\"";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
+        echo "\" class=\"btn-get-started scrollto\">POSTULER ICI  </a>
+                ";
+        // line 74
         echo "                <p>
-                    <section id=\"facts\"  class=\"wow fadeIn\">
-                    <div class=\"container\">
-
-                      <header class=\"section-header\">
-                        
-                      </header>
-
-                      <div class=\"row counters\">
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">274</span>
-                          <p>Entreprises partenaires</p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">259</span>
-                          <p>Emplois  </p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">320</span>
-                          <p> Stages </p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">401</span>
-                          <p>Insertions professionnelles  </p>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-                  </section><!-- #facts -->
+                    
                   
                 </p>
               </div>
@@ -300,49 +141,15 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
             <div class=\"carousel-background\"><img src=\"img/intro-carousel/5.jpg\" alt=\"\"></div>
             <div class=\"carousel-container\">
               <div class=\"carousel-content\">
-                <h2>Des offres d'emplois publiées chaque jours</h2>
-                <p>Le service qui lutte contre le chomage en Cote d'Ivoire</p>
-                <a href=\"";
-        // line 255
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
-        echo "\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
                 ";
-        // line 265
+        // line 88
+        echo "                <a href=\"";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
+        echo "\" class=\"btn-get-started scrollto\">POSTULER ICI  </a>
+                ";
+        // line 99
         echo "                <p>
-                    <section id=\"facts\"  class=\"wow fadeIn\">
-                    <div class=\"container\">
-
-                      <header class=\"section-header\">
-                        
-                      </header>
-
-                      <div class=\"row counters\">
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">274</span>
-                          <p>Entreprises partenaires</p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">259</span>
-                          <p>Emplois  </p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">320</span>
-                          <p> Stages</p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">401</span>
-                          <p>Insertions professionnelles  </p>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-                  </section><!-- #facts -->
+                   
                   
                 </p>
               </div>
@@ -364,11 +171,26 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
 
       </div>
       ";
-        // line 327
+        // line 128
         echo "<!-- #facts -->
 
     </div>
+   
   </section><!-- #intro -->
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class=\"col-lg-2\">
+           <img src=\"img/eal3.jpg\" alt=\"\">
+        </div>
+        <!-- /.col-md-4 -->
+      </div>
+      <!-- /.row -->
+
+
+   
+
+</div>
+  
 
   
     
@@ -394,7 +216,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
 
     public function getDebugInfo()
     {
-        return array (  368 => 327,  311 => 265,  307 => 255,  258 => 208,  254 => 198,  205 => 151,  201 => 141,  151 => 93,  147 => 83,  97 => 35,  93 => 25,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
+        return array (  175 => 128,  151 => 99,  146 => 88,  132 => 74,  127 => 64,  112 => 49,  108 => 39,  84 => 17,  81 => 15,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -405,11 +227,25 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
 
 {% block body %}
 
-  <!--==========================
+<div class=\"container-fluid\">
+    
+  
+  <!-- Heading Row -->
+      <div class=\"row my-4\">
+        <div class=\"col-lg-2\">
+          {# <h1>ESPACE A LOUER</h1>
+          <p>VOTRE ESPACE PUB</p> #}
+          <img src=\"img/eal3.jpg\" alt=\"\"> 
+        {#   <a class=\"btn btn-primary btn-lg\" href=\"#\">Call to Action!</a> #}
+        </div>
+        <div class=\"col-lg-8\">
+          <!--==========================
     Intro Section
   ============================-->
   <section id=\"intro\">
+
     <div class=\"intro-container\">
+
       <div id=\"introCarousel\" class=\"carousel  slide carousel-fade\" data-ride=\"carousel\">
 
         <ol class=\"carousel-indicators\"></ol>
@@ -421,9 +257,9 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
             <div class=\"carousel-background\"><img src=\"img/intro-carousel/1.jpg\" alt=\"\"></div>
             <div class=\"carousel-container\">
               <div class=\"carousel-content\">
-                <h2>CJOB AU 98025</h2>
-                <p>L'emploi à porté de main .</p>
-                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
+                <h2 style=\"color:#000 ;\">CJOB AU 98025</h2>
+                <p style=\"color:#000;\">Reçevez des offres d'emploi par SMS</p>
+                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">POSTULER ICI</a>
                 {# <p>
                   
                   <ul class=\"nav-menu\">
@@ -434,40 +270,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
                   </ul>
                 </p> #}
                 <p>
-                    <section id=\"facts\"  class=\"wow fadeIn\">
-                    <div class=\"container\">
-
-                      <header class=\"section-header\">
-                        
-                      </header>
-
-                      <div class=\"row counters\">
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">274</span>
-                          <p>Entreprises partenaires</p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">259</span>
-                          <p>Emplois</p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">320</span>
-                          <p> Stagess</p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">401</span>
-                          <p>Insertions professionnelles </p>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-                  </section><!-- #facts -->
+                   
                   
                 </p>
                 
@@ -476,127 +279,12 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
           </div>
 
           <div class=\"carousel-item\">
-            <div class=\"carousel-background\"><img src=\"img/intro-carousel/2.jpg\" alt=\"\"></div>
-            <div class=\"carousel-container\">
-              <div class=\"carousel-content\">
-                <h2>Votre assistance conseil </h2>
-                <p>Nous nous rapprochons de vous par notre chat direct </p>
-                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
-                {# <p>
-                  
-                  <ul class=\"nav-menu\">
-                  <li class=\"\"><a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Informatique</a> </li>
-                  <li><a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">banque</a></li>
-                  <li><a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Communication</a></li>
-         
-                  </ul>
-                </p> #}
-                <p>
-                    <section id=\"facts\"  class=\"wow fadeIn\">
-                    <div class=\"container\">
-
-                      <header class=\"section-header\">
-                        
-                      </header>
-
-                      <div class=\"row counters\">
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">274</span>
-                          <p>Entreprises partenaires</p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">259</span>
-                          <p>Emplois  </p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">320</span>
-                          <p> Stages  </p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">401</span>
-                          <p>Insertions professionnelles</p>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-                  </section><!-- #facts -->
-                  
-                </p>
-              </div>
-              
-            </div>
-          </div>
-
-          <div class=\"carousel-item\">
-            <div class=\"carousel-background\"><img src=\"img/intro-carousel/3.jpg\" alt=\"\"></div>
-            <div class=\"carousel-container\">
-              <div class=\"carousel-content\">
-                <h2> Insertion professionnelle </h2>
-                <p>La plateforme de l'emploi et des stages</p>
-                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Consulter toutes nos offres </a>
-                {# <p>
-                  
-                  <ul class=\"nav-menu\">
-                  <li class=\"\"><a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Informatique</a> </li>
-                  <li><a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">banque</a></li>
-                  <li><a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Communication</a></li>
-         
-                  </ul>
-                </p> #}
-                <p>
-                    <section id=\"facts\"  class=\"wow fadeIn\">
-                    <div class=\"container\">
-
-                      <header class=\"section-header\">
-                        
-                      </header>
-
-                      <div class=\"row counters\">
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">274</span>
-                          <p>Entreprises partenaires</p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">259</span>
-                          <p>Emplois  </p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">320</span>
-                          <p> Stages  </p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">401 </span>
-                          <p>Insertions professionnelles  </p>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-                  </section><!-- #facts -->
-                  
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class=\"carousel-item\">
             <div class=\"carousel-background\"><img src=\"img/intro-carousel/4.jpg\" alt=\"\"></div>
             <div class=\"carousel-container\">
               <div class=\"carousel-content\">
-                <h2>Merci CJOB</h2>
-                <p>votre bien etre , notre priorité</p>
-                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
+                {# <h2 style=\"color:#000 ;\">CJOB AU 98025</h2>
+                <p style=\"color:#000;\">Reçevez des offres d'emploi par SMS</p> #}
+                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">POSTULER ICI  </a>
                 {# <p>
                   
                   <ul class=\"nav-menu\">
@@ -607,40 +295,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
                   </ul>
                 </p> #}
                 <p>
-                    <section id=\"facts\"  class=\"wow fadeIn\">
-                    <div class=\"container\">
-
-                      <header class=\"section-header\">
-                        
-                      </header>
-
-                      <div class=\"row counters\">
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">274</span>
-                          <p>Entreprises partenaires</p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">259</span>
-                          <p>Emplois  </p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">320</span>
-                          <p> Stages </p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">401</span>
-                          <p>Insertions professionnelles  </p>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-                  </section><!-- #facts -->
+                    
                   
                 </p>
               </div>
@@ -651,53 +306,21 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
             <div class=\"carousel-background\"><img src=\"img/intro-carousel/5.jpg\" alt=\"\"></div>
             <div class=\"carousel-container\">
               <div class=\"carousel-content\">
-                <h2>Des offres d'emplois publiées chaque jours</h2>
-                <p>Le service qui lutte contre le chomage en Cote d'Ivoire</p>
-                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Consulter toutes nos offres  </a>
+                {# <h2 style=\"color:#000 ;\">CJOB AU 98025</h2>
+                <p style=\"color:#000;\">Reçevez des offres d'emploi par SMS</p> #}
+                <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">POSTULER ICI  </a>
                 {# <p>
                   
                   <ul class=\"nav-menu\">
                   <li class=\"\"><a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Informatique</a> </li>
-                  <li><a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">banque</a></li>
+                  <li><a hre
+                  f=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">banque</a></li>
                   <li><a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Communication</a></li>
          
                   </ul>
                 </p> #}
                 <p>
-                    <section id=\"facts\"  class=\"wow fadeIn\">
-                    <div class=\"container\">
-
-                      <header class=\"section-header\">
-                        
-                      </header>
-
-                      <div class=\"row counters\">
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">274</span>
-                          <p>Entreprises partenaires</p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">259</span>
-                          <p>Emplois  </p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">320</span>
-                          <p> Stages</p>
-                        </div>
-
-                        <div class=\"col-lg-3 col-6 text-center\">
-                          <span data-toggle=\"counter-up\">401</span>
-                          <p>Insertions professionnelles  </p>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-                  </section><!-- #facts -->
+                   
                   
                 </p>
               </div>
@@ -728,7 +351,22 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
     </section> #}<!-- #facts -->
 
     </div>
+   
   </section><!-- #intro -->
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class=\"col-lg-2\">
+           <img src=\"img/eal3.jpg\" alt=\"\">
+        </div>
+        <!-- /.col-md-4 -->
+      </div>
+      <!-- /.row -->
+
+
+   
+
+</div>
+  
 
   
     

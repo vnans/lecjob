@@ -8,6 +8,8 @@ use App\Repository\CjOffresRepository;
 use App\service\DataService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\File\guessExtension;
@@ -26,16 +28,30 @@ class CjOffresController extends AbstractController
      */
     public function index(Request $request, DataService $query,SessionInterface $session ): Response
     {
-        // $form = $this->createFormBuilder()
-        // ->add('recherche',TextType::class , ['attr'=>['placeholder'=>'recherche']])
-        // ->add('valider',SubmitType::class,['attr'=>['class'=>'btn btn-primary']])
-        // ->getForm();
+         $form = $this->createFormBuilder()
+         // ->add('recherche',SearchType::class , ['attr'=>['placeholder'=>'Saisissez vos critères de recherche ici ... ']])
+       
+         ->add('Type', ChoiceType::class, array('choices' => array(
+                'Type' => 'Emploi',
+                'Emploi' => 'Emploi',
+                'Stage' => 'Stage',
+            )))
+         ->add('Niveau', ChoiceType::class, array('choices'  => array(
+            'Niveau' => null,
+            'Bac +2' => 'Bac +2',
+             )))       
+         ->add('Metier', ChoiceType::class, array('choices' => array(
+            'Metier' => null,
+            'Assurance' => 'education scolaire',
+             )))
+           ->add('Valider',SubmitType::class,['attr'=>['class'=>'float-right btn btn-primary']])
+         ->getForm(); 
 
         $offres=$query->ReturnData($request);
         $user=$session->get('user'); 
         
-     // return $this->render('cj_offres/index.html.twig', ['cj_offres' => $offres,'form'=>$form->createView(),'user'=>$user]);
-        return $this->render('cj_offres/index.html.twig', ['cj_offres' => $offres,'user'=>$user]);
+      return $this->render('cj_offres/index.html.twig', ['cj_offres' => $offres,'formSearch'=>$form->createView(),'user'=>$user]);
+       // return $this->render('cj_offres/index.html.twig', ['cj_offres' => $offres,'user'=>$user]);
      
     
         

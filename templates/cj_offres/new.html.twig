@@ -3,14 +3,19 @@
 {% block title %}Nouvelles Offres{% endblock %}
 
 {% block body %}
-	  
-    <header class="section-header">
-    	<br><br><br><br> 
+	<section id="services">
+	<header class="section-header">
+    	<br><br><br><br>  
           <h3>Ajouter une offre</h3>
-          
-        </header>
+      </header>
+       <div class="container" >
+       	{{ include('cj_offres/_form.html.twig') }}
+       </div>    
+       
+	</section>   
+    
 
-    {{ include('cj_offres/_form.html.twig') }}
+   
 
-    <a href="{{ path('cj_offres_index') }}">Retourner à la liste</a>
+    
 {% endblock %}

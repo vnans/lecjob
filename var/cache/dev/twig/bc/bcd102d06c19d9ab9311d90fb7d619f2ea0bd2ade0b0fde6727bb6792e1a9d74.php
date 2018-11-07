@@ -78,7 +78,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
         <div class=\"col-lg-2\">
           ";
         // line 15
-        echo "          <img src=\"img/eal3.jpg\" alt=\"\"> 
+        echo "         <img src=\"img/eal3.jpg\" alt=\"\"> 
         ";
         // line 17
         echo "        </div>
@@ -102,7 +102,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
             <div class=\"carousel-container\">
               <div class=\"carousel-content\">
                 <h2 style=\"color:#000 ;\">CJOB AU 98025</h2>
-                <p style=\"color:#000;\">Reçevez des offres d'emploi par SMS</p>
+                <p style=\"color:#000;\"><b>Reçevez des offres d'emploi par SMS</b></p>
                 <a href=\"";
         // line 39
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
@@ -235,7 +235,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
         <div class=\"col-lg-2\">
           {# <h1>ESPACE A LOUER</h1>
           <p>VOTRE ESPACE PUB</p> #}
-          <img src=\"img/eal3.jpg\" alt=\"\"> 
+         <img src=\"img/eal3.jpg\" alt=\"\"> 
         {#   <a class=\"btn btn-primary btn-lg\" href=\"#\">Call to Action!</a> #}
         </div>
         <div class=\"col-lg-8\">
@@ -258,7 +258,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
             <div class=\"carousel-container\">
               <div class=\"carousel-content\">
                 <h2 style=\"color:#000 ;\">CJOB AU 98025</h2>
-                <p style=\"color:#000;\">Reçevez des offres d'emploi par SMS</p>
+                <p style=\"color:#000;\"><b>Reçevez des offres d'emploi par SMS</b></p>
                 <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">POSTULER ICI</a>
                 {# <p>
                   

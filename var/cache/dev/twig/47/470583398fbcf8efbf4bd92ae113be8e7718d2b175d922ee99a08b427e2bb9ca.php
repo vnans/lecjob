@@ -32,9 +32,9 @@ class __TwigTemplate_72bd7a9a8091eabda9d36c5bb3b50aec76661b8cea03bf9153abcbeeff0
   <div class=\"row\">
   <div class=\"alert alert-default alert-dismissible\" role=\"alert\">
   <button type=\"button\" onclick=\"this.parentNode.parentNode.removeChild(this.parentNode);\" class=\"close\" data-dismiss=\"alert\"><span style=\"color: black;\" aria-hidden=\"true\">×</span><span class=\"sr-only\">Close</span></button>
-  <strong><i class=\"fa fa-warning\"></i>FLASH-CJOB! </strong> <marquee><p style=\"font-family: Impact; font-size: 18pt;color: #fff;\">NE PAYER JAMAIS A PERSONNE,SOUS AUCUN PRETEXTE,UNE QUELCONQUE SOMME D'ARGENT POUR UN TEST DE CANDIDATURE OU UNE ENTREVUE. (ALCALIS TECHNOLOGIES) </p></marquee>
+  <strong><i class=\"fa fa-warning\"></i>FLASH-CJOB! </strong> <marquee><p style=\"font-family: Serif; font-size: 12pt;color: #fff;\"> <b> NE PAYER JAMAIS A PERSONNE,SOUS AUCUN PRETEXTE,UNE QUELCONQUE SOMME D'ARGENT POUR UN TEST DE CANDIDATURE OU UNE ENTREVUE. (ALCALIS TECHNOLOGIES) </b> </p></marquee>
 </div>
-  </div>
+  </div> 
 </h1>
 
 <div class=\"modal-dialog\">
@@ -150,9 +150,9 @@ class __TwigTemplate_72bd7a9a8091eabda9d36c5bb3b50aec76661b8cea03bf9153abcbeeff0
   <div class=\"row\">
   <div class=\"alert alert-default alert-dismissible\" role=\"alert\">
   <button type=\"button\" onclick=\"this.parentNode.parentNode.removeChild(this.parentNode);\" class=\"close\" data-dismiss=\"alert\"><span style=\"color: black;\" aria-hidden=\"true\">×</span><span class=\"sr-only\">Close</span></button>
-  <strong><i class=\"fa fa-warning\"></i>FLASH-CJOB! </strong> <marquee><p style=\"font-family: Impact; font-size: 18pt;color: #fff;\">NE PAYER JAMAIS A PERSONNE,SOUS AUCUN PRETEXTE,UNE QUELCONQUE SOMME D'ARGENT POUR UN TEST DE CANDIDATURE OU UNE ENTREVUE. (ALCALIS TECHNOLOGIES) </p></marquee>
+  <strong><i class=\"fa fa-warning\"></i>FLASH-CJOB! </strong> <marquee><p style=\"font-family: Serif; font-size: 12pt;color: #fff;\"> <b> NE PAYER JAMAIS A PERSONNE,SOUS AUCUN PRETEXTE,UNE QUELCONQUE SOMME D'ARGENT POUR UN TEST DE CANDIDATURE OU UNE ENTREVUE. (ALCALIS TECHNOLOGIES) </b> </p></marquee>
 </div>
-  </div>
+  </div> 
 </h1>
 
 <div class=\"modal-dialog\">

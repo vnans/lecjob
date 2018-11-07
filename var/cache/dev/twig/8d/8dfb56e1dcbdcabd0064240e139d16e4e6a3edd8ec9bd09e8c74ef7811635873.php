@@ -69,22 +69,24 @@ class __TwigTemplate_e737adaabb06ef0b1924e812e666283f6167f40896750f4736670f806ed
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "\t  
-    <header class=\"section-header\">
-    \t<br><br><br><br>
+        echo "\t<section id=\"services\">
+\t<header class=\"section-header\">
+    \t<br><br><br><br>  
           <h3>Ajouter une offre</h3>
-          
-        </header>
-
-    ";
-        // line 13
+      </header>
+       <div class=\"container\" >
+       \t";
+        // line 12
         echo twig_include($this->env, $context, "cj_offres/_form.html.twig");
         echo "
+       </div>    
+       
+\t</section>   
+    
 
-    <a href=\"";
-        // line 15
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
-        echo "\">Retourner à la liste</a>
+   
+
+    
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -106,7 +108,7 @@ class __TwigTemplate_e737adaabb06ef0b1924e812e666283f6167f40896750f4736670f806ed
 
     public function getDebugInfo()
     {
-        return array (  86 => 15,  81 => 13,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
+        return array (  80 => 12,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -116,16 +118,21 @@ class __TwigTemplate_e737adaabb06ef0b1924e812e666283f6167f40896750f4736670f806ed
 {% block title %}Nouvelles Offres{% endblock %}
 
 {% block body %}
-\t  
-    <header class=\"section-header\">
-    \t<br><br><br><br>
+\t<section id=\"services\">
+\t<header class=\"section-header\">
+    \t<br><br><br><br>  
           <h3>Ajouter une offre</h3>
-          
-        </header>
+      </header>
+       <div class=\"container\" >
+       \t{{ include('cj_offres/_form.html.twig') }}
+       </div>    
+       
+\t</section>   
+    
 
-    {{ include('cj_offres/_form.html.twig') }}
+   
 
-    <a href=\"{{ path('cj_offres_index') }}\">Retourner à la liste</a>
+    
 {% endblock %}
 ", "cj_offres/new.html.twig", "/var/www/lecjob/templates/cj_offres/new.html.twig");
     }

@@ -20,13 +20,13 @@ class CjOffresType extends AbstractType
             ->add('niveau')
             ->add('experience')
             ->add('lieu')
-            ->add('description',TextareaType::class)
+            ->add('description',TextareaType::class, array('data_class' => null))
             ->add('recruteur')
             ->add('tel')
             ->add('email')
             ->add('dossier')        
             ->add('dateFin')
-             ->add('image',FileType::class, array('label' => 'Choisir une image','data_class'=>null))
+            ->add('image',FileType::class,array('data_class' => null))
         ;
     }
 

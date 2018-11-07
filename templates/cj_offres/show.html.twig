@@ -4,57 +4,60 @@
 
 
 {% block body %}
-
-    <h3> <b>{{ cj_offre.type }}</b> : {{ cj_offre.libelle }} </h3>
+<section id="services"> 
+     <header class="section-header">
+        
+    <h3>{{ cj_offre.type }} : {{ cj_offre.libelle }} </h3>
+</header>
 
     <div class="row">
         <div class="col-md-4">
             <div class="img">
-               <img src=" {{asset('public/img/offres/') }}{{ cj_offre.image }} " alt="" class="img-fluid"> 
+               <img src=" {{asset('img/offres/') }}{{ cj_offre.image }} " alt="" class="img-fluid"> 
                 <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
               </div>
-        </div>
+        </div> 
 
         <div class="col-md-8">
            <table class="table table-striped">
         <tbody>
            
             <tr>
-                <th>Metier</th>
+                <th>Metier/Secteur </th>
                 <td>{{ cj_offre.metier }}</td>
             </tr>
             <tr>
-                <th>Niveau</th>
+                <th>Niveau d'étude</th>
                 <td>{{ cj_offre.niveau }}</td>
             </tr>
             <tr>
-                <th>Experience</th>
+                <th>Expérience professionnelle</th>
                 <td>{{ cj_offre.experience }}</td>
             </tr>
             <tr>
-                <th>Lieu</th>
+                <th>Lieu de travail</th>
                 <td>{{ cj_offre.lieu }}</td>
             </tr>
             
             <tr>
-                <th>Recruteur</th>
+                <th>Récruteur</th>
                 <td>{{ cj_offre.recruteur }}</td>
             </tr>
             <tr>
-                <th>Contact du recruteur </th>
+                <th>Contact du récruteur </th>
                 <td>Tel :{{ cj_offre.tel }} //  Email :{{ cj_offre.email }}</td>
             </tr>
             
-                <th>Dossier</th>
+                <th>Dossier à fournir</th>
                 <td>{{ cj_offre.dossier }}</td>
             </tr>
             <tr>
                 <th>Date d'Ajout</th>
-                <td>{{ cj_offre.dateAjout ? cj_offre.dateAjout|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ cj_offre.dateAjout ? cj_offre.dateAjout|date('d-m-y H:i:s') : '' }}</td>
             </tr>
             <tr>
                 <th>Date limite</th>
-                <td>{{ cj_offre.dateFin ? cj_offre.dateFin|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ cj_offre.dateFin ? cj_offre.dateFin|date('d-m-y H:i:s') : '' }}</td>
             </tr>
             
         </tbody>
@@ -65,10 +68,14 @@
    <div>
     {% if is_granted('ROLE_ADMIN') %}
 
-    <a href="{{ path('cj_offres_edit', {'id': cj_offre.id}) }}"> <button class="btn btn-success">Modifier cette offre</button>  </a>
+    <a href="{{ path('cj_offres_edit', {'id': cj_offre.id}) }}"> <button class="btn btn-success">Modifier cette offre</button>  </a> <br> <br> 
+    {{ include('cj_offres/_delete_form.html.twig') }}
 
 {% endif %}
      
+    
+</section>
+    
   
    </div> 
         </div>
@@ -77,10 +84,13 @@
       <div class="container">
 
         <header class="section-header">
-          <h3>Description de l'offres</h3>
-          <p>{{ cj_offre.description }}</p>
+          <h3>Description de l'offre</h3>
+          <div>
+              <p>{{ cj_offre.description }}</p>
+          </div>
+          
         </header>
-    </section>
+    </section> 
 
    
     {# <section >

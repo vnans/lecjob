@@ -47,13 +47,13 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 32
         echo " <!-- chat scrips -->
-<script type=\"text/javascript\">window.\$crisp=[];window.CRISP_WEBSITE_ID=\"84841eb2-febe-48ea-9012-43b0468e0ffd\";(function(){d=document;s=d.createElement(\"script\");s.src=\"https://client.crisp.chat/l.js\";s.async=1;d.getElementsByTagName(\"head\")[0].appendChild(s);})();</script>
+<script type=\"text/javascript\">window.\$crisp=[];window.CRISP_WEBSITE_ID=\"84841eb2-febe-48ea-9012-43b0468e0ffd\";(function(){d=document;s=d.createElement(\"script\");s.src=\"https://client.crisp.chat/l.js\";s.async=1;d.getElementsByTagName(\"head\")[0].appendChild(s);})();</script> 
 <!--  fin chat scrips -->
-  
-</head>
+   
+</head> 
 <!--==========================
     Header
-  ============================-->
+  ============================--> 
   <header id=\"header\">
     <div class=\"container-fluid\">
 
@@ -62,7 +62,7 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
         // line 44
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("default");
         echo "\" class=\"scrollto\">CJOB</a></h1>
-        <h4  style=\"color:#fff\"> L'emploi à portée de main </h4>
+        <h6  style=\"color:#fff\"> L'emploi à portée de main </h4>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href=\"#intro\"><img src=\"img/logo.png\" alt=\"\" title=\"\" /></a>-->
       </div>
@@ -79,16 +79,16 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
         // line 55
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
         echo "\">Contacts</a></li>
-          <li>
+          <li style=\"color:#fff\">
           ";
         // line 57
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
             // line 58
-            echo "            Bonjour Admin !
+            echo "            Salut Admin !
           ";
         } elseif ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
             // line 60
-            echo "             Salut !
+            echo "             Salut ! 
           ";
         } else {
             // line 62
@@ -185,14 +185,14 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
        ";
         // line 118
         $this->displayBlock('footer', $context, $blocks);
-        // line 119
+        // line 132
         echo "
         
 
         ";
-        // line 122
+        // line 135
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 144
+        // line 157
         echo "    </body>
 </html>
 ";
@@ -313,7 +313,20 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
 
-        echo " ";
+        echo " 
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id=\"footer\">
+   
+      <div class=\"credits\"> 
+        
+      copyright &copy; 2018  <a href=\"https://alcalis.tech\"> Alcalis Technologies</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->       
+       ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -322,7 +335,7 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
 
     }
 
-    // line 122
+    // line 135
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -331,70 +344,70 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 123
+        // line 136
         echo "
   <!-- JavaScript Libraries -->
   <script src=\"";
-        // line 125
+        // line 138
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 126
+        // line 139
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/jquery/jquery-migrate.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 127
+        // line 140
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 128
+        // line 141
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/easing/easing.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 129
+        // line 142
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/superfish/hoverIntent.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 130
+        // line 143
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/superfish/superfish.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 131
+        // line 144
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/wow/wow.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 132
+        // line 145
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/waypoints/waypoints.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 133
+        // line 146
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/counterup/counterup.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 134
+        // line 147
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/owlcarousel/owl.carousel.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 135
+        // line 148
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/isotope/isotope.pkgd.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 136
+        // line 149
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/lightbox/js/lightbox.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 137
+        // line 150
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/touchSwipe/jquery.touchSwipe.min.js"), "html", null, true);
         echo "\"></script>
   <!-- Contact Form JavaScript File -->
   <script src=\"";
-        // line 139
+        // line 152
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contactform/contactform.js"), "html", null, true);
         echo "\"></script>
 
   <!-- Template Main Javascript File -->
   <script src=\"";
-        // line 142
+        // line 155
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/main.js"), "html", null, true);
         echo "\"></script>
  ";
@@ -418,7 +431,7 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
 
     public function getDebugInfo()
     {
-        return array (  398 => 142,  392 => 139,  387 => 137,  383 => 136,  379 => 135,  375 => 134,  371 => 133,  367 => 132,  363 => 131,  359 => 130,  355 => 129,  351 => 128,  347 => 127,  343 => 126,  339 => 125,  335 => 123,  326 => 122,  308 => 118,  290 => 115,  276 => 28,  270 => 25,  266 => 24,  262 => 23,  258 => 22,  254 => 21,  248 => 18,  242 => 15,  235 => 10,  226 => 9,  208 => 5,  196 => 144,  194 => 122,  189 => 119,  187 => 118,  183 => 116,  181 => 115,  150 => 86,  146 => 84,  139 => 80,  135 => 79,  131 => 78,  127 => 76,  119 => 71,  115 => 70,  111 => 69,  107 => 67,  105 => 66,  101 => 64,  95 => 62,  91 => 60,  87 => 58,  85 => 57,  80 => 55,  75 => 54,  63 => 44,  49 => 32,  47 => 9,  40 => 5,  34 => 1,);
+        return array (  411 => 155,  405 => 152,  400 => 150,  396 => 149,  392 => 148,  388 => 147,  384 => 146,  380 => 145,  376 => 144,  372 => 143,  368 => 142,  364 => 141,  360 => 140,  356 => 139,  352 => 138,  348 => 136,  339 => 135,  308 => 118,  290 => 115,  276 => 28,  270 => 25,  266 => 24,  262 => 23,  258 => 22,  254 => 21,  248 => 18,  242 => 15,  235 => 10,  226 => 9,  208 => 5,  196 => 157,  194 => 135,  189 => 132,  187 => 118,  183 => 116,  181 => 115,  150 => 86,  146 => 84,  139 => 80,  135 => 79,  131 => 78,  127 => 76,  119 => 71,  115 => 70,  111 => 69,  107 => 67,  105 => 66,  101 => 64,  95 => 62,  91 => 60,  87 => 58,  85 => 57,  80 => 55,  75 => 54,  63 => 44,  49 => 32,  47 => 9,  40 => 5,  34 => 1,);
     }
 
     public function getSourceContext()
@@ -455,19 +468,19 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
 
   {% endblock %}
  <!-- chat scrips -->
-<script type=\"text/javascript\">window.\$crisp=[];window.CRISP_WEBSITE_ID=\"84841eb2-febe-48ea-9012-43b0468e0ffd\";(function(){d=document;s=d.createElement(\"script\");s.src=\"https://client.crisp.chat/l.js\";s.async=1;d.getElementsByTagName(\"head\")[0].appendChild(s);})();</script>
+<script type=\"text/javascript\">window.\$crisp=[];window.CRISP_WEBSITE_ID=\"84841eb2-febe-48ea-9012-43b0468e0ffd\";(function(){d=document;s=d.createElement(\"script\");s.src=\"https://client.crisp.chat/l.js\";s.async=1;d.getElementsByTagName(\"head\")[0].appendChild(s);})();</script> 
 <!--  fin chat scrips -->
-  
-</head>
+   
+</head> 
 <!--==========================
     Header
-  ============================-->
+  ============================--> 
   <header id=\"header\">
     <div class=\"container-fluid\">
 
       <div id=\"logo\" class=\"pull-left\">
         <h1><a href=\"{{ path('default') }}\" class=\"scrollto\">CJOB</a></h1>
-        <h4  style=\"color:#fff\"> L'emploi à portée de main </h4>
+        <h6  style=\"color:#fff\"> L'emploi à portée de main </h4>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href=\"#intro\"><img src=\"img/logo.png\" alt=\"\" title=\"\" /></a>-->
       </div>
@@ -478,11 +491,11 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
          {#  <li class=\"menu-active\"><a href=\"#\">Envoyer, CJOB au 98025 par SMS pour creer un compte </a></li> #}
           <li><a href=\" {{ path('apropos') }} \">A propos</a></li> 
           <li><a href=\"{{ path('contact') }}\">Contacts</a></li>
-          <li>
+          <li style=\"color:#fff\">
           {% if is_granted('ROLE_ADMIN')  %}
-            Bonjour Admin !
+            Salut Admin !
           {% elseif is_granted('ROLE_USER') %}
-             Salut !
+             Salut ! 
           {% else %}
             <a href=\"{{ path('fos_user_security_login')}}\" >Se connecter</a>
           {% endif %}
@@ -540,7 +553,20 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
         {% block body %} {% endblock %}
 
 
-       {% block footer %} {% endblock %}
+       {% block footer %} 
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id=\"footer\">
+   
+      <div class=\"credits\"> 
+        
+      copyright &copy; 2018  <a href=\"https://alcalis.tech\"> Alcalis Technologies</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->       
+       {% endblock %}
 
         
 

@@ -1,6 +1,47 @@
 {% trans_default_domain 'FOSUserBundle' %}
+ 
+   <section id="contact" class="section-bg wow fadeInUp">
+      <div class="container">
 
-<div class="fos_user_user_show">
+        <div class="section-header">
+          <h3>Mes infos</h3>
+        {#   <p></p> #}
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+             {#  <i class="ion-ios-location-outline"></i> #}
+              <h3></h3>
+              <address></address>
+            </div>
+          </div> 
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Mon numero d'abonnement</h3>
+              <p><a href="tel:{{ user.username }}">{{ user.username }}</a></p>
+            
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+             {#  <i class="ion-ios-email-outline"></i> 
+              <h3>Service</h3>
+              <p>CJOB</p>#}
+            </div>
+          </div>
+
+        </div>
+        
+
+      </div> 
+    </section><!-- #contact -->
+{# <div class="fos_user_user_show"> 
     <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
     <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
 </div>
+ #}

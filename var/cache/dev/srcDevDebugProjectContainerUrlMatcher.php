@@ -72,6 +72,7 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 $routes = array(
                     '/cj/offres/' => array(array('_route' => 'cj_offres_index', '_controller' => 'App\\Controller\\CjOffresController::index'), null, array('GET' => 0), null),
                     '/cj/offres/new' => array(array('_route' => 'cj_offres_new', '_controller' => 'App\\Controller\\CjOffresController::new'), null, array('GET' => 0, 'POST' => 1), null),
+                    '/client' => array(array('_route' => 'client', '_controller' => 'App\\Controller\\ClientController::index'), null, null, null),
                     '/apropos' => array(array('_route' => 'apropos', '_controller' => 'App\\Controller\\DefaultController::apropos'), null, null, null),
                     '/contact' => array(array('_route' => 'contact', '_controller' => 'App\\Controller\\DefaultController::contact'), null, null, null),
                     '/search' => array(array('_route' => 'search', '_controller' => 'App\\Controller\\SearchController::recherche'), null, array('POST' => 0), null),

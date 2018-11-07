@@ -3,16 +3,20 @@
 {% block title %}Modifier l'Offre{% endblock %}
 
 {% block body %}
-      
-    <header class="section-header">
+    <section id="service">
+    	<header class="section-header">
     	<br><br><br><br>  
           <h3>Modifier une offre</h3>
-          
-        </header>
-
-    {{ include('cj_offres/_form.html.twig', {'button_label': 'Valider la Modification'}) }}
+      </header>
+      <div class="container">
+     {{ include('cj_offres/_form.html.twig', {'button_label': 'Valider la Modification'}) }}
 
     <a href="{{ path('cj_offres_index') }}">Rétourner à la liste</a>
 
     {{ include('cj_offres/_delete_form.html.twig') }}
+      </div>
+    </section>  
+    
+
+   
 {% endblock %}

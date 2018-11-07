@@ -6,7 +6,7 @@
 parameters:
     locale: 'fr'
 
-    images_directory: '%kernel.project_dir%/img/offres'
+    images_directory: '%kernel.project_dir%/public/img/offres'
 
 
 services:

@@ -25,6 +25,7 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         'cj_offres_show' => array(array('id'), array('_controller' => 'App\\Controller\\CjOffresController::show'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/cj/offres')), array(), array()),
         'cj_offres_edit' => array(array('id'), array('_controller' => 'App\\Controller\\CjOffresController::edit'), array(), array(array('text', '/edit'), array('variable', '/', '[^/]++', 'id'), array('text', '/cj/offres')), array(), array()),
         'cj_offres_delete' => array(array('id'), array('_controller' => 'App\\Controller\\CjOffresController::delete'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/cj/offres')), array(), array()),
+        'client' => array(array(), array('_controller' => 'App\\Controller\\ClientController::index'), array(), array(array('text', '/client')), array(), array()),
         'default' => array(array(), array('_controller' => 'App\\Controller\\DefaultController::index'), array(), array(array('text', '/')), array(), array()),
         'apropos' => array(array(), array('_controller' => 'App\\Controller\\DefaultController::apropos'), array(), array(array('text', '/apropos')), array(), array()),
         'contact' => array(array(), array('_controller' => 'App\\Controller\\DefaultController::contact'), array(), array(array('text', '/contact')), array(), array()),

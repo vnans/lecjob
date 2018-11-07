@@ -35,7 +35,7 @@ class CjOffresController extends AbstractController
                 'Type' => 'Emploi',
                 'Emploi' => 'Emploi',
                 'Stage' => 'Stage',
-            )))
+                )))
          ->add('Niveau', ChoiceType::class, array('choices'  => array(
             'Niveau' => null,
             'Bac +2' => 'Bac +2',
@@ -73,7 +73,7 @@ class CjOffresController extends AbstractController
             // moves the file to the directory where brochures are stored
             $file->move($this->getParameter('images_directory'), $fileName);
 
-            $cjOffre->setImage($fileName);
+            $cjOffre->setImage($fileName); 
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($cjOffre);
@@ -127,6 +127,13 @@ class CjOffresController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $file = $cjOffre->getImage();
+            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+            // moves the file to the directory where brochures are stored
+            $file->move($this->getParameter('images_directory'), $fileName);
+
+            $cjOffre->setImage($fileName); 
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('cj_offres_edit', ['id' => $cjOffre->getId()]);

@@ -41,7 +41,7 @@ class __TwigTemplate_9dabfc975eaf9e97ede430786c314a00c88e97385f01afe8b7d57fe6d3f
         echo " 
  </div>
  <div class=\"form-group col-md-4\" >
- \t<label for=\"\">Libelle </label>
+ \t<label for=\"\">Intitulé du poste </label>
  \t ";
         // line 10
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 10, $this->source); })()), "libelle", array()), 'widget');
@@ -59,7 +59,7 @@ class __TwigTemplate_9dabfc975eaf9e97ede430786c314a00c88e97385f01afe8b7d57fe6d3f
  \t ";
         // line 18
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 18, $this->source); })()), "experience", array()), 'widget');
-        echo " 
+        echo "  
  </div>
  <div class=\"form-group col-md-4\" >
  \t<label for=\"\">Lieu </label>
@@ -83,7 +83,7 @@ class __TwigTemplate_9dabfc975eaf9e97ede430786c314a00c88e97385f01afe8b7d57fe6d3f
         echo " 
  </div>
  <div class=\"form-group col-md-4\" >
- \t<label for=\"\">Recruteur </label>
+ \t<label for=\"\">Récruteur </label>
  \t ";
         // line 34
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 34, $this->source); })()), "recruteur", array()), 'widget');
@@ -104,14 +104,14 @@ class __TwigTemplate_9dabfc975eaf9e97ede430786c314a00c88e97385f01afe8b7d57fe6d3f
         echo " 
  </div>
  <div class=\"form-group col-md-4\" >
- \t<label for=\"\">Dossier </label>
+ \t<label for=\"\">Dossier à fournir </label> 
  \t ";
         // line 46
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 46, $this->source); })()), "dossier", array()), 'widget');
         echo " 
  </div>
  <div class=\"form-group col-md-4\">
- \t<label for=\"\">Date Fin </label>
+ \t<label for=\"\">Date limite </label>
  \t ";
         // line 50
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 50, $this->source); })()), "dateFin", array()), 'widget');
@@ -122,7 +122,7 @@ class __TwigTemplate_9dabfc975eaf9e97ede430786c314a00c88e97385f01afe8b7d57fe6d3f
  \t ";
         // line 54
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 54, $this->source); })()), "image", array()), 'widget');
-        echo " 
+        echo "  
  </div>
 </div>
  
@@ -172,7 +172,7 @@ class __TwigTemplate_9dabfc975eaf9e97ede430786c314a00c88e97385f01afe8b7d57fe6d3f
  \t {{ form_widget(form.type) }} 
  </div>
  <div class=\"form-group col-md-4\" >
- \t<label for=\"\">Libelle </label>
+ \t<label for=\"\">Intitulé du poste </label>
  \t {{ form_widget(form.libelle) }} 
  </div>
  <div class=\"form-group col-md-4\" >
@@ -181,7 +181,7 @@ class __TwigTemplate_9dabfc975eaf9e97ede430786c314a00c88e97385f01afe8b7d57fe6d3f
  </div>
  <div class=\"form-group col-md-4\" >
  \t<label for=\"\">Experience </label>
- \t {{ form_widget(form.experience) }} 
+ \t {{ form_widget(form.experience) }}  
  </div>
  <div class=\"form-group col-md-4\" >
  \t<label for=\"\">Lieu </label>
@@ -196,7 +196,7 @@ class __TwigTemplate_9dabfc975eaf9e97ede430786c314a00c88e97385f01afe8b7d57fe6d3f
  \t {{ form_widget(form.description) }} 
  </div>
  <div class=\"form-group col-md-4\" >
- \t<label for=\"\">Recruteur </label>
+ \t<label for=\"\">Récruteur </label>
  \t {{ form_widget(form.recruteur) }} 
  </div>
   <div class=\"form-group col-md-4\" >
@@ -208,16 +208,16 @@ class __TwigTemplate_9dabfc975eaf9e97ede430786c314a00c88e97385f01afe8b7d57fe6d3f
  \t {{ form_widget(form.email) }} 
  </div>
  <div class=\"form-group col-md-4\" >
- \t<label for=\"\">Dossier </label>
+ \t<label for=\"\">Dossier à fournir </label> 
  \t {{ form_widget(form.dossier) }} 
  </div>
  <div class=\"form-group col-md-4\">
- \t<label for=\"\">Date Fin </label>
+ \t<label for=\"\">Date limite </label>
  \t {{ form_widget(form.dateFin) }} 
  </div>
  <div class=\"form-group col-md-4\">
  \t<label for=\"\">Image </label>
- \t {{ form_widget(form.image) }} 
+ \t {{ form_widget(form.image) }}  
  </div>
 </div>
  

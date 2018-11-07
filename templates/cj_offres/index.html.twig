@@ -11,8 +11,9 @@
 
         <header class="section-header">
           <h3>Emplois et stages </h3> 
+
     
-          <p>
+          {# <p>
 
            {% form_theme  formSearch 'bootstrap_4_layout.html.twig' %} 
 
@@ -31,7 +32,7 @@
               
               </form>
               
-          </p>
+          </p> #}
         </header>
 
 <div>
@@ -42,24 +43,34 @@
 </div>
 
 
+{# <div class="row about-cols">
+  <div class="col-md-12 wow fadeInUp">
+     <img src="http://tmottgogo.com/wp-content/uploads/2016/02/AbolitionOfSlavery-1100x150.jpg" alt="pub">
+  </div>
 
-        <div class="row about-cols">
- {% for cj_offre in cj_offres %}
-          <div class="col-md-4 wow fadeInUp">
+</div>  #}
+
+  
+   
+
+   
+      <div class="row about-cols">
+          
+     {% for cj_offre in cj_offres %}
+          <div class="col-md-3 wow fadeInUp"> 
             <div class="about-col">
               <div class="img">
-               <a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}"><img src=" {{asset('public/img/offres/') }}{{ cj_offre.image }} " alt="" class="img-fluid"></a> 
+               <a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}"><img src=" {{asset('img/offres/') }}{{ cj_offre.image }} " alt="" class="img-fluid"></a> 
                {#  <div class="icon"><i class="ion-chatbox-working"> </i></div>#}
               </div>
-              <h2 class="title"><a href=" {{ path('cj_offres_show', {'id': cj_offre.id}) }} "> <b>Type d'offre :</b> {{ cj_offre.type }}  {{ cj_offre.libelle }} </a></h2>
-              <p>
-                <b>Métier :</b> {{ cj_offre.metier }}
-              </p>
+              <h2 class="title"><a href=" {{ path('cj_offres_show', {'id': cj_offre.id}) }} "> <b></b> {{ cj_offre.type }} </a></h2>
+              <h2>{{ cj_offre.libelle }}</h2> 
+            
                <p>
                 <b>Récruteur :</b> {{ cj_offre.recruteur }}
               </p>
               <p>
-                <b>Date limite :</b> {{ cj_offre.dateFin ? cj_offre.dateFin|date('Y-m-d H:i:s') : '' }}
+                <b>Date limite :</b> {{ cj_offre.dateFin ? cj_offre.dateFin|date('d-m-y H:i:s') : '' }}
               </p>
               <p><a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}"> <button class="btn btn-primary" >Suite</button> </a>  </p>
 
@@ -75,7 +86,13 @@
 
      {% endfor %}      
 
-        </div>
+          </div>
+   
+    <div class="col-md-2">
+      
+    </div>
+         
+
 
 
 

@@ -30,19 +30,19 @@
 
   {% endblock %}
  <!-- chat scrips -->
-<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="84841eb2-febe-48ea-9012-43b0468e0ffd";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="84841eb2-febe-48ea-9012-43b0468e0ffd";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script> 
 <!--  fin chat scrips -->
-  
-</head>
+   
+</head> 
 <!--==========================
     Header
-  ============================-->
+  ============================--> 
   <header id="header">
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
         <h1><a href="{{ path('default') }}" class="scrollto">CJOB</a></h1>
-        <h4  style="color:#fff"> L'emploi à portée de main </h4>
+        <h6  style="color:#fff"> L'emploi à portée de main </h4>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>
@@ -53,11 +53,11 @@
          {#  <li class="menu-active"><a href="#">Envoyer, CJOB au 98025 par SMS pour creer un compte </a></li> #}
           <li><a href=" {{ path('apropos') }} ">A propos</a></li> 
           <li><a href="{{ path('contact') }}">Contacts</a></li>
-          <li>
+          <li style="color:#fff">
           {% if is_granted('ROLE_ADMIN')  %}
-            Bonjour Admin !
+            Salut Admin !
           {% elseif is_granted('ROLE_USER') %}
-             Salut !
+             Salut ! 
           {% else %}
             <a href="{{ path('fos_user_security_login')}}" >Se connecter</a>
           {% endif %}
@@ -115,7 +115,20 @@
         {% block body %} {% endblock %}
 
 
-       {% block footer %} {% endblock %}
+       {% block footer %} 
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+   
+      <div class="credits"> 
+        
+      copyright &copy; 2018  <a href="https://alcalis.tech"> Alcalis Technologies</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->       
+       {% endblock %}
 
         
 

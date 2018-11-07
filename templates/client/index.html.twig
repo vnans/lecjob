@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello client{% endblock %}
+
+{% block body %}
+{# {% trans_default_domain 'FOSUserBundle' %} #}
+<body id="LoginForm">
+<div class="container">
+
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-heading">
+        <h2 class="text-center">Espace admin</h2>
+      </div>
+      <div class="modal-body"> 
+      	{{ form_start(form) }}
+        <form action="{{ path("client")}}" method="POST">
+          {# {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+          {% endif %} #}
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">
+              <span class="glyphicon glyphicon-user"></span>
+              </span>
+              {# <input type="text" class="form-control" placeholder="Numéro de téléphone"  id="username" name="username" value="{{ last_username }}" required="required" autocomplete="username" /> #}
+              {{ form_widget(form.username) }}
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+              </span>
+              {# <input type="password" class="form-control" placeholder="Mot de passe" id="password" name="password" required="required" autocomplete="current-password" /> #}
+              {{ form_widget(form.password)}}
+            </div>
+
+          </div>
+          <div class="form-group">
+           {#  <input type="checkbox" id="remember_me" name="_remember_me" value="on" /> #}
+           {{ form_widget(form.remenber) }} 
+           <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+          </div>       
+
+          <div class="form-group text-center">
+            <input type="submit" id="_submit" name="submit" class="btn btn-primary btn-lg" value="{{ 'security.login.submit'|trans }}" />
+          </div>
+          <p class="text-primary text-center" >Vous n'avez pas de compte ? envoyer simplement par SMS </p>
+          <p class="text-primary text-center" ><mark>CJOB au 98025</mark> 206 Fcfa/15 Jours</p>
+
+          {# {% if error %}
+             <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+          {% endif %}
+ #}
+          <p class="text-center" > <img src="img/orangeMTN.jpg" alt="operateurs"> </p>
+        </form>
+        {{ form_end(form) }}
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+</body>
+</html>
+
+
+{% endblock %}
+

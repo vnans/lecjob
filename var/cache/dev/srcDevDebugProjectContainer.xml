@@ -81,9 +81,8 @@
     <parameter key="kernel.container_class">srcDevDebugProjectContainer</parameter>
     <parameter key="container.autowiring.strict_mode">true</parameter>
     <parameter key="container.dumper.inline_class_loader">true</parameter>
-    <parameter key="env(DATABASE_URL)"></parameter>
     <parameter key="locale">fr</parameter>
-    <parameter key="images_directory">/var/www/lecjob/img/offres</parameter>
+    <parameter key="images_directory">/var/www/lecjob/public/img/offres</parameter>
     <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">%env(APP_SECRET)%</parameter>
@@ -183,11 +182,13 @@
     <parameter key="doctrine.class">Doctrine\Bundle\DoctrineBundle\Registry</parameter>
     <parameter key="doctrine.entity_managers" type="collection">
       <parameter key="default">doctrine.orm.default_entity_manager</parameter>
+      <parameter key="customer">doctrine.orm.customer_entity_manager</parameter>
     </parameter>
     <parameter key="doctrine.default_entity_manager">default</parameter>
     <parameter key="doctrine.dbal.connection_factory.types" type="collection"/>
     <parameter key="doctrine.connections" type="collection">
       <parameter key="default">doctrine.dbal.default_connection</parameter>
+      <parameter key="customer">doctrine.dbal.customer_connection</parameter>
     </parameter>
     <parameter key="doctrine.default_connection">default</parameter>
     <parameter key="doctrine.orm.configuration.class">Doctrine\ORM\Configuration</parameter>
@@ -235,7 +236,7 @@
     <parameter key="doctrine.orm.second_level_cache.logger_statistics.class">Doctrine\ORM\Cache\Logging\StatisticsCacheLogger</parameter>
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
-    <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
+    <parameter key="doctrine.orm.auto_generate_proxy_classes">false</parameter>
     <parameter key="doctrine.orm.proxy_dir">/var/www/lecjob/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine_migrations.dir_name">/var/www/lecjob/src/Migrations</parameter>
@@ -436,6 +437,13 @@
         <argument type="service" id=".service_locator.ychIlgF.App\Controller\CjOffresController"/>
       </call>
     </service>
+    <service id="App\Controller\ClientController" class="App\Controller\ClientController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ychIlgF.App\Controller\ClientController"/>
+      </call>
+    </service>
     <service id="App\Controller\DefaultController" class="App\Controller\DefaultController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -452,6 +460,10 @@
     </service>
     <service id="App\Form\CjOffresType" class="App\Form\CjOffresType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
+    </service>
+    <service id="App\Repository\ChefRepository" class="App\Repository\ChefRepository" public="false" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\CjOffresRepository" class="App\Repository\CjOffresRepository" public="false" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -2975,6 +2987,10 @@
         <argument>default</argument>
         <argument type="service" id="doctrine.dbal.logger.profiling.default"/>
       </call>
+      <call method="addLogger">
+        <argument>customer</argument>
+        <argument type="service" id="doctrine.dbal.logger.profiling.customer"/>
+      </call>
     </service>
     <service id="doctrine.dbal.connection_factory" class="Doctrine\Bundle\DoctrineBundle\ConnectionFactory">
       <argument type="collection"/>
@@ -3051,22 +3067,63 @@
     </service>
     <service id="doctrine.dbal.default_connection" class="Doctrine\DBAL\Connection" public="true">
       <argument type="collection">
+        <argument key="url">%env(DATABASE_URL)%</argument>
         <argument key="driver">pdo_mysql</argument>
         <argument key="charset">utf8mb4</argument>
-        <argument key="url">%env(resolve:DATABASE_URL)%</argument>
         <argument key="host">localhost</argument>
         <argument key="port">null</argument>
         <argument key="user">root</argument>
         <argument key="password">null</argument>
         <argument key="driverOptions" type="collection"/>
         <argument key="serverVersion">5.7</argument>
-        <argument key="defaultTableOptions" type="collection">
-          <argument key="charset">utf8mb4</argument>
-          <argument key="collate">utf8mb4_unicode_ci</argument>
-        </argument>
+        <argument key="defaultTableOptions" type="collection"/>
       </argument>
       <argument type="service" id="doctrine.dbal.default_connection.configuration"/>
       <argument type="service" id="doctrine.dbal.default_connection.event_manager"/>
+      <argument type="collection"/>
+      <factory service="doctrine.dbal.connection_factory" method="createConnection"/>
+    </service>
+    <service id="doctrine.dbal.customer_connection.configuration" class="Doctrine\DBAL\Configuration" public="false">
+      <call method="setSQLLogger">
+        <argument type="service" id="doctrine.dbal.logger.chain.customer"/>
+      </call>
+    </service>
+    <service id="doctrine.dbal.logger.profiling.customer" class="Doctrine\DBAL\Logging\DebugStack" public="false"/>
+    <service id="doctrine.dbal.logger.chain.customer" class="Doctrine\DBAL\Logging\LoggerChain" public="false">
+      <call method="addLogger">
+        <argument type="service" id="doctrine.dbal.logger"/>
+      </call>
+      <call method="addLogger">
+        <argument type="service" id="doctrine.dbal.logger.profiling.customer"/>
+      </call>
+    </service>
+    <service id="doctrine.dbal.customer_connection.event_manager" class="Symfony\Bridge\Doctrine\ContainerAwareEventManager" public="false">
+      <argument type="service" id="service_container"/>
+      <call method="addEventSubscriber">
+        <argument type="service" id="fos_user.user_listener"/>
+      </call>
+      <call method="addEventListener">
+        <argument type="collection">
+          <argument>loadClassMetadata</argument>
+        </argument>
+        <argument type="service" id="doctrine.orm.customer_listeners.attach_entity_listeners"/>
+      </call>
+    </service>
+    <service id="doctrine.dbal.customer_connection" class="Doctrine\DBAL\Connection" public="true">
+      <argument type="collection">
+        <argument key="url">%env(DATABASE_CUSTOMER_URL)%</argument>
+        <argument key="driver">pdo_mysql</argument>
+        <argument key="charset">utf8mb4</argument>
+        <argument key="host">localhost</argument>
+        <argument key="port">null</argument>
+        <argument key="user">root</argument>
+        <argument key="password">null</argument>
+        <argument key="driverOptions" type="collection"/>
+        <argument key="serverVersion">5.7</argument>
+        <argument key="defaultTableOptions" type="collection"/>
+      </argument>
+      <argument type="service" id="doctrine.dbal.customer_connection.configuration"/>
+      <argument type="service" id="doctrine.dbal.customer_connection.event_manager"/>
       <argument type="collection"/>
       <factory service="doctrine.dbal.connection_factory" method="createConnection"/>
     </service>
@@ -3088,7 +3145,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.tXNPqzh"/>
+      <argument type="service" id=".service_locator.8o6x4tE"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -3231,7 +3288,7 @@
         <argument>Proxies</argument>
       </call>
       <call method="setAutoGenerateProxyClasses">
-        <argument>true</argument>
+        <argument>false</argument>
       </call>
       <call method="setClassMetadataFactoryName">
         <argument>Doctrine\ORM\Mapping\ClassMetadataFactory</argument>
@@ -3240,7 +3297,7 @@
         <argument>Doctrine\ORM\EntityRepository</argument>
       </call>
       <call method="setNamingStrategy">
-        <argument type="service" id="doctrine.orm.naming_strategy.underscore"/>
+        <argument type="service" id="doctrine.orm.naming_strategy.default"/>
       </call>
       <call method="setQuoteStrategy">
         <argument type="service" id="doctrine.orm.quote_strategy.default"/>
@@ -3298,7 +3355,7 @@
       <argument type="service" id="service_container"/>
     </service>
     <service id="doctrine.orm.default_listeners.attach_entity_listeners" class="Doctrine\ORM\Tools\AttachEntityListenersListener">
-      <tag name="doctrine.event_listener" event="loadClassMetadata"/>
+      <tag name="doctrine.event_listener" event="loadClassMetadata" connection="default"/>
     </service>
     <service id="doctrine.orm.default_manager_configurator" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator">
       <argument type="collection"/>
@@ -3309,6 +3366,95 @@
       <argument type="service" id="doctrine.orm.default_configuration"/>
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
       <configurator service="doctrine.orm.default_manager_configurator" method="configure"/>
+    </service>
+    <service id="doctrine.orm.customer_configuration" class="Doctrine\ORM\Configuration" public="false">
+      <call method="setEntityNamespaces">
+        <argument type="collection">
+          <argument key="Customer">App\Entity\Customer</argument>
+        </argument>
+      </call>
+      <call method="setMetadataCacheImpl">
+        <argument type="service" id="doctrine_cache.providers.doctrine.orm.customer_metadata_cache"/>
+      </call>
+      <call method="setQueryCacheImpl">
+        <argument type="service" id="doctrine_cache.providers.doctrine.orm.customer_query_cache"/>
+      </call>
+      <call method="setResultCacheImpl">
+        <argument type="service" id="doctrine_cache.providers.doctrine.orm.customer_result_cache"/>
+      </call>
+      <call method="setMetadataDriverImpl">
+        <argument type="service" id="doctrine.orm.customer_metadata_driver"/>
+      </call>
+      <call method="setProxyDir">
+        <argument>/var/www/lecjob/var/cache/dev/doctrine/orm/Proxies</argument>
+      </call>
+      <call method="setProxyNamespace">
+        <argument>Proxies</argument>
+      </call>
+      <call method="setAutoGenerateProxyClasses">
+        <argument>false</argument>
+      </call>
+      <call method="setClassMetadataFactoryName">
+        <argument>Doctrine\ORM\Mapping\ClassMetadataFactory</argument>
+      </call>
+      <call method="setDefaultRepositoryClassName">
+        <argument>Doctrine\ORM\EntityRepository</argument>
+      </call>
+      <call method="setNamingStrategy">
+        <argument type="service" id="doctrine.orm.naming_strategy.default"/>
+      </call>
+      <call method="setQuoteStrategy">
+        <argument type="service" id="doctrine.orm.quote_strategy.default"/>
+      </call>
+      <call method="setEntityListenerResolver">
+        <argument type="service" id="doctrine.orm.customer_entity_listener_resolver"/>
+      </call>
+      <call method="setRepositoryFactory">
+        <argument type="service" id="doctrine.orm.container_repository_factory"/>
+      </call>
+    </service>
+    <service id="doctrine.orm.customer_annotation_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+      <argument type="service" id="annotations.cached_reader"/>
+      <argument type="collection">
+        <argument>/var/www/lecjob/src/Entity/Customer</argument>
+      </argument>
+    </service>
+    <service id="doctrine.orm.customer_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
+      <call method="addDriver">
+        <argument type="service" id="doctrine.orm.customer_annotation_metadata_driver"/>
+        <argument>App\Entity\Customer</argument>
+      </call>
+    </service>
+    <service id="doctrine_cache.providers.doctrine.orm.customer_metadata_cache" class="Doctrine\Common\Cache\ArrayCache" public="true">
+      <call method="setNamespace">
+        <argument>sf_orm_customer_7f230ff28103eaf7c1f001e1c2af338605f54dc60a6dcc3c0202dcc05790c7f7</argument>
+      </call>
+    </service>
+    <service id="doctrine_cache.providers.doctrine.orm.customer_result_cache" class="Doctrine\Common\Cache\ArrayCache" public="true">
+      <call method="setNamespace">
+        <argument>sf_orm_customer_7f230ff28103eaf7c1f001e1c2af338605f54dc60a6dcc3c0202dcc05790c7f7</argument>
+      </call>
+    </service>
+    <service id="doctrine_cache.providers.doctrine.orm.customer_query_cache" class="Doctrine\Common\Cache\ArrayCache" public="true">
+      <call method="setNamespace">
+        <argument>sf_orm_customer_7f230ff28103eaf7c1f001e1c2af338605f54dc60a6dcc3c0202dcc05790c7f7</argument>
+      </call>
+    </service>
+    <service id="doctrine.orm.customer_entity_listener_resolver" class="Doctrine\Bundle\DoctrineBundle\Mapping\ContainerAwareEntityListenerResolver">
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="doctrine.orm.customer_listeners.attach_entity_listeners" class="Doctrine\ORM\Tools\AttachEntityListenersListener">
+      <tag name="doctrine.event_listener" event="loadClassMetadata" connection="customer"/>
+    </service>
+    <service id="doctrine.orm.customer_manager_configurator" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator">
+      <argument type="collection"/>
+      <argument type="collection"/>
+    </service>
+    <service id="doctrine.orm.customer_entity_manager" class="Doctrine\ORM\EntityManager" public="true" lazy="true">
+      <argument type="service" id="doctrine.dbal.customer_connection"/>
+      <argument type="service" id="doctrine.orm.customer_configuration"/>
+      <factory class="Doctrine\ORM\EntityManager" method="create"/>
+      <configurator service="doctrine.orm.customer_manager_configurator" method="configure"/>
     </service>
     <service id="doctrine_migrations.diff_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsDiffDoctrineCommand">
       <tag name="console.command"/>
@@ -4800,6 +4946,9 @@
     <service id=".instanceof.Symfony\Component\DependencyInjection\ServiceSubscriberInterface.0.App\Controller\CjOffresController" class="App\Controller\CjOffresController" public="false" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CjOffresController" class="App\Controller\CjOffresController" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CjOffresController" class="App\Controller\CjOffresController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\DependencyInjection\ServiceSubscriberInterface.0.App\Controller\ClientController" class="App\Controller\ClientController" public="false" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ClientController" class="App\Controller\ClientController" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ClientController" class="App\Controller\ClientController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\DependencyInjection\ServiceSubscriberInterface.0.App\Controller\DefaultController" class="App\Controller\DefaultController" public="false" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DefaultController" class="App\Controller\DefaultController" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\DefaultController" class="App\Controller\DefaultController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
@@ -4808,6 +4957,8 @@
     <service id=".abstract.instanceof.App\Controller\SearchController" class="App\Controller\SearchController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CjOffresType" class="App\Form\CjOffresType" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CjOffresType" class="App\Form\CjOffresType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ChefRepository" class="App\Repository\ChefRepository" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ChefRepository" class="App\Repository\ChefRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CjOffresRepository" class="App\Repository\CjOffresRepository" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CjOffresRepository" class="App\Repository\CjOffresRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="maker.auto_command.make_auth" class="Symfony\Bundle\MakerBundle\Command\MakerCommand" public="false">
@@ -4974,24 +5125,32 @@
         <argument key="cjOffre" type="service" id=".errored..service_locator.YXNMYZx.App\Entity\CjOffres"/>
       </argument>
     </service>
+    <service id=".service_locator.80eHtCa" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
     <service id=".service_locator.WTlTne3" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="query" type="service" id="App\service\DataService"/>
       </argument>
     </service>
-    <service id=".service_locator.._setIY" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.CjYvAoP" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CjOffresController::delete" type="service" id=".service_locator.YXNMYZx"/>
         <argument key="App\Controller\CjOffresController::edit" type="service" id=".service_locator.YXNMYZx"/>
         <argument key="App\Controller\CjOffresController::index" type="service" id=".service_locator.U8w5AFS"/>
         <argument key="App\Controller\CjOffresController::show" type="service" id=".service_locator.q4iV3.e"/>
+        <argument key="App\Controller\ClientController::index" type="service" id=".service_locator.80eHtCa"/>
         <argument key="App\Controller\SearchController::recherche" type="service" id=".service_locator.WTlTne3"/>
         <argument key="App\Controller\CjOffresController:delete" type="service" id=".service_locator.YXNMYZx"/>
         <argument key="App\Controller\CjOffresController:edit" type="service" id=".service_locator.YXNMYZx"/>
         <argument key="App\Controller\CjOffresController:index" type="service" id=".service_locator.U8w5AFS"/>
         <argument key="App\Controller\CjOffresController:show" type="service" id=".service_locator.q4iV3.e"/>
+        <argument key="App\Controller\ClientController:index" type="service" id=".service_locator.80eHtCa"/>
         <argument key="App\Controller\SearchController:recherche" type="service" id=".service_locator.WTlTne3"/>
       </argument>
     </service>
@@ -5066,9 +5225,10 @@
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service" id="form.type.form"/>
       </argument>
     </service>
-    <service id=".service_locator.tXNPqzh" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.8o6x4tE" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\ChefRepository" type="service" id="App\Repository\ChefRepository"/>
         <argument key="App\Repository\CjOffresRepository" type="service" id="App\Repository\CjOffresRepository"/>
       </argument>
     </service>
@@ -5113,7 +5273,7 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.._setIY"/>
+      <argument type="service" id=".service_locator.CjYvAoP"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -5136,6 +5296,11 @@
     </service>
     <service id=".service_locator.ychIlgF.App\Controller\CjOffresController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <argument>App\Controller\CjOffresController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ychIlgF" method="withContext"/>
+    </service>
+    <service id=".service_locator.ychIlgF.App\Controller\ClientController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <argument>App\Controller\ClientController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ychIlgF" method="withContext"/>
     </service>
@@ -5479,6 +5644,10 @@
     <service id="doctrine.orm.default_result_cache" alias="doctrine_cache.providers.doctrine.orm.default_result_cache" public="true"/>
     <service id="doctrine.orm.default_query_cache" alias="doctrine_cache.providers.doctrine.orm.default_query_cache" public="true"/>
     <service id="doctrine.orm.default_entity_manager.event_manager" alias="doctrine.dbal.default_connection.event_manager" public="false"/>
+    <service id="doctrine.orm.customer_metadata_cache" alias="doctrine_cache.providers.doctrine.orm.customer_metadata_cache" public="true"/>
+    <service id="doctrine.orm.customer_result_cache" alias="doctrine_cache.providers.doctrine.orm.customer_result_cache" public="true"/>
+    <service id="doctrine.orm.customer_query_cache" alias="doctrine_cache.providers.doctrine.orm.customer_query_cache" public="true"/>
+    <service id="doctrine.orm.customer_entity_manager.event_manager" alias="doctrine.dbal.customer_connection.event_manager" public="false"/>
     <service id="swiftmailer.mailer.default.transport" alias="swiftmailer.mailer.default.transport.spool"/>
     <service id="swiftmailer.mailer.default.spool" alias="swiftmailer.mailer.default.spool.memory"/>
     <service id="swiftmailer.mailer.default.transport.real" alias="swiftmailer.mailer.default.transport.dynamic" public="true"/>
@@ -5527,7 +5696,7 @@
     <service id="fos_user.mailer" alias="fos_user.mailer.default"/>
     <service id="fos_user.session" alias="session" public="false"/>
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.._setIY"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.CjYvAoP"/>
     <service id="Symfony\Component\Templating\EngineInterface" alias="templating.engine.delegating" public="false"/>
     <service id="Symfony\Bundle\FrameworkBundle\Templating\EngineInterface" alias="templating.engine.delegating" public="false"/>
     <service id="twig.loader" alias="twig.loader.filesystem"/>

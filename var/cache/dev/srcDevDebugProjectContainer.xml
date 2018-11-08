@@ -469,6 +469,14 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\Customer\UserRepository" class="App\Repository\Customer\UserRepository" public="false" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\Customer\testRepository" class="App\Repository\Customer\testRepository" public="false" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\service\DataService" class="App\service\DataService" public="false" autowire="true" autoconfigure="true">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="service_container"/>
@@ -3145,7 +3153,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.8o6x4tE"/>
+      <argument type="service" id=".service_locator.iqYZZf5"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4961,6 +4969,10 @@
     <service id=".abstract.instanceof.App\Repository\ChefRepository" class="App\Repository\ChefRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CjOffresRepository" class="App\Repository\CjOffresRepository" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CjOffresRepository" class="App\Repository\CjOffresRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\Customer\UserRepository" class="App\Repository\Customer\UserRepository" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\Customer\UserRepository" class="App\Repository\Customer\UserRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\Customer\testRepository" class="App\Repository\Customer\testRepository" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\Customer\testRepository" class="App\Repository\Customer\testRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="maker.auto_command.make_auth" class="Symfony\Bundle\MakerBundle\Command\MakerCommand" public="false">
       <tag name="console.command" command="make:auth"/>
       <argument type="service" id="maker.maker.make_authenticator"/>
@@ -5125,10 +5137,12 @@
         <argument key="cjOffre" type="service" id=".errored..service_locator.YXNMYZx.App\Entity\CjOffres"/>
       </argument>
     </service>
-    <service id=".service_locator.80eHtCa" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.qjNzlWY" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="entityManager" type="service" id="doctrine.orm.default_entity_manager"/>
+        <argument key="query" type="service" id="App\service\DataService"/>
+        <argument key="session" type="service" id="session"/>
       </argument>
     </service>
     <service id=".service_locator.WTlTne3" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5137,20 +5151,20 @@
         <argument key="query" type="service" id="App\service\DataService"/>
       </argument>
     </service>
-    <service id=".service_locator.CjYvAoP" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.IMEY_no" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CjOffresController::delete" type="service" id=".service_locator.YXNMYZx"/>
         <argument key="App\Controller\CjOffresController::edit" type="service" id=".service_locator.YXNMYZx"/>
         <argument key="App\Controller\CjOffresController::index" type="service" id=".service_locator.U8w5AFS"/>
         <argument key="App\Controller\CjOffresController::show" type="service" id=".service_locator.q4iV3.e"/>
-        <argument key="App\Controller\ClientController::index" type="service" id=".service_locator.80eHtCa"/>
+        <argument key="App\Controller\ClientController::index" type="service" id=".service_locator.qjNzlWY"/>
         <argument key="App\Controller\SearchController::recherche" type="service" id=".service_locator.WTlTne3"/>
         <argument key="App\Controller\CjOffresController:delete" type="service" id=".service_locator.YXNMYZx"/>
         <argument key="App\Controller\CjOffresController:edit" type="service" id=".service_locator.YXNMYZx"/>
         <argument key="App\Controller\CjOffresController:index" type="service" id=".service_locator.U8w5AFS"/>
         <argument key="App\Controller\CjOffresController:show" type="service" id=".service_locator.q4iV3.e"/>
-        <argument key="App\Controller\ClientController:index" type="service" id=".service_locator.80eHtCa"/>
+        <argument key="App\Controller\ClientController:index" type="service" id=".service_locator.qjNzlWY"/>
         <argument key="App\Controller\SearchController:recherche" type="service" id=".service_locator.WTlTne3"/>
       </argument>
     </service>
@@ -5225,11 +5239,13 @@
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service" id="form.type.form"/>
       </argument>
     </service>
-    <service id=".service_locator.8o6x4tE" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.iqYZZf5" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\ChefRepository" type="service" id="App\Repository\ChefRepository"/>
         <argument key="App\Repository\CjOffresRepository" type="service" id="App\Repository\CjOffresRepository"/>
+        <argument key="App\Repository\Customer\UserRepository" type="service" id="App\Repository\Customer\UserRepository"/>
+        <argument key="App\Repository\Customer\testRepository" type="service" id="App\Repository\Customer\testRepository"/>
       </argument>
     </service>
     <service id="security.logout.handler.csrf_token_clearing" class="Symfony\Component\Security\Http\Logout\CsrfTokenClearingLogoutHandler" public="false">
@@ -5273,7 +5289,7 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.CjYvAoP"/>
+      <argument type="service" id=".service_locator.IMEY_no"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -5696,7 +5712,7 @@
     <service id="fos_user.mailer" alias="fos_user.mailer.default"/>
     <service id="fos_user.session" alias="session" public="false"/>
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.CjYvAoP"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.IMEY_no"/>
     <service id="Symfony\Component\Templating\EngineInterface" alias="templating.engine.delegating" public="false"/>
     <service id="Symfony\Bundle\FrameworkBundle\Templating\EngineInterface" alias="templating.engine.delegating" public="false"/>
     <service id="twig.loader" alias="twig.loader.filesystem"/>

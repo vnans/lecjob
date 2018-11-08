@@ -50,7 +50,7 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello client";
+        echo "Connexion client";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -68,79 +68,100 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 7
-        echo "<body id=\"LoginForm\">
+        // line 6
+        echo "<div></div> </br>
+<body id=\"LoginForm\">
 <div class=\"container\">
+<h1 class=\"form-heading\">
+  <div class=\"row\">
+  <div class=\"alert alert-default alert-dismissible\" role=\"alert\">
+  <button type=\"button\" onclick=\"this.parentNode.parentNode.removeChild(this.parentNode);\" class=\"close\" data-dismiss=\"alert\"><span style=\"color: black;\" aria-hidden=\"true\">×</span><span class=\"sr-only\">Close</span></button>
+  <strong><i class=\"fa fa-warning\"></i>FLASH-CJOB! </strong> <marquee><p style=\"font-family: Serif; font-size: 12pt;color: #fff;\"> <b> NE PAYER JAMAIS A PERSONNE,SOUS AUCUN PRETEXTE,UNE QUELCONQUE SOMME D'ARGENT POUR UN TEST DE CANDIDATURE OU UNE ENTREVUE. (ALCALIS TECHNOLOGIES) </b> </p></marquee>
+</div>
+  </div> 
+</h1>
 
 <div class=\"modal-dialog\">
     <div class=\"modal-content\">
       <div class=\"modal-heading\">
-        <h2 class=\"text-center\">Espace admin</h2>
+        <h2 class=\"text-center\"> Connectez-vous</h2>
       </div>
       <div class=\"modal-body\"> 
       \t";
-        // line 16
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 16, $this->source); })()), 'form_start');
+        // line 24
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 24, $this->source); })()), 'form_start');
         echo "
         <form action=\"";
-        // line 17
+        // line 25
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client");
         echo "\" method=\"POST\">
           ";
-        // line 21
+        // line 29
         echo "          <div class=\"form-group\">
+          \t<label for=\"username\">";
+        // line 30
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Numero de téléphone"), "html", null, true);
+        echo "</label>
+          
             <div class=\"input-group\">
               <span class=\"input-group-addon\">
               <span class=\"glyphicon glyphicon-user\"></span>
               </span>
               ";
-        // line 27
+        // line 37
         echo "              ";
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 27, $this->source); })()), "username", array()), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 37, $this->source); })()), "username", array()), 'widget');
         echo "
             </div>
           </div>
           <div class=\"form-group\">
+          \t<label for=\"username\">";
+        // line 41
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("mot de passe"), "html", null, true);
+        echo "</label>
+          
             <div class=\"input-group\">
               <span class=\"input-group-addon\">
               <span class=\"glyphicon glyphicon-lock\"></span>
               </span>
               ";
-        // line 36
+        // line 48
         echo "              ";
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 36, $this->source); })()), "password", array()), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 48, $this->source); })()), "password", array()), 'widget');
         echo "
             </div>
 
           </div>
           <div class=\"form-group\">
            ";
-        // line 42
+        // line 54
         echo "           ";
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 42, $this->source); })()), "remenber", array()), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 54, $this->source); })()), "remenber", array()), 'widget');
         echo " 
            <label for=\"remember_me\">";
-        // line 43
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("security.login.remember_me"), "html", null, true);
+        // line 55
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Se souvenir de moi"), "html", null, true);
         echo "</label>
           </div>       
 
           <div class=\"form-group text-center\">
             <input type=\"submit\" id=\"_submit\" name=\"submit\" class=\"btn btn-primary btn-lg\" value=\"";
-        // line 47
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("security.login.submit"), "html", null, true);
+        // line 59
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Connexion"), "html", null, true);
         echo "\" />
           </div>
           <p class=\"text-primary text-center\" >Vous n'avez pas de compte ? envoyer simplement par SMS </p>
           <p class=\"text-primary text-center\" ><mark>CJOB au 98025</mark> 206 Fcfa/15 Jours</p>
 
           ";
-        // line 56
-        echo "          <p class=\"text-center\" > <img src=\"img/orangeMTN.jpg\" alt=\"operateurs\"> </p>
+        // line 68
+        echo "          <p class=\"text-center\" > <img src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/orangeMTN.jpg"), "html", null, true);
+        echo "\" alt=\"operateurs\"> </p>
         </form>
         ";
-        // line 58
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 58, $this->source); })()), 'form_end');
+        // line 70
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 70, $this->source); })()), 'form_end');
         echo "
       </div>
     </div>
@@ -173,24 +194,32 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
 
     public function getDebugInfo()
     {
-        return array (  143 => 58,  139 => 56,  131 => 47,  124 => 43,  119 => 42,  110 => 36,  98 => 27,  91 => 21,  87 => 17,  83 => 16,  72 => 7,  63 => 5,  45 => 3,  15 => 1,);
+        return array (  164 => 70,  158 => 68,  150 => 59,  143 => 55,  138 => 54,  129 => 48,  120 => 41,  112 => 37,  103 => 30,  100 => 29,  96 => 25,  92 => 24,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello client{% endblock %}
+{% block title %}Connexion client{% endblock %}
 
 {% block body %}
-{# {% trans_default_domain 'FOSUserBundle' %} #}
+<div></div> </br>
 <body id=\"LoginForm\">
 <div class=\"container\">
+<h1 class=\"form-heading\">
+  <div class=\"row\">
+  <div class=\"alert alert-default alert-dismissible\" role=\"alert\">
+  <button type=\"button\" onclick=\"this.parentNode.parentNode.removeChild(this.parentNode);\" class=\"close\" data-dismiss=\"alert\"><span style=\"color: black;\" aria-hidden=\"true\">×</span><span class=\"sr-only\">Close</span></button>
+  <strong><i class=\"fa fa-warning\"></i>FLASH-CJOB! </strong> <marquee><p style=\"font-family: Serif; font-size: 12pt;color: #fff;\"> <b> NE PAYER JAMAIS A PERSONNE,SOUS AUCUN PRETEXTE,UNE QUELCONQUE SOMME D'ARGENT POUR UN TEST DE CANDIDATURE OU UNE ENTREVUE. (ALCALIS TECHNOLOGIES) </b> </p></marquee>
+</div>
+  </div> 
+</h1>
 
 <div class=\"modal-dialog\">
     <div class=\"modal-content\">
       <div class=\"modal-heading\">
-        <h2 class=\"text-center\">Espace admin</h2>
+        <h2 class=\"text-center\"> Connectez-vous</h2>
       </div>
       <div class=\"modal-body\"> 
       \t{{ form_start(form) }}
@@ -199,6 +228,8 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
         <input type=\"hidden\" name=\"_csrf_token\" value=\"{{ csrf_token }}\" />
           {% endif %} #}
           <div class=\"form-group\">
+          \t<label for=\"username\">{{ 'Numero de téléphone'|trans }}</label>
+          
             <div class=\"input-group\">
               <span class=\"input-group-addon\">
               <span class=\"glyphicon glyphicon-user\"></span>
@@ -208,6 +239,8 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
             </div>
           </div>
           <div class=\"form-group\">
+          \t<label for=\"username\">{{ 'mot de passe'|trans }}</label>
+          
             <div class=\"input-group\">
               <span class=\"input-group-addon\">
               <span class=\"glyphicon glyphicon-lock\"></span>
@@ -220,11 +253,11 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
           <div class=\"form-group\">
            {#  <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" /> #}
            {{ form_widget(form.remenber) }} 
-           <label for=\"remember_me\">{{ 'security.login.remember_me'|trans }}</label>
+           <label for=\"remember_me\">{{ 'Se souvenir de moi'|trans }}</label>
           </div>       
 
           <div class=\"form-group text-center\">
-            <input type=\"submit\" id=\"_submit\" name=\"submit\" class=\"btn btn-primary btn-lg\" value=\"{{ 'security.login.submit'|trans }}\" />
+            <input type=\"submit\" id=\"_submit\" name=\"submit\" class=\"btn btn-primary btn-lg\" value=\"{{ 'Connexion'|trans }}\" />
           </div>
           <p class=\"text-primary text-center\" >Vous n'avez pas de compte ? envoyer simplement par SMS </p>
           <p class=\"text-primary text-center\" ><mark>CJOB au 98025</mark> 206 Fcfa/15 Jours</p>
@@ -233,7 +266,7 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
              <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
           {% endif %}
  #}
-          <p class=\"text-center\" > <img src=\"img/orangeMTN.jpg\" alt=\"operateurs\"> </p>
+          <p class=\"text-center\" > <img src=\"{{asset('img/orangeMTN.jpg')}}\" alt=\"operateurs\"> </p>
         </form>
         {{ form_end(form) }}
       </div>

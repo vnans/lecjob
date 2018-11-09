@@ -1,9 +1,9 @@
 dev:
     scheme: ftp
-    host: ftp.moser-ci.com
+    host: ftp.monpaquetage.com
     port: 21
-    user: cjob1@cjob.alcalis.tech
-    pass: @lc@lis18
+    user: monpa782655
+    pass: Monpa@2017
     check: true
     path:
-        remote: /
+        remote: /tounumeriq.monpaquetage.com

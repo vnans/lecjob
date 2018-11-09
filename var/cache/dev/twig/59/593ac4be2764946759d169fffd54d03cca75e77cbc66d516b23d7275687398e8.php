@@ -80,7 +80,17 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
 </div>
   </div> 
 </h1>
-
+ ";
+        // line 17
+        if ((isset($context["erreurForm"]) || array_key_exists("erreurForm", $context))) {
+            // line 18
+            echo " <div class=\"alert alert-danger text-center\" role=\"alert\">
+  Erreur identifiants
+</div>
+";
+        }
+        // line 22
+        echo "
 <div class=\"modal-dialog\">
     <div class=\"modal-content\">
       <div class=\"modal-heading\">
@@ -88,18 +98,18 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
       </div>
       <div class=\"modal-body\"> 
       \t";
-        // line 24
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 24, $this->source); })()), 'form_start');
+        // line 29
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 29, $this->source); })()), 'form_start');
         echo "
         <form action=\"";
-        // line 25
+        // line 30
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client");
         echo "\" method=\"POST\">
           ";
-        // line 29
+        // line 34
         echo "          <div class=\"form-group\">
           \t<label for=\"username\">";
-        // line 30
+        // line 35
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Numero de téléphone"), "html", null, true);
         echo "</label>
           
@@ -108,15 +118,15 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
               <span class=\"glyphicon glyphicon-user\"></span>
               </span>
               ";
-        // line 37
+        // line 42
         echo "              ";
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 37, $this->source); })()), "username", array()), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 42, $this->source); })()), "username", array()), 'widget');
         echo "
             </div>
           </div>
           <div class=\"form-group\">
           \t<label for=\"username\">";
-        // line 41
+        // line 46
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("mot de passe"), "html", null, true);
         echo "</label>
           
@@ -125,28 +135,28 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
               <span class=\"glyphicon glyphicon-lock\"></span>
               </span>
               ";
-        // line 48
+        // line 53
         echo "              ";
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 48, $this->source); })()), "password", array()), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 53, $this->source); })()), "password", array()), 'widget');
         echo "
             </div>
 
           </div>
           <div class=\"form-group\">
            ";
-        // line 54
+        // line 59
         echo "           ";
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 54, $this->source); })()), "remenber", array()), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 59, $this->source); })()), "remenber", array()), 'widget');
         echo " 
            <label for=\"remember_me\">";
-        // line 55
+        // line 60
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Se souvenir de moi"), "html", null, true);
         echo "</label>
           </div>       
 
           <div class=\"form-group text-center\">
             <input type=\"submit\" id=\"_submit\" name=\"submit\" class=\"btn btn-primary btn-lg\" value=\"";
-        // line 59
+        // line 64
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Connexion"), "html", null, true);
         echo "\" />
           </div>
@@ -154,14 +164,14 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
           <p class=\"text-primary text-center\" ><mark>CJOB au 98025</mark> 206 Fcfa/15 Jours</p>
 
           ";
-        // line 68
+        // line 73
         echo "          <p class=\"text-center\" > <img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/orangeMTN.jpg"), "html", null, true);
         echo "\" alt=\"operateurs\"> </p>
         </form>
         ";
-        // line 70
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 70, $this->source); })()), 'form_end');
+        // line 75
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 75, $this->source); })()), 'form_end');
         echo "
       </div>
     </div>
@@ -194,7 +204,7 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
 
     public function getDebugInfo()
     {
-        return array (  164 => 70,  158 => 68,  150 => 59,  143 => 55,  138 => 54,  129 => 48,  120 => 41,  112 => 37,  103 => 30,  100 => 29,  96 => 25,  92 => 24,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
+        return array (  174 => 75,  168 => 73,  160 => 64,  153 => 60,  148 => 59,  139 => 53,  130 => 46,  122 => 42,  113 => 35,  110 => 34,  106 => 30,  102 => 29,  93 => 22,  87 => 18,  85 => 17,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -215,6 +225,11 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
 </div>
   </div> 
 </h1>
+ {% if  erreurForm is defined %}
+ <div class=\"alert alert-danger text-center\" role=\"alert\">
+  Erreur identifiants
+</div>
+{% endif %}
 
 <div class=\"modal-dialog\">
     <div class=\"modal-content\">

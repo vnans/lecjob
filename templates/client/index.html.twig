@@ -15,7 +15,7 @@
   </div> 
 </h1>
  {% if  erreurForm is defined %}
- <div class="alert alert-danger text-center" role="alert">
+ <div class="alert alert-danger text-center" role="alert"> 
   Erreur identifiants
 </div>
 {% endif %}
@@ -23,7 +23,7 @@
 <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-heading">
-        <h2 class="text-center"> Connectez-vous</h2>
+        <h2 class="text-center"> Connexion abonnés</h2>
       </div>
       <div class="modal-body"> 
       	{{ form_start(form) }}
@@ -54,11 +54,11 @@
             </div>
 
           </div>
-          <div class="form-group">
-           {#  <input type="checkbox" id="remember_me" name="_remember_me" value="on" /> #}
+          {# <div class="form-group">
+           {#  <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
            {{ form_widget(form.remenber) }} 
            <label for="remember_me">{{ 'Se souvenir de moi'|trans }}</label>
-          </div>       
+          </div>      #}  
 
           <div class="form-group text-center">
             <input type="submit" id="_submit" name="submit" class="btn btn-primary btn-lg" value="{{ 'Connexion'|trans }}" />

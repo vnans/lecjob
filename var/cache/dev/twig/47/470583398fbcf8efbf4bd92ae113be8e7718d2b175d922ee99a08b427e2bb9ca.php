@@ -40,7 +40,7 @@ class __TwigTemplate_72bd7a9a8091eabda9d36c5bb3b50aec76661b8cea03bf9153abcbeeff0
 <div class=\"modal-dialog\">
     <div class=\"modal-content\">
       <div class=\"modal-heading\">
-        <h2 class=\"text-center\">Connectez-vous</h2>
+        <h2 class=\"text-center\">Connexion partenaire</h2>
       </div>
       <div class=\"modal-body\">
         <form action=\"";
@@ -62,7 +62,7 @@ class __TwigTemplate_72bd7a9a8091eabda9d36c5bb3b50aec76661b8cea03bf9153abcbeeff0
               <span class=\"input-group-addon\">
               <span class=\"glyphicon glyphicon-user\"></span>
               </span>
-              <input type=\"text\" class=\"form-control\" placeholder=\"Numéro de téléphone\"  id=\"username\" name=\"_username\" value=\"";
+              <input type=\"text\" class=\"form-control\" placeholder=\"Nom d'utilisateur\"  id=\"username\" name=\"_username\" value=\"";
         // line 28
         echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new Twig_Error_Runtime('Variable "last_username" does not exist.', 28, $this->source); })()), "html", null, true);
         echo "\" required=\"required\" autocomplete=\"username\" />
@@ -158,7 +158,7 @@ class __TwigTemplate_72bd7a9a8091eabda9d36c5bb3b50aec76661b8cea03bf9153abcbeeff0
 <div class=\"modal-dialog\">
     <div class=\"modal-content\">
       <div class=\"modal-heading\">
-        <h2 class=\"text-center\">Connectez-vous</h2>
+        <h2 class=\"text-center\">Connexion partenaire</h2>
       </div>
       <div class=\"modal-body\">
         <form action=\"{{ path(\"fos_user_security_check\") }}\" method=\"POST\">
@@ -170,7 +170,7 @@ class __TwigTemplate_72bd7a9a8091eabda9d36c5bb3b50aec76661b8cea03bf9153abcbeeff0
               <span class=\"input-group-addon\">
               <span class=\"glyphicon glyphicon-user\"></span>
               </span>
-              <input type=\"text\" class=\"form-control\" placeholder=\"Numéro de téléphone\"  id=\"username\" name=\"_username\" value=\"{{ last_username }}\" required=\"required\" autocomplete=\"username\" />
+              <input type=\"text\" class=\"form-control\" placeholder=\"Nom d'utilisateur\"  id=\"username\" name=\"_username\" value=\"{{ last_username }}\" required=\"required\" autocomplete=\"username\" />
             </div>
           </div>
           <div class=\"form-group\">

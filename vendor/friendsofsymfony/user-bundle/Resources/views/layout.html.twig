@@ -50,7 +50,13 @@
           {% elseif is_granted('ROLE_USER') %}
              Salut !
           {% else %}
-            <a href="{{ path('fos_user_security_login')}}" >Se connecter</a>
+            <li class="menu-has-children"><a href="">Se connecter</a>
+              <ul>
+                <li><a href="{{ path('client') }}">Abonné</a></li>
+                <li><a href="{{ path('fos_user_security_login')}}">Partenaire</a></li>
+               
+              </ul>
+          </li>
           {% endif %}
           </li>
         

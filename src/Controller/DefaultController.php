@@ -7,6 +7,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
+
+
+
     /**
      * @Route("/", name="default")
      *
@@ -49,4 +52,34 @@ class DefaultController extends AbstractController
  //        return $this->render('default/index.html.twig');
  //    }
    
+
+   /**
+     * @Route("/alcalistore", name="alcalistore")
+     *
+     */
+    public function alcalistore()
+    {
+        $customerEntityManager = $this->getDoctrine()->getManager('customer');
+            
+            
+            $dqlquery = $customerEntityManager->createQuery('SELECT u FROM App\Entity\Customer\User u');
+            
+            $abonne = $dqlquery->getResult();
+        return $this->render('default/alcalistore.html.twig',['abonne' => $abonne]); 
+    }
+
+    /**
+     * @Route("/alcalistech", name="alcalistech")
+     *
+     */
+    public function alcalistech()
+    {
+        $EntityManager = $this->getDoctrine()->getManager('default');
+            
+            
+            $dqlquery = $EntityManager->createQuery('SELECT o FROM App\Entity\CjOffres o');
+            
+            $offre = $dqlquery->getResult();
+        return $this->render('default/alcalistech.html.twig',['offre' => $offre]); 
+    }
 }

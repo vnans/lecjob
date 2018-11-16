@@ -72,9 +72,12 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 $routes = array(
                     '/cj/offres/' => array(array('_route' => 'cj_offres_index', '_controller' => 'App\\Controller\\CjOffresController::index'), null, array('GET' => 0), null),
                     '/cj/offres/new' => array(array('_route' => 'cj_offres_new', '_controller' => 'App\\Controller\\CjOffresController::new'), null, array('GET' => 0, 'POST' => 1), null),
+                    '/deco' => array(array('_route' => 'deconnexion', '_controller' => 'App\\Controller\\ClientController::deco'), null, null, null),
                     '/client' => array(array('_route' => 'client', '_controller' => 'App\\Controller\\ClientController::index'), null, null, null),
                     '/apropos' => array(array('_route' => 'apropos', '_controller' => 'App\\Controller\\DefaultController::apropos'), null, null, null),
                     '/contact' => array(array('_route' => 'contact', '_controller' => 'App\\Controller\\DefaultController::contact'), null, null, null),
+                    '/alcalistore' => array(array('_route' => 'alcalistore', '_controller' => 'App\\Controller\\DefaultController::alcalistore'), null, null, null),
+                    '/alcalistech' => array(array('_route' => 'alcalistech', '_controller' => 'App\\Controller\\DefaultController::alcalistech'), null, null, null),
                     '/search' => array(array('_route' => 'search', '_controller' => 'App\\Controller\\SearchController::recherche'), null, array('POST' => 0), null),
                     '/_profiler/' => array(array('_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'), null, null, null),
                     '/_profiler/search' => array(array('_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'), null, null, null),

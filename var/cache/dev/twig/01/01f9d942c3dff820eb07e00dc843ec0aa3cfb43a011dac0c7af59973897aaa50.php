@@ -38,7 +38,7 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
   <title>";
         // line 5
         $this->displayBlock('title', $context, $blocks);
-        echo "</title>
+        echo "</title> 
   <meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">
   <meta content=\"\" name=\"keywords\">
   <meta content=\"\" name=\"description\">
@@ -86,67 +86,74 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
             // line 58
             echo "            Salut Admin !
           ";
-        } elseif ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
+        } elseif (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER") || (        // line 59
+(isset($context["user"]) || array_key_exists("user", $context)) && ((isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 59, $this->source); })()) == "abonne")))) {
             // line 60
             echo "             Salut ! 
           ";
         } else {
             // line 62
-            echo "            <a href=\"";
+            echo "             <li class=\"menu-has-children\"><a href=\"\">Se connecter</a>
+              <ul>
+                <li><a href=\"";
+            // line 64
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client");
+            echo "\">Abonné</a></li>
+                <li><a href=\"";
+            // line 65
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_login");
-            echo "\" >Se connecter</a>
-          ";
+            echo "\">Partenaire</a></li>
+               
+              </ul>
+          </li>
+            ";
+            // line 70
+            echo "          ";
         }
-        // line 64
+        // line 71
         echo "          </li>
         
             ";
-        // line 66
+        // line 73
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 67
+            // line 74
             echo "            <li class=\"menu-has-children\"><a href=\"\">Mon Profil</a>
               <ul>
                 <li><a href=\"";
-            // line 69
+            // line 76
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_profile_show");
             echo "\">Mes infos.</a></li>
                 <li><a href=\"";
-            // line 70
+            // line 77
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_change_password");
             echo "\">Modifier mon mot de passe</a></li>
                 <li><a href=\"";
-            // line 71
+            // line 78
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_logout");
             echo "\">se déconnecter</a></li>
               </ul>
           </li>
          
           ";
-        } elseif ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 76
+        } elseif (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER") || (        // line 82
+(isset($context["user"]) || array_key_exists("user", $context)) && ((isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 82, $this->source); })()) == "abonne")))) {
+            // line 83
             echo "           <li class=\"menu-has-children\"><a href=\"\">Mon Profile</a>
               <ul>
-                <li><a href=\"";
-            // line 78
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_profile_show");
-            echo "\">Mes infos.</a></li>
-                <li><a href=\"";
-            // line 79
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_change_password");
-            echo "\">Modifier mon mot de passe</a></li>
-                <li><a href=\"";
-            // line 80
+                ";
+            // line 87
+            echo "<li><a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_logout");
             echo "\">se déconnecter</a></li>
               </ul>
           </li>  
           ";
         } else {
-            // line 84
+            // line 91
             echo "           
           ";
         }
-        // line 86
+        // line 93
         echo "            
          
          
@@ -177,22 +184,22 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
 
 
         ";
-        // line 115
+        // line 122
         $this->displayBlock('body', $context, $blocks);
-        // line 116
+        // line 123
         echo "
 
        ";
-        // line 118
+        // line 125
         $this->displayBlock('footer', $context, $blocks);
-        // line 132
+        // line 139
         echo "
         
 
         ";
-        // line 135
+        // line 142
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 157
+        // line 164
         echo "    </body>
 </html>
 ";
@@ -286,7 +293,7 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
 
     }
 
-    // line 115
+    // line 122
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -304,7 +311,7 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
 
     }
 
-    // line 118
+    // line 125
     public function block_footer($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -335,7 +342,7 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
 
     }
 
-    // line 135
+    // line 142
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -344,70 +351,70 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 136
+        // line 143
         echo "
   <!-- JavaScript Libraries -->
   <script src=\"";
-        // line 138
+        // line 145
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 139
+        // line 146
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/jquery/jquery-migrate.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 140
+        // line 147
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 141
+        // line 148
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/easing/easing.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 142
+        // line 149
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/superfish/hoverIntent.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 143
+        // line 150
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/superfish/superfish.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 144
+        // line 151
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/wow/wow.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 145
+        // line 152
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/waypoints/waypoints.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 146
+        // line 153
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/counterup/counterup.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 147
+        // line 154
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/owlcarousel/owl.carousel.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 148
+        // line 155
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/isotope/isotope.pkgd.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 149
+        // line 156
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/lightbox/js/lightbox.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 150
+        // line 157
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/touchSwipe/jquery.touchSwipe.min.js"), "html", null, true);
         echo "\"></script>
   <!-- Contact Form JavaScript File -->
   <script src=\"";
-        // line 152
+        // line 159
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contactform/contactform.js"), "html", null, true);
         echo "\"></script>
 
   <!-- Template Main Javascript File -->
   <script src=\"";
-        // line 155
+        // line 162
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/main.js"), "html", null, true);
         echo "\"></script>
  ";
@@ -431,7 +438,7 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
 
     public function getDebugInfo()
     {
-        return array (  411 => 155,  405 => 152,  400 => 150,  396 => 149,  392 => 148,  388 => 147,  384 => 146,  380 => 145,  376 => 144,  372 => 143,  368 => 142,  364 => 141,  360 => 140,  356 => 139,  352 => 138,  348 => 136,  339 => 135,  308 => 118,  290 => 115,  276 => 28,  270 => 25,  266 => 24,  262 => 23,  258 => 22,  254 => 21,  248 => 18,  242 => 15,  235 => 10,  226 => 9,  208 => 5,  196 => 157,  194 => 135,  189 => 132,  187 => 118,  183 => 116,  181 => 115,  150 => 86,  146 => 84,  139 => 80,  135 => 79,  131 => 78,  127 => 76,  119 => 71,  115 => 70,  111 => 69,  107 => 67,  105 => 66,  101 => 64,  95 => 62,  91 => 60,  87 => 58,  85 => 57,  80 => 55,  75 => 54,  63 => 44,  49 => 32,  47 => 9,  40 => 5,  34 => 1,);
+        return array (  418 => 162,  412 => 159,  407 => 157,  403 => 156,  399 => 155,  395 => 154,  391 => 153,  387 => 152,  383 => 151,  379 => 150,  375 => 149,  371 => 148,  367 => 147,  363 => 146,  359 => 145,  355 => 143,  346 => 142,  315 => 125,  297 => 122,  283 => 28,  277 => 25,  273 => 24,  269 => 23,  265 => 22,  261 => 21,  255 => 18,  249 => 15,  242 => 10,  233 => 9,  215 => 5,  203 => 164,  201 => 142,  196 => 139,  194 => 125,  190 => 123,  188 => 122,  157 => 93,  153 => 91,  145 => 87,  141 => 83,  139 => 82,  132 => 78,  128 => 77,  124 => 76,  120 => 74,  118 => 73,  114 => 71,  111 => 70,  104 => 65,  100 => 64,  96 => 62,  92 => 60,  90 => 59,  87 => 58,  85 => 57,  80 => 55,  75 => 54,  63 => 44,  49 => 32,  47 => 9,  40 => 5,  34 => 1,);
     }
 
     public function getSourceContext()
@@ -440,7 +447,7 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
 <html lang=\"fr\">
 <head>
   <meta charset=\"utf-8\">
-  <title>{% block title %}CJOB-le portail de l'emploi{% endblock %}</title>
+  <title>{% block title %}CJOB-le portail de l'emploi{% endblock %}</title> 
   <meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">
   <meta content=\"\" name=\"keywords\">
   <meta content=\"\" name=\"description\">
@@ -494,10 +501,17 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
           <li style=\"color:#fff\">
           {% if is_granted('ROLE_ADMIN')  %}
             Salut Admin !
-          {% elseif is_granted('ROLE_USER') %}
+          {% elseif is_granted('ROLE_USER') or (user is defined and user == 'abonne') %}
              Salut ! 
           {% else %}
-            <a href=\"{{ path('fos_user_security_login')}}\" >Se connecter</a>
+             <li class=\"menu-has-children\"><a href=\"\">Se connecter</a>
+              <ul>
+                <li><a href=\"{{ path('client') }}\">Abonné</a></li>
+                <li><a href=\"{{ path('fos_user_security_login')}}\">Partenaire</a></li>
+               
+              </ul>
+          </li>
+            {# <a href=\"{{  path('fos_user_security_login')}}\" >Se connecter</a> #}
           {% endif %}
           </li>
         
@@ -510,12 +524,12 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
               </ul>
           </li>
          
-          {% elseif is_granted('ROLE_USER') %}
+          {% elseif is_granted('ROLE_USER') or (user is defined and user == 'abonne') %}
            <li class=\"menu-has-children\"><a href=\"\">Mon Profile</a>
               <ul>
-                <li><a href=\"{{ path('fos_user_profile_show') }}\">Mes infos.</a></li>
+                {# <li><a href=\"{{ path('fos_user_profile_show') }}\">Mes infos.</a></li>
                 <li><a href=\"{{ path('fos_user_change_password') }}\">Modifier mon mot de passe</a></li>
-                <li><a href=\"{{ path('fos_user_security_logout')}}\">se déconnecter</a></li>
+                 #}<li><a href=\"{{ path('fos_user_security_logout')}}\">se déconnecter</a></li>
               </ul>
           </li>  
           {% else %}

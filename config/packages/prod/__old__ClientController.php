@@ -15,25 +15,13 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ClientController extends AbstractController
 {
- /**
-  * @Route("/deco", name="deconnexion")
-  */
- public function deco()
- {
- 	$session->set('user','deco');
- 	$user=$session->get('user');
- 	
- 	return $this->render('default/index.html.twig',['user'=> $user]);  
-
- }
-
 
     /**
      * @Route("/client", name="client")
      */
     public function index(Request $request,EntityManagerInterface $entityManager,DataService $query ,SessionInterface $session): Response
     { 	
-    	// formulaire de connexion abonne
+
         $form = $this->createFormBuilder()      
 	         ->add('username', TextType::class, array(
 	         	'attr'=>array(
@@ -43,7 +31,7 @@ class ClientController extends AbstractController
 	         ->add('password', PasswordType::class)       
 	         // ->add('remenber', CheckboxType::class)
 	         ->getForm();                  	
-// verifions si l'utilisateur est un abonne
+
         if (isset($request->request->get('form')['username']) ){
     
      		$username =$request->request->get('form')['username'] ;
@@ -52,7 +40,7 @@ class ClientController extends AbstractController
      		$customerEntityManager = $this->getDoctrine()->getManager('customer');
         	
         	
-        	$dqlquery = $customerEntityManager->createQuery('SELECT u FROM App\Entity\Customer\User u WHERE (u.username = :username ) AND u.plainPassword = :password');
+        	$dqlquery = $customerEntityManager->createQuery('SELECT u FROM App\Entity\Customer\User u WHERE (u.username = :username ) AND u.password = :password');
 			$dqlquery->setParameters(array(
 			    'username' => $username,
 			    
@@ -66,7 +54,7 @@ class ClientController extends AbstractController
 
 
 			if (!$users) { // verification avec indicatif +225
-				$dqlquery = $customerEntityManager->createQuery('SELECT u FROM App\Entity\Customer\User u WHERE u.username = :username  AND u.plainPassword = :password');
+				$dqlquery = $customerEntityManager->createQuery('SELECT u FROM App\Entity\Customer\User u WHERE u.username = :username  AND u.password = :password');
 				$dqlquery->setParameters(array(
 			    'username' => '+225'.$username,
 			    
@@ -75,7 +63,7 @@ class ClientController extends AbstractController
 				$users = $dqlquery->getResult();
 
 	    		if (!$users) { // verification avec indicatif 00225
-	    			$dqlquery = $customerEntityManager->createQuery('SELECT u FROM App\Entity\Customer\User u WHERE (u.username = :username ) AND u.plainPassword = :password');
+	    			$dqlquery = $customerEntityManager->createQuery('SELECT u FROM App\Entity\Customer\User u WHERE (u.username = :username ) AND u.password = :password');
 				$dqlquery->setParameters(array(
 			    'username' => '00225'.$username,
 			    
@@ -87,23 +75,19 @@ class ClientController extends AbstractController
 		    			$erreur= 1 ;
 		    			return $this->render('client/index.html.twig', ['form'=> $form->createView() ,'erreurForm'=>'$erreur']);	//mauvais indentifiants
 		    		}else{
-		    				 $session->set('user','abonne'); 
-            				 $user=$session->get('user'); 
+		    				 $user=$session->get('user'); 
 		    				return $this->render('default/index.html.twig',['user'=> $user]);		
 		    		}
 	    		}else{
-	    				$session->set('user','abonne'); 
-            			$user=$session->get('user'); 
 	    				return $this->render('default/index.html.twig',['user'=> $user]);	
 	    		}
 			 	
 			}else{
 			// $offres=$query->ReturnData($request);
-		       	 $session->set('user','abonne'); 
-            	$user=$session->get('user'); 
-		    
-      		// return $this->render('default/index.html.twig',['user'=> $user]); 
-            	return $this->redirectToRoute('cj_offres_index');
+		    //   	 $user=$session->get('user'); 
+		        
+		     // 		return $this->render('cj_offres/index.html.twig', ['cj_offres' => $offres,'user'=>$user]);
+      		return $this->render('default/index.html.twig',['user'=> $user]); 
 	 		}		  
 
   		}else{

@@ -84,7 +84,7 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
         // line 17
         if ((isset($context["erreurForm"]) || array_key_exists("erreurForm", $context))) {
             // line 18
-            echo " <div class=\"alert alert-danger text-center\" role=\"alert\">
+            echo " <div class=\"alert alert-danger text-center\" role=\"alert\"> 
   Erreur identifiants
 </div>
 ";
@@ -94,7 +94,7 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
 <div class=\"modal-dialog\">
     <div class=\"modal-content\">
       <div class=\"modal-heading\">
-        <h2 class=\"text-center\"> Connectez-vous</h2>
+        <h2 class=\"text-center\"> Connexion abonnés</h2>
       </div>
       <div class=\"modal-body\"> 
       \t";
@@ -142,17 +142,9 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
             </div>
 
           </div>
-          <div class=\"form-group\">
-           ";
-        // line 59
-        echo "           ";
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 59, $this->source); })()), "remenber", array()), 'widget');
-        echo " 
-           <label for=\"remember_me\">";
-        // line 60
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Se souvenir de moi"), "html", null, true);
-        echo "</label>
-          </div>       
+          ";
+        // line 61
+        echo "  
 
           <div class=\"form-group text-center\">
             <input type=\"submit\" id=\"_submit\" name=\"submit\" class=\"btn btn-primary btn-lg\" value=\"";
@@ -204,7 +196,7 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
 
     public function getDebugInfo()
     {
-        return array (  174 => 75,  168 => 73,  160 => 64,  153 => 60,  148 => 59,  139 => 53,  130 => 46,  122 => 42,  113 => 35,  110 => 34,  106 => 30,  102 => 29,  93 => 22,  87 => 18,  85 => 17,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
+        return array (  166 => 75,  160 => 73,  152 => 64,  147 => 61,  139 => 53,  130 => 46,  122 => 42,  113 => 35,  110 => 34,  106 => 30,  102 => 29,  93 => 22,  87 => 18,  85 => 17,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -226,7 +218,7 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
   </div> 
 </h1>
  {% if  erreurForm is defined %}
- <div class=\"alert alert-danger text-center\" role=\"alert\">
+ <div class=\"alert alert-danger text-center\" role=\"alert\"> 
   Erreur identifiants
 </div>
 {% endif %}
@@ -234,7 +226,7 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
 <div class=\"modal-dialog\">
     <div class=\"modal-content\">
       <div class=\"modal-heading\">
-        <h2 class=\"text-center\"> Connectez-vous</h2>
+        <h2 class=\"text-center\"> Connexion abonnés</h2>
       </div>
       <div class=\"modal-body\"> 
       \t{{ form_start(form) }}
@@ -265,11 +257,11 @@ class __TwigTemplate_a2908c22d4faedf8efb89963ca4ea9c8d46aaee3dc294b847adfb475389
             </div>
 
           </div>
-          <div class=\"form-group\">
-           {#  <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" /> #}
+          {# <div class=\"form-group\">
+           {#  <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
            {{ form_widget(form.remenber) }} 
            <label for=\"remember_me\">{{ 'Se souvenir de moi'|trans }}</label>
-          </div>       
+          </div>      #}  
 
           <div class=\"form-group text-center\">
             <input type=\"submit\" id=\"_submit\" name=\"submit\" class=\"btn btn-primary btn-lg\" value=\"{{ 'Connexion'|trans }}\" />

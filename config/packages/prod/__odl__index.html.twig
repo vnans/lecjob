@@ -34,16 +34,6 @@
               
           </p> #}
         </header>
-    {# {% if $session->get('user') == 'Nonabonne' %}
-      <div>
-        <p class="alert alert-danger text-center" role="alert">Connectez vous <a href="">ici</a> pour bénéficier de plus de détails </p>
-      </div>
-    {% endif %}  #}
-    {% for message in app.flashes('info') %} 
-        <div class="alert alert-danger text-center" role="alert">
-        {{ message }} sur les offres <a href="{{ path('client')}} ">connectez-vous ici</a>  
-      </div>
-    {% endfor %}
 
 <div>
  
@@ -70,17 +60,22 @@
           <div class="col-md-3 wow fadeInUp"> 
             <div class="about-col">
               <div class="img">
-               <a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}"><img src=" {{asset('img/offres/') }}{{ cj_offre.image }} " alt="" class="img-fluid"></a> 
+               <a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}"><img src=" {{asset('public/img/offres/') }}{{ cj_offre.image }} " alt="" class="img-fluid"></a> 
                {#  <div class="icon"><i class="ion-chatbox-working"> </i></div>#}
               </div>
-              <h2 class="title"><a href=" {{ path('cj_offres_show', {'id': cj_offre.id}) }} "> <b></b> {{ cj_offre.type }} </a></h2>
-              <h2>{{ cj_offre.libelle }}</h2> 
-            
+
+                <p class="text-center"><b><a href=" {{ path('cj_offres_show', {'id': cj_offre.id}) }} "> {{ cj_offre.type }} </a> </b></p>
                <p>
-                <b>Récruteur :</b> {{ cj_offre.recruteur }}
+
+                 <b>{{ cj_offre.libelle }} </b> </br>
+                <b>Récruteur :</b> {{ cj_offre.recruteur }} </br>
+                 <b>Date limite :</b> {{ cj_offre.dateFin ? cj_offre.dateFin|date('d-m-y') : '' }}
               </p>
+              {# <p>
+                <b>Métier :</b> {{ cj_offre.metier }}
+              </p> #}
               <p>
-                <b>Date limite :</b> {{ cj_offre.dateFin ? cj_offre.dateFin|date('d-m-y H:i:s') : '' }}
+               
               </p>
               <p><a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}"> <button class="btn btn-primary" >Suite</button> </a>  </p>
 

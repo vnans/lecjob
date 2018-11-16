@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}CJOB-le portail de l'emploi{% endblock %}</title> 
+  <title>{% block title %}CJOB-le portail de l'emploi{% endblock %}</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -56,7 +56,7 @@
           <li style="color:#fff">
           {% if is_granted('ROLE_ADMIN')  %}
             Salut Admin !
-          {% elseif is_granted('ROLE_USER') or (user is defined and user == 'abonne') %}
+          {% elseif is_granted('ROLE_USER') or user is defined %}
              Salut ! 
           {% else %}
              <li class="menu-has-children"><a href="">Se connecter</a>
@@ -66,7 +66,7 @@
                
               </ul>
           </li>
-            {# <a href="{{  path('fos_user_security_login')}}" >Se connecter</a> #}
+            {# <a href="{{ path('fos_user_security_login')}}" >Se connecter</a> #}
           {% endif %}
           </li>
         
@@ -79,7 +79,7 @@
               </ul>
           </li>
          
-          {% elseif is_granted('ROLE_USER') or (user is defined and user == 'abonne') %}
+          {% elseif is_granted('ROLE_USER') or user is defined %}
            <li class="menu-has-children"><a href="">Mon Profile</a>
               <ul>
                 {# <li><a href="{{ path('fos_user_profile_show') }}">Mes infos.</a></li>

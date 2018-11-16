@@ -82,30 +82,40 @@ class __TwigTemplate_4ab4af3fb4cac0b61d77173feb0dadc8bba6f8609b9e902aace27941602
           ";
         } else {
             // line 53
-            echo "            <a href=\"";
+            echo "            <li class=\"menu-has-children\"><a href=\"\">Se connecter</a>
+              <ul>
+                <li><a href=\"";
+            // line 55
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client");
+            echo "\">Abonné</a></li>
+                <li><a href=\"";
+            // line 56
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_login");
-            echo "\" >Se connecter</a>
+            echo "\">Partenaire</a></li>
+               
+              </ul>
+          </li>
           ";
         }
-        // line 55
+        // line 61
         echo "          </li>
         
             ";
-        // line 57
+        // line 63
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 58
+            // line 64
             echo "            <li class=\"menu-has-children\"><a href=\"\">Mon Profil</a>
               <ul>
                 <li><a href=\"";
-            // line 60
+            // line 66
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_profile_show");
             echo "\">Mes infos.</a></li>
                 <li><a href=\"";
-            // line 61
+            // line 67
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_change_password");
             echo "\">Modifier mon mot de passe</a></li>
                 <li><a href=\"";
-            // line 62
+            // line 68
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_logout");
             echo "\">se déconnecter</a></li>
               </ul>
@@ -113,30 +123,30 @@ class __TwigTemplate_4ab4af3fb4cac0b61d77173feb0dadc8bba6f8609b9e902aace27941602
          
           ";
         } elseif ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 67
+            // line 73
             echo "           <li class=\"menu-has-children\"><a href=\"\">Mon Profile</a>
               <ul>
                 <li><a href=\"";
-            // line 69
+            // line 75
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_profile_show");
             echo "\">Mes infos.</a></li>
                 <li><a href=\"";
-            // line 70
+            // line 76
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_change_password");
             echo "\">Modifier mon mot de passe</a></li>
                 <li><a href=\"";
-            // line 71
+            // line 77
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_logout");
             echo "\">se déconnecter</a></li>
               </ul>
           </li>  
           ";
         } else {
-            // line 75
+            // line 81
             echo "           
           ";
         }
-        // line 77
+        // line 83
         echo "            
          
          
@@ -160,24 +170,24 @@ class __TwigTemplate_4ab4af3fb4cac0b61d77173feb0dadc8bba6f8609b9e902aace27941602
     <body>
         <div>
             ";
-        // line 99
+        // line 105
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-            // line 100
+            // line 106
             echo "                ";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("layout.logged_in_as", array("%username%" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 100, $this->source); })()), "user", array()), "username", array())), "FOSUserBundle"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("layout.logged_in_as", array("%username%" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 106, $this->source); })()), "user", array()), "username", array())), "FOSUserBundle"), "html", null, true);
             echo " |
                 <a href=\"";
-            // line 101
+            // line 107
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_logout");
             echo "\">
                     ";
-            // line 102
+            // line 108
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("layout.logout", array(), "FOSUserBundle"), "html", null, true);
             echo "
                 </a>
             ";
         } else {
-            // line 105
+            // line 111
             echo "                <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_login");
             echo "\">";
@@ -185,28 +195,28 @@ class __TwigTemplate_4ab4af3fb4cac0b61d77173feb0dadc8bba6f8609b9e902aace27941602
             echo "</a>
             ";
         }
-        // line 107
+        // line 113
         echo "        </div>
 
         ";
-        // line 109
-        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 109, $this->source); })()), "request", array()), "hasPreviousSession", array())) {
-            // line 110
+        // line 115
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 115, $this->source); })()), "request", array()), "hasPreviousSession", array())) {
+            // line 116
             echo "            ";
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 110, $this->source); })()), "session", array()), "flashbag", array()), "all", array(), "method"));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 116, $this->source); })()), "session", array()), "flashbag", array()), "all", array(), "method"));
             foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
-                // line 111
+                // line 117
                 echo "                ";
                 $context['_parent'] = $context;
                 $context['_seq'] = twig_ensure_traversable($context["messages"]);
                 foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                    // line 112
+                    // line 118
                     echo "                    <div class=\"flash-";
                     echo twig_escape_filter($this->env, $context["type"], "html", null, true);
                     echo "\">
                         ";
-                    // line 113
+                    // line 119
                     echo twig_escape_filter($this->env, $context["message"], "html", null, true);
                     echo "
                     </div>
@@ -215,28 +225,28 @@ class __TwigTemplate_4ab4af3fb4cac0b61d77173feb0dadc8bba6f8609b9e902aace27941602
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 116
+                // line 122
                 echo "            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['type'], $context['messages'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 117
+            // line 123
             echo "        ";
         }
-        // line 118
+        // line 124
         echo "
         <div>
             ";
-        // line 120
+        // line 126
         $this->displayBlock('fos_user_content', $context, $blocks);
-        // line 122
+        // line 128
         echo "        </div>
     </body>
     ";
-        // line 124
+        // line 130
         $this->displayBlock('footer', $context, $blocks);
-        // line 138
+        // line 144
         echo "
 </html>
 
@@ -329,7 +339,7 @@ class __TwigTemplate_4ab4af3fb4cac0b61d77173feb0dadc8bba6f8609b9e902aace27941602
 
     }
 
-    // line 120
+    // line 126
     public function block_fos_user_content($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -338,7 +348,7 @@ class __TwigTemplate_4ab4af3fb4cac0b61d77173feb0dadc8bba6f8609b9e902aace27941602
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
 
-        // line 121
+        // line 127
         echo "            ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -348,7 +358,7 @@ class __TwigTemplate_4ab4af3fb4cac0b61d77173feb0dadc8bba6f8609b9e902aace27941602
 
     }
 
-    // line 124
+    // line 130
     public function block_footer($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -391,7 +401,7 @@ class __TwigTemplate_4ab4af3fb4cac0b61d77173feb0dadc8bba6f8609b9e902aace27941602
 
     public function getDebugInfo()
     {
-        return array (  352 => 124,  342 => 121,  333 => 120,  321 => 30,  315 => 27,  311 => 26,  307 => 25,  303 => 24,  299 => 23,  293 => 20,  287 => 17,  280 => 12,  271 => 11,  253 => 6,  240 => 138,  238 => 124,  234 => 122,  232 => 120,  228 => 118,  225 => 117,  219 => 116,  210 => 113,  205 => 112,  200 => 111,  195 => 110,  193 => 109,  189 => 107,  181 => 105,  175 => 102,  171 => 101,  166 => 100,  164 => 99,  140 => 77,  136 => 75,  129 => 71,  125 => 70,  121 => 69,  117 => 67,  109 => 62,  105 => 61,  101 => 60,  97 => 58,  95 => 57,  91 => 55,  85 => 53,  81 => 51,  77 => 49,  75 => 48,  72 => 47,  68 => 45,  57 => 37,  50 => 32,  48 => 11,  40 => 6,  33 => 1,);
+        return array (  362 => 130,  352 => 127,  343 => 126,  331 => 30,  325 => 27,  321 => 26,  317 => 25,  313 => 24,  309 => 23,  303 => 20,  297 => 17,  290 => 12,  281 => 11,  263 => 6,  250 => 144,  248 => 130,  244 => 128,  242 => 126,  238 => 124,  235 => 123,  229 => 122,  220 => 119,  215 => 118,  210 => 117,  205 => 116,  203 => 115,  199 => 113,  191 => 111,  185 => 108,  181 => 107,  176 => 106,  174 => 105,  150 => 83,  146 => 81,  139 => 77,  135 => 76,  131 => 75,  127 => 73,  119 => 68,  115 => 67,  111 => 66,  107 => 64,  105 => 63,  101 => 61,  93 => 56,  89 => 55,  85 => 53,  81 => 51,  77 => 49,  75 => 48,  72 => 47,  68 => 45,  57 => 37,  50 => 32,  48 => 11,  40 => 6,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -448,7 +458,13 @@ class __TwigTemplate_4ab4af3fb4cac0b61d77173feb0dadc8bba6f8609b9e902aace27941602
           {% elseif is_granted('ROLE_USER') %}
              Salut !
           {% else %}
-            <a href=\"{{ path('fos_user_security_login')}}\" >Se connecter</a>
+            <li class=\"menu-has-children\"><a href=\"\">Se connecter</a>
+              <ul>
+                <li><a href=\"{{ path('client') }}\">Abonné</a></li>
+                <li><a href=\"{{ path('fos_user_security_login')}}\">Partenaire</a></li>
+               
+              </ul>
+          </li>
           {% endif %}
           </li>
         

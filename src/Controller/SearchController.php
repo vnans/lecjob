@@ -26,7 +26,7 @@ class SearchController extends AbstractController
      * @Route("/search", name="search" ,methods="POST")
      */
     public function recherche(Request $request, DataService $query)
-
+ 
     { 
        
  		$offres=$query->ReturnResearch($request->request->get('form')['Type'],$request->request->get('form')['Niveau'],$request->request->get('form')['Metier']);        

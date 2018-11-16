@@ -12,7 +12,6 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\HttpFoundation\File\guessExtension;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -49,7 +48,7 @@ class CjOffresController extends AbstractController
          ->getForm(); 
 
         $offres=$query->ReturnData($request);
-        $user  =$session->get('user'); 
+        $user=$session->get('user'); 
         
       return $this->render('cj_offres/index.html.twig', ['cj_offres' => $offres,'formSearch'=>$form->createView(),'user'=>$user]);
        // return $this->render('cj_offres/index.html.twig', ['cj_offres' => $offres,'user'=>$user]);
@@ -76,7 +75,7 @@ class CjOffresController extends AbstractController
 
             $cjOffre->setImage($fileName); 
 
-            $em = $this->getDoctrine()->getManager('default'); //modifié
+            $em = $this->getDoctrine()->getManager();
             $em->persist($cjOffre);
             $em->flush();
 
@@ -97,44 +96,25 @@ class CjOffresController extends AbstractController
         $authChecker =  $this->container->get('security.authorization_checker');
        if ($authChecker->IsGranted('ROLE_ADMIN')) {
 
-            $session->set('admin','admin'); 
+            $session->set('admin','connexion_admin'); 
             
             $admin=$session->get('admin'); 
 
         return $this->render('cj_offres/show.html.twig',['cj_offre' => $cjOffre,'admin' => $admin]);
 
-        }else if($authChecker->IsGranted('ROLE_USER') or $session->get('user') == 'abonne' ){
+        }else if($authChecker->IsGranted('ROLE_USER')){
 
-            $session->set('user','abonne'); 
+            $session->set('user','connexion_utilisateur'); 
             $user=$session->get('user'); 
 
             return $this->render('cj_offres/show.html.twig',['cj_offre' => $cjOffre,'user' =>$user]);
         }else{
-            // un message flash d'erreur de connexion
-            $this->addFlash('info','Pour obtenir plus de détails'); 
 
-  // si pas connecter afficher message 
-        // return $this->render('cj_offres/index.html.twig',['message',$message])   ;        
-            return $this->redirectToRoute('cj_offres_index'); 
-
- //invitation de connexion a l'utilisateur avec ce formulaire et redirection sur login/client
-         //    $form = $this->createFormBuilder()      
-         //     ->add('username', TextType::class, array(
-         //        'attr'=>array(
-         //        'maxlength'=>'8',
-         //        'placeholder'=>'ex: 99000099'
-         //     ))) 
-         //     ->add('password', PasswordType::class)       
-         //     // ->add('remenber', CheckboxType::class)
-         //     ->getForm();                   
-
-         // // return $this->redirectToRoute('default');
-         //     return $this->render('client/index.html.twig', ['form'=> $form->createView()] );
-         //    return redirectToRoute('client');
-         // return $this->render('@FOSUser/Security/login.html.twig',array(
-         //    'last_username' => null,
-         //    'error' => null,
-         //    'csrf_token' => null,));
+         // return $this->redirectToRoute('default');
+         return $this->render('@FOSUser/Security/login.html.twig',array(
+            'last_username' => null,
+            'error' => null,
+            'csrf_token' => null,));
     }
 }
 

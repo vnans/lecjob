@@ -78,7 +78,7 @@ class __TwigTemplate_98e1d05f723713be980147e1225c9d783eae32415f5555a7889312bcde4
         echo " : ";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["cj_offre"]) || array_key_exists("cj_offre", $context) ? $context["cj_offre"] : (function () { throw new Twig_Error_Runtime('Variable "cj_offre" does not exist.', 10, $this->source); })()), "libelle", array()), "html", null, true);
         echo " </h3>
-</header>
+    </header>
 
     <div class=\"row\">
         <div class=\"col-md-4\">
@@ -253,7 +253,7 @@ class __TwigTemplate_98e1d05f723713be980147e1225c9d783eae32415f5555a7889312bcde4
      <header class=\"section-header\">
         
     <h3>{{ cj_offre.type }} : {{ cj_offre.libelle }} </h3>
-</header>
+    </header>
 
     <div class=\"row\">
         <div class=\"col-md-4\">

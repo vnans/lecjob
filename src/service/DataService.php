@@ -45,7 +45,7 @@ public function ReturnData($request){
     $container = $this->container;
     $defaultEntityManager =$this->getDoctrine()->getManager('default');
 
-    $dql =$defaultEntityManager->createQuery(' SELECT o FROM App\Entity\CjOffres o');
+    $dql =$defaultEntityManager->createQuery(' SELECT o FROM App\Entity\CjOffres o ORDER BY o.id DESC ');
     $paginator =$container->get('knp_paginator');
     $result = $paginator->paginate($dql,$request->query->getInt('page', 1),15);
     return ($result); 

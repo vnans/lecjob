@@ -74,11 +74,11 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
     
   
   <!-- Heading Row -->
-      <div class=\"row my-4\">
-        <div class=\"col-lg-2\">
+      <div class=\"row my-4\" id=\"\">
+        <div class=\"col-lg-2\" id=\"pub1\">
           ";
         // line 15
-        echo "         <img src=\"img/eal3.jpg\" alt=\"\"> 
+        echo "         <img src=\"img/eal3.jpg\" alt=\"pub1\"> 
         ";
         // line 17
         echo "        </div>
@@ -89,7 +89,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
   <section id=\"intro\">
 
     <div class=\"intro-container\">
-
+      
       <div id=\"introCarousel\" class=\"carousel  slide carousel-fade\" data-ride=\"carousel\">
 
         <ol class=\"carousel-indicators\"></ol>
@@ -127,9 +127,8 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
         echo "                <a href=\"";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
         echo "\" class=\"btn-get-started scrollto\">POSTULER ICI  </a>
-                ";
-        // line 74
-        echo "                <p>
+                
+                <p>
                     
                   
                 </p>
@@ -142,13 +141,12 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
             <div class=\"carousel-container\">
               <div class=\"carousel-content\">
                 ";
-        // line 88
+        // line 80
         echo "                <a href=\"";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_index");
         echo "\" class=\"btn-get-started scrollto\">POSTULER ICI  </a>
-                ";
-        // line 99
-        echo "                <p>
+                
+                <p>
                    
                   
                 </p>
@@ -171,7 +169,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
 
       </div>
       ";
-        // line 128
+        // line 111
         echo "<!-- #facts -->
 
     </div>
@@ -179,7 +177,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
   </section><!-- #intro -->
         </div>
         <!-- /.col-lg-8 -->
-        <div class=\"col-lg-2\">
+        <div class=\"col-lg-2\" id=\"pub2\">
            <img src=\"img/eal3.jpg\" alt=\"\">
         </div>
         <!-- /.col-md-4 -->
@@ -216,7 +214,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
 
     public function getDebugInfo()
     {
-        return array (  175 => 128,  151 => 99,  146 => 88,  132 => 74,  127 => 64,  112 => 49,  108 => 39,  84 => 17,  81 => 15,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
+        return array (  173 => 111,  145 => 80,  127 => 64,  112 => 49,  108 => 39,  84 => 17,  81 => 15,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -231,11 +229,11 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
     
   
   <!-- Heading Row -->
-      <div class=\"row my-4\">
-        <div class=\"col-lg-2\">
+      <div class=\"row my-4\" id=\"\">
+        <div class=\"col-lg-2\" id=\"pub1\">
           {# <h1>ESPACE A LOUER</h1>
           <p>VOTRE ESPACE PUB</p> #}
-         <img src=\"img/eal3.jpg\" alt=\"\"> 
+         <img src=\"img/eal3.jpg\" alt=\"pub1\"> 
         {#   <a class=\"btn btn-primary btn-lg\" href=\"#\">Call to Action!</a> #}
         </div>
         <div class=\"col-lg-8\">
@@ -245,7 +243,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
   <section id=\"intro\">
 
     <div class=\"intro-container\">
-
+      
       <div id=\"introCarousel\" class=\"carousel  slide carousel-fade\" data-ride=\"carousel\">
 
         <ol class=\"carousel-indicators\"></ol>
@@ -285,15 +283,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
                 {# <h2 style=\"color:#000 ;\">CJOB AU 98025</h2>
                 <p style=\"color:#000;\">Reçevez des offres d'emploi par SMS</p> #}
                 <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">POSTULER ICI  </a>
-                {# <p>
-                  
-                  <ul class=\"nav-menu\">
-                  <li class=\"\"><a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Informatique</a> </li>
-                  <li><a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">banque</a></li>
-                  <li><a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Communication</a></li>
-         
-                  </ul>
-                </p> #}
+                
                 <p>
                     
                   
@@ -309,16 +299,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
                 {# <h2 style=\"color:#000 ;\">CJOB AU 98025</h2>
                 <p style=\"color:#000;\">Reçevez des offres d'emploi par SMS</p> #}
                 <a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">POSTULER ICI  </a>
-                {# <p>
-                  
-                  <ul class=\"nav-menu\">
-                  <li class=\"\"><a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Informatique</a> </li>
-                  <li><a hre
-                  f=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">banque</a></li>
-                  <li><a href=\"{{ path('cj_offres_index') }}\" class=\"btn-get-started scrollto\">Communication</a></li>
-         
-                  </ul>
-                </p> #}
+                
                 <p>
                    
                   
@@ -355,7 +336,7 @@ class __TwigTemplate_aeed3b5e634fc6effef78960777d064966ccb0f690d40834b3f745372f8
   </section><!-- #intro -->
         </div>
         <!-- /.col-lg-8 -->
-        <div class=\"col-lg-2\">
+        <div class=\"col-lg-2\" id=\"pub2\">
            <img src=\"img/eal3.jpg\" alt=\"\">
         </div>
         <!-- /.col-md-4 -->

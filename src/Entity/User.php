@@ -19,5 +19,23 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $iduser;
+
+    public function getIduser(): ?int
+    {
+        return $this->iduser;
+    }
+
+    public function setIduser(int $iduser): self
+    {
+        $this->iduser = $iduser;
+
+        return $this;
+    }
+
+
     
 }

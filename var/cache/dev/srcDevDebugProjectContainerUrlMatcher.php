@@ -78,6 +78,7 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     '/contact' => array(array('_route' => 'contact', '_controller' => 'App\\Controller\\DefaultController::contact'), null, null, null),
                     '/alcalistore' => array(array('_route' => 'alcalistore', '_controller' => 'App\\Controller\\DefaultController::alcalistore'), null, null, null),
                     '/alcalistech' => array(array('_route' => 'alcalistech', '_controller' => 'App\\Controller\\DefaultController::alcalistech'), null, null, null),
+                    '/test' => array(array('_route' => 'test', '_controller' => 'App\\Controller\\DefaultController::test'), null, null, null),
                     '/search' => array(array('_route' => 'search', '_controller' => 'App\\Controller\\SearchController::recherche'), null, array('POST' => 0), null),
                     '/_profiler/' => array(array('_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'), null, null, null),
                     '/_profiler/search' => array(array('_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'), null, null, null),

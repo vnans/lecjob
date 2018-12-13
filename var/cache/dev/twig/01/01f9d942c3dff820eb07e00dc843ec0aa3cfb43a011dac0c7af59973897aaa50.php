@@ -93,19 +93,12 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
           ";
         } else {
             // line 62
-            echo "             <li class=\"menu-has-children\"><a href=\"\">Se connecter</a>
-              <ul>
-                <li><a href=\"";
-            // line 64
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client");
-            echo "\">Abonné</a></li>
-                <li><a href=\"";
-            // line 65
+            echo "             <li class=\"menu-has-children\"><a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_login");
-            echo "\">Partenaire</a></li>
-               
-              </ul>
-          </li>
+            echo "\">Se connecter</a>
+             ";
+            // line 68
+            echo "          </li>
             ";
             // line 70
             echo "          ";
@@ -140,9 +133,16 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
             // line 83
             echo "           <li class=\"menu-has-children\"><a href=\"\">Mon Profile</a>
               <ul>
-                ";
+                <li><a href=\"";
+            // line 85
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_profile_show");
+            echo "\">Mes infos.</a></li>
+                <li><a href=\"";
+            // line 86
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_change_password");
+            echo "\">Modifier mon mot de passe</a></li>
+                <li><a href=\"";
             // line 87
-            echo "<li><a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_logout");
             echo "\">se déconnecter</a></li>
               </ul>
@@ -192,14 +192,14 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
        ";
         // line 125
         $this->displayBlock('footer', $context, $blocks);
-        // line 139
+        // line 181
         echo "
         
 
         ";
-        // line 142
+        // line 184
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 164
+        // line 206
         echo "    </body>
 </html>
 ";
@@ -329,10 +329,54 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
    
       <div class=\"credits\"> 
         
-      copyright &copy; 2018  <a href=\"https://alcalis.tech\"> Alcalis Technologies</a>
+      copyright &copy; 2018  <a href=\"https://alcalis.tech\"> ALCALIS TECHNOLOGIES</a>
       </div>
     </div>
-  </footer><!-- #footer -->       
+  </footer><!-- #footer -->    
+
+ ";
+        // line 139
+        if (((isset($context["popup"]) || array_key_exists("popup", $context)) && ((isset($context["popup"]) || array_key_exists("popup", $context) ? $context["popup"] : (function () { throw new Twig_Error_Runtime('Variable "popup" does not exist.', 139, $this->source); })()) == 1))) {
+            // line 140
+            echo "   <script type=\"text/javascript\">setTimeout(\"\$('#NewsletterModal').modal('show');\", 2000); </script>
+";
+        }
+        // line 142
+        echo "  
+
+
+
+<div class=\"modal fade\" id=\"NewsletterModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"NewsletterModalLabel\" aria-hidden=\"true\">
+      <div class=\"modal-dialog\" role=\"document\">
+        <div class=\"modal-content\">
+       
+        
+          <div class=\"modal-header\">
+            <h4 class=\"modal-title\" id=\"exampleModalLabel\">Info sécurité</h4>
+            <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+              <span aria-hidden=\"true\">&times;</span>
+            </button>
+          </div>
+          <div class=\"modal-body\">
+             <div class=\"modal-content\">
+              <div class=\"alert alert-danger text-center\" role=\"alert\">
+              <a href=\"";
+        // line 160
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_change_password");
+        echo "\">Modifier vôtre mot de passe</a>  par defaut pour plus de sécurité.
+            </div>
+             </div>
+             
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+";
+        // line 178
+        echo "
+
        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -342,7 +386,7 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
 
     }
 
-    // line 142
+    // line 184
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -351,70 +395,70 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 143
+        // line 185
         echo "
   <!-- JavaScript Libraries -->
   <script src=\"";
-        // line 145
+        // line 187
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 146
+        // line 188
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/jquery/jquery-migrate.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 147
+        // line 189
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 148
+        // line 190
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/easing/easing.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 149
+        // line 191
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/superfish/hoverIntent.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 150
+        // line 192
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/superfish/superfish.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 151
+        // line 193
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/wow/wow.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 152
+        // line 194
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/waypoints/waypoints.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 153
+        // line 195
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/counterup/counterup.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 154
+        // line 196
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/owlcarousel/owl.carousel.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 155
+        // line 197
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/isotope/isotope.pkgd.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 156
+        // line 198
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/lightbox/js/lightbox.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 157
+        // line 199
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/touchSwipe/jquery.touchSwipe.min.js"), "html", null, true);
         echo "\"></script>
   <!-- Contact Form JavaScript File -->
   <script src=\"";
-        // line 159
+        // line 201
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contactform/contactform.js"), "html", null, true);
         echo "\"></script>
 
   <!-- Template Main Javascript File -->
   <script src=\"";
-        // line 162
+        // line 204
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/main.js"), "html", null, true);
         echo "\"></script>
  ";
@@ -438,7 +482,7 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
 
     public function getDebugInfo()
     {
-        return array (  418 => 162,  412 => 159,  407 => 157,  403 => 156,  399 => 155,  395 => 154,  391 => 153,  387 => 152,  383 => 151,  379 => 150,  375 => 149,  371 => 148,  367 => 147,  363 => 146,  359 => 145,  355 => 143,  346 => 142,  315 => 125,  297 => 122,  283 => 28,  277 => 25,  273 => 24,  269 => 23,  265 => 22,  261 => 21,  255 => 18,  249 => 15,  242 => 10,  233 => 9,  215 => 5,  203 => 164,  201 => 142,  196 => 139,  194 => 125,  190 => 123,  188 => 122,  157 => 93,  153 => 91,  145 => 87,  141 => 83,  139 => 82,  132 => 78,  128 => 77,  124 => 76,  120 => 74,  118 => 73,  114 => 71,  111 => 70,  104 => 65,  100 => 64,  96 => 62,  92 => 60,  90 => 59,  87 => 58,  85 => 57,  80 => 55,  75 => 54,  63 => 44,  49 => 32,  47 => 9,  40 => 5,  34 => 1,);
+        return array (  462 => 204,  456 => 201,  451 => 199,  447 => 198,  443 => 197,  439 => 196,  435 => 195,  431 => 194,  427 => 193,  423 => 192,  419 => 191,  415 => 190,  411 => 189,  407 => 188,  403 => 187,  399 => 185,  390 => 184,  378 => 178,  365 => 160,  345 => 142,  341 => 140,  339 => 139,  315 => 125,  297 => 122,  283 => 28,  277 => 25,  273 => 24,  269 => 23,  265 => 22,  261 => 21,  255 => 18,  249 => 15,  242 => 10,  233 => 9,  215 => 5,  203 => 206,  201 => 184,  196 => 181,  194 => 125,  190 => 123,  188 => 122,  157 => 93,  153 => 91,  146 => 87,  142 => 86,  138 => 85,  134 => 83,  132 => 82,  125 => 78,  121 => 77,  117 => 76,  113 => 74,  111 => 73,  107 => 71,  104 => 70,  101 => 68,  96 => 62,  92 => 60,  90 => 59,  87 => 58,  85 => 57,  80 => 55,  75 => 54,  63 => 44,  49 => 32,  47 => 9,  40 => 5,  34 => 1,);
     }
 
     public function getSourceContext()
@@ -504,18 +548,18 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
           {% elseif is_granted('ROLE_USER') or (user is defined and user == 'abonne') %}
              Salut ! 
           {% else %}
-             <li class=\"menu-has-children\"><a href=\"\">Se connecter</a>
-              <ul>
+             <li class=\"menu-has-children\"><a href=\"{{ path('fos_user_security_login')}}\">Se connecter</a>
+             {#  <ul>
                 <li><a href=\"{{ path('client') }}\">Abonné</a></li>
                 <li><a href=\"{{ path('fos_user_security_login')}}\">Partenaire</a></li>
                
-              </ul>
+              </ul> #}
           </li>
             {# <a href=\"{{  path('fos_user_security_login')}}\" >Se connecter</a> #}
           {% endif %}
           </li>
         
-            {% if is_granted('ROLE_ADMIN')  %}
+            {% if is_granted('ROLE_ADMIN')   %}
             <li class=\"menu-has-children\"><a href=\"\">Mon Profil</a>
               <ul>
                 <li><a href=\"{{ path('fos_user_profile_show') }}\">Mes infos.</a></li>
@@ -527,9 +571,9 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
           {% elseif is_granted('ROLE_USER') or (user is defined and user == 'abonne') %}
            <li class=\"menu-has-children\"><a href=\"\">Mon Profile</a>
               <ul>
-                {# <li><a href=\"{{ path('fos_user_profile_show') }}\">Mes infos.</a></li>
+                <li><a href=\"{{ path('fos_user_profile_show') }}\">Mes infos.</a></li>
                 <li><a href=\"{{ path('fos_user_change_password') }}\">Modifier mon mot de passe</a></li>
-                 #}<li><a href=\"{{ path('fos_user_security_logout')}}\">se déconnecter</a></li>
+                <li><a href=\"{{ path('fos_user_security_logout')}}\">se déconnecter</a></li>
               </ul>
           </li>  
           {% else %}
@@ -576,10 +620,52 @@ class __TwigTemplate_0867a2bed3eb2e74994f9f3a48ecebb0bd5ccd970b20f5512a3d3f9ff29
    
       <div class=\"credits\"> 
         
-      copyright &copy; 2018  <a href=\"https://alcalis.tech\"> Alcalis Technologies</a>
+      copyright &copy; 2018  <a href=\"https://alcalis.tech\"> ALCALIS TECHNOLOGIES</a>
       </div>
     </div>
-  </footer><!-- #footer -->       
+  </footer><!-- #footer -->    
+
+ {% if popup is defined and popup == 1 %}
+   <script type=\"text/javascript\">setTimeout(\"\$('#NewsletterModal').modal('show');\", 2000); </script>
+{% endif %}
+  
+
+
+
+<div class=\"modal fade\" id=\"NewsletterModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"NewsletterModalLabel\" aria-hidden=\"true\">
+      <div class=\"modal-dialog\" role=\"document\">
+        <div class=\"modal-content\">
+       
+        
+          <div class=\"modal-header\">
+            <h4 class=\"modal-title\" id=\"exampleModalLabel\">Info sécurité</h4>
+            <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+              <span aria-hidden=\"true\">&times;</span>
+            </button>
+          </div>
+          <div class=\"modal-body\">
+             <div class=\"modal-content\">
+              <div class=\"alert alert-danger text-center\" role=\"alert\">
+              <a href=\"{{ path('fos_user_change_password') }}\">Modifier vôtre mot de passe</a>  par defaut pour plus de sécurité.
+            </div>
+             </div>
+             
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+{# <div class=\"alert alert-danger text-center\" role=\"alert\">
+              {% for message in app.flashes('info_Mdp') %} 
+                <div class=\"alert alert-danger text-center\" role=\"alert\">
+               {{ message }} Modifier votre mot de passe par defaut  <a href=\"{{ path('fos_user_security_login')}} \"> modifier le ici </a>    
+              </div>
+              {% endfor %}        
+            </div>
+ #}
+
+
        {% endblock %}
 
         

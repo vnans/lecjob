@@ -190,7 +190,17 @@ class __TwigTemplate_98e1d05f723713be980147e1225c9d783eae32415f5555a7889312bcde4
         }
         // line 75
         echo "     
-    
+     ";
+        // line 76
+        if ((isset($context["recordMessage"]) || array_key_exists("recordMessage", $context))) {
+            // line 77
+            echo "        ";
+            echo twig_escape_filter($this->env, (isset($context["recordMessage"]) || array_key_exists("recordMessage", $context) ? $context["recordMessage"] : (function () { throw new Twig_Error_Runtime('Variable "recordMessage" does not exist.', 77, $this->source); })()), "html", null, true);
+            echo "
+     ";
+        }
+        // line 79
+        echo "    
 </section>
     
   
@@ -204,8 +214,8 @@ class __TwigTemplate_98e1d05f723713be980147e1225c9d783eae32415f5555a7889312bcde4
           <h3>Description de l'offre</h3>
           <div>
               <p>";
-        // line 89
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["cj_offre"]) || array_key_exists("cj_offre", $context) ? $context["cj_offre"] : (function () { throw new Twig_Error_Runtime('Variable "cj_offre" does not exist.', 89, $this->source); })()), "description", array()), "html", null, true);
+        // line 92
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["cj_offre"]) || array_key_exists("cj_offre", $context) ? $context["cj_offre"] : (function () { throw new Twig_Error_Runtime('Variable "cj_offre" does not exist.', 92, $this->source); })()), "description", array()), "html", null, true);
         echo "</p>
           </div>
           
@@ -214,7 +224,7 @@ class __TwigTemplate_98e1d05f723713be980147e1225c9d783eae32415f5555a7889312bcde4
 
    
     ";
-        // line 102
+        // line 105
         echo "<!-- #clients -->
 
    ";
@@ -238,7 +248,7 @@ class __TwigTemplate_98e1d05f723713be980147e1225c9d783eae32415f5555a7889312bcde4
 
     public function getDebugInfo()
     {
-        return array (  218 => 102,  208 => 89,  192 => 75,  186 => 72,  182 => 71,  179 => 70,  177 => 69,  171 => 66,  162 => 60,  155 => 56,  148 => 52,  139 => 48,  132 => 44,  124 => 39,  117 => 35,  110 => 31,  103 => 27,  88 => 16,  77 => 10,  72 => 7,  63 => 6,  45 => 3,  15 => 1,);
+        return array (  228 => 105,  218 => 92,  203 => 79,  197 => 77,  195 => 76,  192 => 75,  186 => 72,  182 => 71,  179 => 70,  177 => 69,  171 => 66,  162 => 60,  155 => 56,  148 => 52,  139 => 48,  132 => 44,  124 => 39,  117 => 35,  110 => 31,  103 => 27,  88 => 16,  77 => 10,  72 => 7,  63 => 6,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -318,6 +328,9 @@ class __TwigTemplate_98e1d05f723713be980147e1225c9d783eae32415f5555a7889312bcde4
 
 {% endif %}
      
+     {% if recordMessage is defined %}
+        {{ recordMessage }}
+     {% endif %}
     
 </section>
     

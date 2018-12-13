@@ -1,33 +1,33 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{% if is_granted('ROLE_ADMIN') %}
-
+{# {% if is_granted('ROLE_ADMIN') %}{% else %}{% endif %} #}
+ <br><br><br><br><br>
 <table class="table table-dark">
   <thead>
     <tr>
       <th scope="col">id</th>
       <th scope="col">username</th>
-      <th scope="col">tel</th>
-      <th scope="col">smsc</th>
+      <th scope="col">pass</th>
+      <th scope="col">email</th>
     </tr>
   </thead>
   <tbody>
     {% for offres in offre %}
   <tr>
       <th scope="row"> {{offres.id}} </th>
-      <td>{{offres.libelle}}</td>
-      <td>{{offres.niveau}}</td>
-      <td>{{offres.experience}}</td>
+      <td>{{offres.username}}</td>
+      <td>{{offres.password}}</td>
+      <td>{{offres.email}}</td>
     </tr>
   {% endfor %}
   
   </tbody>
 </table>
-{% else %}
-  <br><br><br><br><br>
+
+  {# <br><br><br><br><br>
   <div class="alert alert-danger" role="alert">
     Vous n'est pas le bienvenu
-  </div>
-{% endif %}
+  </div> #}
+
 {% endblock %}

@@ -3,6 +3,8 @@
 /.env
 /public/bundles/
 /var/
+∕translations
+
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

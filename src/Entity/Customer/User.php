@@ -39,7 +39,7 @@ class User
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $username;
+    public $username;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)

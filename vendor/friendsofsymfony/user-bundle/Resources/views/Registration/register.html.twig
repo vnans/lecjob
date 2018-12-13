@@ -1,9 +1,10 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
 {% block fos_user_content %}
-	      {% if is_granted('ROLE_ADMIN')  %}
+	<br><br><br><br>
+	   {#    {% if is_granted('ROLE_ADMIN')  %} #}
             {% include "@FOSUser/Registration/register_content.html.twig" %}
-          {% else %}
+         {#  {% else %}
           	<h1 class="form-heading">
 			  <div class="row">
 			  <div class="alert alert-danger alert-dismissible" role="alert">
@@ -13,6 +14,6 @@
 			  </div>
 			</h1>
  
-          {% endif %}
+          {% endif %} #} 
 
 {% endblock fos_user_content %}

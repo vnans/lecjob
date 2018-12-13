@@ -69,7 +69,10 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo " <!--==========================
+        echo "  <div class=\"container-fluid\">
+
+    
+    <!--==========================
       About Us Section
     ============================--> 
     <section id=\"about\">
@@ -80,21 +83,25 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
 
     
           ";
-        // line 36
+        // line 39
         echo "        </header>
     ";
-        // line 42
-        echo "    ";
+        // line 45
+        echo "
+
+
+    ";
+        // line 48
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 42, $this->source); })()), "flashes", array(0 => "info"), "method"));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 48, $this->source); })()), "flashes", array(0 => "info"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             echo " 
         <div class=\"alert alert-danger text-center\" role=\"alert\">
         ";
-            // line 44
+            // line 50
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo " sur les offres <a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client");
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_login");
             echo " \">connectez-vous ici</a>  
       </div>
     ";
@@ -102,8 +109,13 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
+        // line 53
         echo "
+     
+     ";
+        // line 56
+        echo "    
+
 <div>
  
 
@@ -113,7 +125,7 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
 
 
 ";
-        // line 62
+        // line 72
         echo "
   
    
@@ -122,65 +134,66 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
       <div class=\"row about-cols\">
           
      ";
-        // line 69
+        // line 79
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["cj_offres"]) || array_key_exists("cj_offres", $context) ? $context["cj_offres"] : (function () { throw new Twig_Error_Runtime('Variable "cj_offres" does not exist.', 69, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["cj_offres"]) || array_key_exists("cj_offres", $context) ? $context["cj_offres"] : (function () { throw new Twig_Error_Runtime('Variable "cj_offres" does not exist.', 79, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["cj_offre"]) {
-            // line 70
+            // line 80
             echo "          <div class=\"col-md-3 wow fadeInUp\"> 
             <div class=\"about-col\">
               <div class=\"img\">
                <a href=\"";
-            // line 73
+            // line 83
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_show", array("id" => twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()))), "html", null, true);
             echo "\"><img src=\" ";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/offres/"), "html", null, true);
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "image", array()), "html", null, true);
             echo " \" alt=\"\" class=\"img-fluid\"></a> 
                ";
-            // line 75
+            // line 85
             echo "              </div>
               <h2 class=\"title\"><a href=\" ";
-            // line 76
+            // line 86
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_show", array("id" => twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()))), "html", null, true);
             echo " \"> <b></b> ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "type", array()), "html", null, true);
             echo " </a></h2>
               <h2>";
-            // line 77
+            // line 87
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "libelle", array()), "html", null, true);
             echo "</h2> 
             
                <p>
                 <b>Récruteur :</b> ";
-            // line 80
+            // line 90
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "recruteur", array()), "html", null, true);
             echo "
               </p>
               <p>
-                <b>Date limite :</b> ";
-            // line 83
-            echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dateFin", array())) ? (twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dateFin", array()), "d-m-y H:i:s")) : ("")), "html", null, true);
+               ";
+            // line 94
+            echo "                <b>Date limite :</b> ";
+            echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dateFin", array())) ? (twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dateFin", array()), "d-m-y")) : ("")), "html", null, true);
             echo "
               </p>
               <p><a href=\"";
-            // line 85
+            // line 96
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_show", array("id" => twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()))), "html", null, true);
             echo "\"> <button class=\"btn btn-primary\" >Suite</button> </a>  </p>
 
               ";
-            // line 87
+            // line 98
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 88
+                // line 99
                 echo "               <a href=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()))), "html", null, true);
                 echo "\"> <button class=\"btn btn-primary\" > Modifier cette offre</button> </a>         
               ";
             }
-            // line 90
+            // line 101
             echo "
               ";
-            // line 93
+            // line 104
             echo "              
             </div>
           </div>
@@ -190,7 +203,7 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['cj_offre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 97
+        // line 108
         echo "      
 
           </div>
@@ -205,8 +218,8 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
 
 <div class=\"pagination\">
     ";
-        // line 110
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["cj_offres"]) || array_key_exists("cj_offres", $context) ? $context["cj_offres"] : (function () { throw new Twig_Error_Runtime('Variable "cj_offres" does not exist.', 110, $this->source); })()));
+        // line 121
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["cj_offres"]) || array_key_exists("cj_offres", $context) ? $context["cj_offres"] : (function () { throw new Twig_Error_Runtime('Variable "cj_offres" does not exist.', 121, $this->source); })()));
         echo "
 </div>
       </div>
@@ -215,9 +228,9 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
 
  
               ";
-        // line 117
+        // line 128
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 118
+            // line 129
             echo "  <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_new");
             echo "\">  <button class=\"btn btn-primary\" >Ajouter une offre</button> </a>             
@@ -244,80 +257,80 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
         </thead>
         <tbody>
         ";
-            // line 141
+            // line 152
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["cj_offres"]) || array_key_exists("cj_offres", $context) ? $context["cj_offres"] : (function () { throw new Twig_Error_Runtime('Variable "cj_offres" does not exist.', 141, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["cj_offres"]) || array_key_exists("cj_offres", $context) ? $context["cj_offres"] : (function () { throw new Twig_Error_Runtime('Variable "cj_offres" does not exist.', 152, $this->source); })()));
             $context['_iterated'] = false;
             foreach ($context['_seq'] as $context["_key"] => $context["cj_offre"]) {
-                // line 142
+                // line 153
                 echo "            <tr>
                 <td>";
-                // line 143
+                // line 154
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 144
+                // line 155
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "type", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 145
+                // line 156
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "libelle", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 146
+                // line 157
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "metier", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 147
+                // line 158
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "niveau", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 148
+                // line 159
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "experience", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 149
+                // line 160
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "lieu", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 150
+                // line 161
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "description", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 151
+                // line 162
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "recruteur", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 152
+                // line 163
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "tel", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 153
+                // line 164
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "email", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 154
+                // line 165
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dossier", array()), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 155
+                // line 166
                 echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dateAjout", array())) ? (twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dateAjout", array()), "Y-m-d H:i:s")) : ("")), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 156
+                // line 167
                 echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dateFin", array())) ? (twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "dateFin", array()), "Y-m-d H:i:s")) : ("")), "html", null, true);
                 echo "</td>
                 <td>";
-                // line 157
+                // line 168
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cj_offre"], "image", array()), "html", null, true);
                 echo "</td>
                 <td>
                     <a href=\"";
-                // line 159
+                // line 170
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_show", array("id" => twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()))), "html", null, true);
                 echo "\">Détails</a>
                     <a href=\"";
-                // line 160
+                // line 171
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["cj_offre"], "id", array()))), "html", null, true);
                 echo "\">Modifier</a>
                 </td>
@@ -326,7 +339,7 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
                 $context['_iterated'] = true;
             }
             if (!$context['_iterated']) {
-                // line 164
+                // line 175
                 echo "            <tr>
                 <td colspan=\"16\">Aucune donnée trouvée</td>
             </tr>
@@ -335,18 +348,20 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['cj_offre'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 168
+            // line 179
             echo "        </tbody>
     </table>
 
    <a href=\"";
-            // line 171
+            // line 182
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cj_offres_new");
             echo "\">  <button class=\"btn btn-primary\" >Ajouter une offre</button> </a>      
               ";
         }
-        // line 173
+        // line 184
         echo "   
+  </div>
+ 
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -368,7 +383,7 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
 
     public function getDebugInfo()
     {
-        return array (  349 => 173,  344 => 171,  339 => 168,  330 => 164,  321 => 160,  317 => 159,  312 => 157,  308 => 156,  304 => 155,  300 => 154,  296 => 153,  292 => 152,  288 => 151,  284 => 150,  280 => 149,  276 => 148,  272 => 147,  268 => 146,  264 => 145,  260 => 144,  256 => 143,  253 => 142,  248 => 141,  221 => 118,  219 => 117,  209 => 110,  194 => 97,  184 => 93,  181 => 90,  175 => 88,  173 => 87,  168 => 85,  163 => 83,  157 => 80,  151 => 77,  145 => 76,  142 => 75,  135 => 73,  130 => 70,  126 => 69,  117 => 62,  106 => 47,  95 => 44,  87 => 42,  84 => 36,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
+        return array (  362 => 184,  357 => 182,  352 => 179,  343 => 175,  334 => 171,  330 => 170,  325 => 168,  321 => 167,  317 => 166,  313 => 165,  309 => 164,  305 => 163,  301 => 162,  297 => 161,  293 => 160,  289 => 159,  285 => 158,  281 => 157,  277 => 156,  273 => 155,  269 => 154,  266 => 153,  261 => 152,  234 => 129,  232 => 128,  222 => 121,  207 => 108,  197 => 104,  194 => 101,  188 => 99,  186 => 98,  181 => 96,  175 => 94,  169 => 90,  163 => 87,  157 => 86,  154 => 85,  147 => 83,  142 => 80,  138 => 79,  129 => 72,  117 => 56,  113 => 53,  102 => 50,  95 => 48,  90 => 45,  87 => 39,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -378,7 +393,10 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
 {% block title %} Offres d'emploi{% endblock %}
 
 {% block body %}
- <!--==========================
+  <div class=\"container-fluid\">
+
+    
+    <!--==========================
       About Us Section
     ============================--> 
     <section id=\"about\">
@@ -414,11 +432,18 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
         <p class=\"alert alert-danger text-center\" role=\"alert\">Connectez vous <a href=\"\">ici</a> pour bénéficier de plus de détails </p>
       </div>
     {% endif %}  #}
+
+
+
     {% for message in app.flashes('info') %} 
         <div class=\"alert alert-danger text-center\" role=\"alert\">
-        {{ message }} sur les offres <a href=\"{{ path('client')}} \">connectez-vous ici</a>  
+        {{ message }} sur les offres <a href=\"{{ path('fos_user_security_login')}} \">connectez-vous ici</a>  
       </div>
     {% endfor %}
+
+     
+     {#  <div> <p> {{ \$session->get('recordMessage') }}</p> </div>   #}
+    
 
 <div>
  
@@ -455,7 +480,8 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
                 <b>Récruteur :</b> {{ cj_offre.recruteur }}
               </p>
               <p>
-                <b>Date limite :</b> {{ cj_offre.dateFin ? cj_offre.dateFin|date('d-m-y H:i:s') : '' }}
+               {#  <b>Date limite :</b> {{ cj_offre.dateFin ? cj_offre.dateFin|date('d-m-y H:i:s') : '' }} #}
+                <b>Date limite :</b> {{ cj_offre.dateFin ? cj_offre.dateFin|date('d-m-y') : '' }}
               </p>
               <p><a href=\"{{ path('cj_offres_show', {'id': cj_offre.id}) }}\"> <button class=\"btn btn-primary\" >Suite</button> </a>  </p>
 
@@ -546,6 +572,8 @@ class __TwigTemplate_29b832b03611ed511f648e348946f6d504fe4697d14b10a8b577453b94c
    <a href=\"{{ path('cj_offres_new') }}\">  <button class=\"btn btn-primary\" >Ajouter une offre</button> </a>      
               {% endif %}
    
+  </div>
+ 
 {% endblock %}
 ", "cj_offres/index.html.twig", "/var/www/lecjob/templates/cj_offres/index.html.twig");
     }

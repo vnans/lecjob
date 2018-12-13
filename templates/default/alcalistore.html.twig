@@ -2,7 +2,8 @@
 
 
 {% block body %}
-{% if is_granted('ROLE_ADMIN') %}
+{# {% if is_granted('ROLE_ADMIN') %}{% else %}{% endif %} #}
+
   <table class="table table-dark">
   <thead>
     <tr>
@@ -15,19 +16,18 @@
   <tbody>
     {% for abonnes in abonne %}
   <tr>
-      <th scope="row"> {{abonnes.id}} </th>
+      <th scope="row"> 1 </th>
       <td>{{abonnes.username}}</td>
-      <td>{{abonnes.tel}}</td>
-      <td>{{abonnes.smsc}}</td>
+      <td>{{abonnes.username}}</td>
+      <td>{{abonnes.username}}</td>
     </tr>
   {% endfor %}
   
   </tbody>
 </table>
-{% else %}
-  <br><br><br><br><br><br>
-  <div class="alert alert-danger" role="alert"> Vous n'est pas le bienvenu</div>
-{% endif %}
+
+ {#  <br><br><br><br><br><br>
+  <div class="alert alert-danger" role="alert"> Vous n'est pas le bienvenu</div> #}
 
 
 {% endblock %}

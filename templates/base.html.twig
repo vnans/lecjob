@@ -59,18 +59,18 @@
           {% elseif is_granted('ROLE_USER') or (user is defined and user == 'abonne') %}
              Salut ! 
           {% else %}
-             <li class="menu-has-children"><a href="">Se connecter</a>
-              <ul>
+             <li class="menu-has-children"><a href="{{ path('fos_user_security_login')}}">Se connecter</a>
+             {#  <ul>
                 <li><a href="{{ path('client') }}">Abonné</a></li>
                 <li><a href="{{ path('fos_user_security_login')}}">Partenaire</a></li>
                
-              </ul>
+              </ul> #}
           </li>
             {# <a href="{{  path('fos_user_security_login')}}" >Se connecter</a> #}
           {% endif %}
           </li>
         
-            {% if is_granted('ROLE_ADMIN')  %}
+            {% if is_granted('ROLE_ADMIN')   %}
             <li class="menu-has-children"><a href="">Mon Profil</a>
               <ul>
                 <li><a href="{{ path('fos_user_profile_show') }}">Mes infos.</a></li>
@@ -82,9 +82,9 @@
           {% elseif is_granted('ROLE_USER') or (user is defined and user == 'abonne') %}
            <li class="menu-has-children"><a href="">Mon Profile</a>
               <ul>
-                {# <li><a href="{{ path('fos_user_profile_show') }}">Mes infos.</a></li>
+                <li><a href="{{ path('fos_user_profile_show') }}">Mes infos.</a></li>
                 <li><a href="{{ path('fos_user_change_password') }}">Modifier mon mot de passe</a></li>
-                 #}<li><a href="{{ path('fos_user_security_logout')}}">se déconnecter</a></li>
+                <li><a href="{{ path('fos_user_security_logout')}}">se déconnecter</a></li>
               </ul>
           </li>  
           {% else %}
@@ -131,10 +131,52 @@
    
       <div class="credits"> 
         
-      copyright &copy; 2018  <a href="https://alcalis.tech"> Alcalis Technologies</a>
+      copyright &copy; 2018  <a href="https://alcalis.tech"> ALCALIS TECHNOLOGIES</a>
       </div>
     </div>
-  </footer><!-- #footer -->       
+  </footer><!-- #footer -->    
+
+ {% if popup is defined and popup == 1 %}
+   <script type="text/javascript">setTimeout("$('#NewsletterModal').modal('show');", 2000); </script>
+{% endif %}
+  
+
+
+
+<div class="modal fade" id="NewsletterModal" tabindex="-1" role="dialog" aria-labelledby="NewsletterModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+       
+        
+          <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Info sécurité</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+             <div class="modal-content">
+              <div class="alert alert-danger text-center" role="alert">
+              <a href="{{ path('fos_user_change_password') }}">Modifier vôtre mot de passe</a>  par defaut pour plus de sécurité.
+            </div>
+             </div>
+             
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+{# <div class="alert alert-danger text-center" role="alert">
+              {% for message in app.flashes('info_Mdp') %} 
+                <div class="alert alert-danger text-center" role="alert">
+               {{ message }} Modifier votre mot de passe par defaut  <a href="{{ path('fos_user_security_login')}} "> modifier le ici </a>    
+              </div>
+              {% endfor %}        
+            </div>
+ #}
+
+
        {% endblock %}
 
         

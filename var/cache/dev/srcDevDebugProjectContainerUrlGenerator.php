@@ -32,6 +32,7 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         'contact' => array(array(), array('_controller' => 'App\\Controller\\DefaultController::contact'), array(), array(array('text', '/contact')), array(), array()),
         'alcalistore' => array(array(), array('_controller' => 'App\\Controller\\DefaultController::alcalistore'), array(), array(array('text', '/alcalistore')), array(), array()),
         'alcalistech' => array(array(), array('_controller' => 'App\\Controller\\DefaultController::alcalistech'), array(), array(array('text', '/alcalistech')), array(), array()),
+        'test' => array(array(), array('_controller' => 'App\\Controller\\DefaultController::test'), array(), array(array('text', '/test')), array(), array()),
         'search' => array(array(), array('_controller' => 'App\\Controller\\SearchController::recherche'), array(), array(array('text', '/search')), array(), array()),
         '_twig_error_test' => array(array('code', '_format'), array('_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'), array('code' => '\\d+'), array(array('variable', '.', '[^/]++', '_format'), array('variable', '/', '\\d+', 'code'), array('text', '/_error')), array(), array()),
         '_wdt' => array(array('token'), array('_controller' => 'web_profiler.controller.profiler::toolbarAction'), array(), array(array('variable', '/', '[^/]++', 'token'), array('text', '/_wdt')), array(), array()),

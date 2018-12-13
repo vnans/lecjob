@@ -3,7 +3,10 @@
 {% block title %} Offres d'emploi{% endblock %}
 
 {% block body %}
- <!--==========================
+  <div class="container-fluid">
+
+    
+    <!--==========================
       About Us Section
     ============================--> 
     <section id="about">
@@ -39,11 +42,18 @@
         <p class="alert alert-danger text-center" role="alert">Connectez vous <a href="">ici</a> pour bénéficier de plus de détails </p>
       </div>
     {% endif %}  #}
+
+
+
     {% for message in app.flashes('info') %} 
         <div class="alert alert-danger text-center" role="alert">
-        {{ message }} sur les offres <a href="{{ path('client')}} ">connectez-vous ici</a>  
+        {{ message }} sur les offres <a href="{{ path('fos_user_security_login')}} ">connectez-vous ici</a>  
       </div>
     {% endfor %}
+
+     
+     {#  <div> <p> {{ $session->get('recordMessage') }}</p> </div>   #}
+    
 
 <div>
  
@@ -80,7 +90,8 @@
                 <b>Récruteur :</b> {{ cj_offre.recruteur }}
               </p>
               <p>
-                <b>Date limite :</b> {{ cj_offre.dateFin ? cj_offre.dateFin|date('d-m-y H:i:s') : '' }}
+               {#  <b>Date limite :</b> {{ cj_offre.dateFin ? cj_offre.dateFin|date('d-m-y H:i:s') : '' }} #}
+                <b>Date limite :</b> {{ cj_offre.dateFin ? cj_offre.dateFin|date('d-m-y') : '' }}
               </p>
               <p><a href="{{ path('cj_offres_show', {'id': cj_offre.id}) }}"> <button class="btn btn-primary" >Suite</button> </a>  </p>
 
@@ -171,4 +182,6 @@
    <a href="{{ path('cj_offres_new') }}">  <button class="btn btn-primary" >Ajouter une offre</button> </a>      
               {% endif %}
    
+  </div>
+ 
 {% endblock %}

@@ -4,6 +4,7 @@
 /public/bundles/
 /var/
 ∕translations
+/tests
 
 ###< symfony/framework-bundle ###
 

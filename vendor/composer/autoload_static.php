@@ -8,6 +8,8 @@ class ComposerStaticInit10066bb4892bc5c5098ed2d9d1155382
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
     );
@@ -25,12 +27,15 @@ class ComposerStaticInit10066bb4892bc5c5098ed2d9d1155382
         'S' => 
         array (
             'Symfony\\Requirements\\' => 21,
+            'Symfony\\Polyfill\\Php72\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Flex\\' => 13,
             'Symfony\\Component\\Yaml\\' => 23,
+            'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\Validator\\' => 28,
             'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\Templating\\' => 29,
+            'Symfony\\Component\\Stopwatch\\' => 28,
             'Symfony\\Component\\Security\\' => 27,
             'Symfony\\Component\\Routing\\' => 26,
             'Symfony\\Component\\PropertyAccess\\' => 33,
@@ -50,6 +55,7 @@ class ComposerStaticInit10066bb4892bc5c5098ed2d9d1155382
             'Symfony\\Component\\Config\\' => 25,
             'Symfony\\Component\\Cache\\' => 24,
             'Symfony\\Component\\Asset\\' => 24,
+            'Symfony\\Bundle\\WebProfilerBundle\\' => 33,
             'Symfony\\Bundle\\TwigBundle\\' => 26,
             'Symfony\\Bundle\\SwiftmailerBundle\\' => 33,
             'Symfony\\Bundle\\SecurityBundle\\' => 30,
@@ -101,6 +107,7 @@ class ComposerStaticInit10066bb4892bc5c5098ed2d9d1155382
         ),
         'A' => 
         array (
+            'App\\Tests\\' => 10,
             'App\\' => 4,
         ),
     );
@@ -122,6 +129,10 @@ class ComposerStaticInit10066bb4892bc5c5098ed2d9d1155382
         array (
             0 => __DIR__ . '/..' . '/symfony/requirements-checker/src',
         ),
+        'Symfony\\Polyfill\\Php72\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -134,6 +145,10 @@ class ComposerStaticInit10066bb4892bc5c5098ed2d9d1155382
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
         ),
+        'Symfony\\Component\\VarDumper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/var-dumper',
+        ),
         'Symfony\\Component\\Validator\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/validator',
@@ -145,6 +160,10 @@ class ComposerStaticInit10066bb4892bc5c5098ed2d9d1155382
         'Symfony\\Component\\Templating\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/templating',
+        ),
+        'Symfony\\Component\\Stopwatch\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/stopwatch',
         ),
         'Symfony\\Component\\Security\\' => 
         array (
@@ -221,6 +240,10 @@ class ComposerStaticInit10066bb4892bc5c5098ed2d9d1155382
         'Symfony\\Component\\Asset\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/asset',
+        ),
+        'Symfony\\Bundle\\WebProfilerBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/web-profiler-bundle',
         ),
         'Symfony\\Bundle\\TwigBundle\\' => 
         array (
@@ -344,6 +367,10 @@ class ComposerStaticInit10066bb4892bc5c5098ed2d9d1155382
         'Doctrine\\Bundle\\DoctrineBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/doctrine-bundle',
+        ),
+        'App\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests',
         ),
         'App\\' => 
         array (
@@ -2530,6 +2557,17 @@ class ComposerStaticInit10066bb4892bc5c5098ed2d9d1155382
         'Symfony\\Bundle\\TwigBundle\\TemplateIterator' => __DIR__ . '/..' . '/symfony/twig-bundle/TemplateIterator.php',
         'Symfony\\Bundle\\TwigBundle\\TwigBundle' => __DIR__ . '/..' . '/symfony/twig-bundle/TwigBundle.php',
         'Symfony\\Bundle\\TwigBundle\\TwigEngine' => __DIR__ . '/..' . '/symfony/twig-bundle/TwigEngine.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ExceptionController' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/Controller/ExceptionController.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ProfilerController' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/Controller/ProfilerController.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\Controller\\RouterController' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/Controller/RouterController.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\Csp\\ContentSecurityPolicyHandler' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/Csp/ContentSecurityPolicyHandler.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\Csp\\NonceGenerator' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/Csp/NonceGenerator.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/DependencyInjection/Configuration.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\DependencyInjection\\WebProfilerExtension' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/DependencyInjection/WebProfilerExtension.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\EventListener\\WebDebugToolbarListener' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/EventListener/WebDebugToolbarListener.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\Profiler\\TemplateManager' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/Profiler/TemplateManager.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/Twig/WebProfilerExtension.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/WebProfilerBundle.php',
         'Symfony\\Component\\Asset\\Context\\ContextInterface' => __DIR__ . '/..' . '/symfony/asset/Context/ContextInterface.php',
         'Symfony\\Component\\Asset\\Context\\NullContext' => __DIR__ . '/..' . '/symfony/asset/Context/NullContext.php',
         'Symfony\\Component\\Asset\\Context\\RequestStackContext' => __DIR__ . '/..' . '/symfony/asset/Context/RequestStackContext.php',
@@ -3806,6 +3844,10 @@ class ComposerStaticInit10066bb4892bc5c5098ed2d9d1155382
         'Symfony\\Component\\Security\\Http\\Util\\TargetPathTrait' => __DIR__ . '/..' . '/symfony/security/Http/Util/TargetPathTrait.php',
         'Symfony\\Component\\Security\\Tests\\Http\\Firewall\\UsernamePasswordFormAuthenticationListenerTest' => __DIR__ . '/..' . '/symfony/security/Http/Tests/Firewall/UsernamePasswordFormAuthenticationListenerTest.php',
         'Symfony\\Component\\Security\\Tests\\Http\\Firewall\\UsernamePasswordJsonAuthenticationListenerTest' => __DIR__ . '/..' . '/symfony/security/Http/Tests/Firewall/UsernamePasswordJsonAuthenticationListenerTest.php',
+        'Symfony\\Component\\Stopwatch\\Section' => __DIR__ . '/..' . '/symfony/stopwatch/Section.php',
+        'Symfony\\Component\\Stopwatch\\Stopwatch' => __DIR__ . '/..' . '/symfony/stopwatch/Stopwatch.php',
+        'Symfony\\Component\\Stopwatch\\StopwatchEvent' => __DIR__ . '/..' . '/symfony/stopwatch/StopwatchEvent.php',
+        'Symfony\\Component\\Stopwatch\\StopwatchPeriod' => __DIR__ . '/..' . '/symfony/stopwatch/StopwatchPeriod.php',
         'Symfony\\Component\\Templating\\DelegatingEngine' => __DIR__ . '/..' . '/symfony/templating/DelegatingEngine.php',
         'Symfony\\Component\\Templating\\EngineInterface' => __DIR__ . '/..' . '/symfony/templating/EngineInterface.php',
         'Symfony\\Component\\Templating\\Helper\\Helper' => __DIR__ . '/..' . '/symfony/templating/Helper/Helper.php',
@@ -4061,6 +4103,57 @@ class ComposerStaticInit10066bb4892bc5c5098ed2d9d1155382
         'Symfony\\Component\\Validator\\Validator\\ValidatorInterface' => __DIR__ . '/..' . '/symfony/validator/Validator/ValidatorInterface.php',
         'Symfony\\Component\\Validator\\Violation\\ConstraintViolationBuilder' => __DIR__ . '/..' . '/symfony/validator/Violation/ConstraintViolationBuilder.php',
         'Symfony\\Component\\Validator\\Violation\\ConstraintViolationBuilderInterface' => __DIR__ . '/..' . '/symfony/validator/Violation/ConstraintViolationBuilderInterface.php',
+        'Symfony\\Component\\VarDumper\\Caster\\AmqpCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/AmqpCaster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\ArgsStub' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/ArgsStub.php',
+        'Symfony\\Component\\VarDumper\\Caster\\Caster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/Caster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\ClassStub' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/ClassStub.php',
+        'Symfony\\Component\\VarDumper\\Caster\\ConstStub' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/ConstStub.php',
+        'Symfony\\Component\\VarDumper\\Caster\\CutArrayStub' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/CutArrayStub.php',
+        'Symfony\\Component\\VarDumper\\Caster\\CutStub' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/CutStub.php',
+        'Symfony\\Component\\VarDumper\\Caster\\DOMCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/DOMCaster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\DateCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/DateCaster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\DoctrineCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/DoctrineCaster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\EnumStub' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/EnumStub.php',
+        'Symfony\\Component\\VarDumper\\Caster\\ExceptionCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/ExceptionCaster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\FrameStub' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/FrameStub.php',
+        'Symfony\\Component\\VarDumper\\Caster\\GmpCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/GmpCaster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\LinkStub' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/LinkStub.php',
+        'Symfony\\Component\\VarDumper\\Caster\\PdoCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/PdoCaster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\PgSqlCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/PgSqlCaster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\RedisCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/RedisCaster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\ReflectionCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/ReflectionCaster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\ResourceCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/ResourceCaster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\SplCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/SplCaster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\StubCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/StubCaster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\SymfonyCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/SymfonyCaster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\TraceStub' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/TraceStub.php',
+        'Symfony\\Component\\VarDumper\\Caster\\XmlReaderCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/XmlReaderCaster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\XmlResourceCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/XmlResourceCaster.php',
+        'Symfony\\Component\\VarDumper\\Cloner\\AbstractCloner' => __DIR__ . '/..' . '/symfony/var-dumper/Cloner/AbstractCloner.php',
+        'Symfony\\Component\\VarDumper\\Cloner\\ClonerInterface' => __DIR__ . '/..' . '/symfony/var-dumper/Cloner/ClonerInterface.php',
+        'Symfony\\Component\\VarDumper\\Cloner\\Cursor' => __DIR__ . '/..' . '/symfony/var-dumper/Cloner/Cursor.php',
+        'Symfony\\Component\\VarDumper\\Cloner\\Data' => __DIR__ . '/..' . '/symfony/var-dumper/Cloner/Data.php',
+        'Symfony\\Component\\VarDumper\\Cloner\\DumperInterface' => __DIR__ . '/..' . '/symfony/var-dumper/Cloner/DumperInterface.php',
+        'Symfony\\Component\\VarDumper\\Cloner\\Stub' => __DIR__ . '/..' . '/symfony/var-dumper/Cloner/Stub.php',
+        'Symfony\\Component\\VarDumper\\Cloner\\VarCloner' => __DIR__ . '/..' . '/symfony/var-dumper/Cloner/VarCloner.php',
+        'Symfony\\Component\\VarDumper\\Command\\Descriptor\\CliDescriptor' => __DIR__ . '/..' . '/symfony/var-dumper/Command/Descriptor/CliDescriptor.php',
+        'Symfony\\Component\\VarDumper\\Command\\Descriptor\\DumpDescriptorInterface' => __DIR__ . '/..' . '/symfony/var-dumper/Command/Descriptor/DumpDescriptorInterface.php',
+        'Symfony\\Component\\VarDumper\\Command\\Descriptor\\HtmlDescriptor' => __DIR__ . '/..' . '/symfony/var-dumper/Command/Descriptor/HtmlDescriptor.php',
+        'Symfony\\Component\\VarDumper\\Command\\ServerDumpCommand' => __DIR__ . '/..' . '/symfony/var-dumper/Command/ServerDumpCommand.php',
+        'Symfony\\Component\\VarDumper\\Dumper\\AbstractDumper' => __DIR__ . '/..' . '/symfony/var-dumper/Dumper/AbstractDumper.php',
+        'Symfony\\Component\\VarDumper\\Dumper\\CliDumper' => __DIR__ . '/..' . '/symfony/var-dumper/Dumper/CliDumper.php',
+        'Symfony\\Component\\VarDumper\\Dumper\\ContextProvider\\CliContextProvider' => __DIR__ . '/..' . '/symfony/var-dumper/Dumper/ContextProvider/CliContextProvider.php',
+        'Symfony\\Component\\VarDumper\\Dumper\\ContextProvider\\ContextProviderInterface' => __DIR__ . '/..' . '/symfony/var-dumper/Dumper/ContextProvider/ContextProviderInterface.php',
+        'Symfony\\Component\\VarDumper\\Dumper\\ContextProvider\\RequestContextProvider' => __DIR__ . '/..' . '/symfony/var-dumper/Dumper/ContextProvider/RequestContextProvider.php',
+        'Symfony\\Component\\VarDumper\\Dumper\\ContextProvider\\SourceContextProvider' => __DIR__ . '/..' . '/symfony/var-dumper/Dumper/ContextProvider/SourceContextProvider.php',
+        'Symfony\\Component\\VarDumper\\Dumper\\DataDumperInterface' => __DIR__ . '/..' . '/symfony/var-dumper/Dumper/DataDumperInterface.php',
+        'Symfony\\Component\\VarDumper\\Dumper\\HtmlDumper' => __DIR__ . '/..' . '/symfony/var-dumper/Dumper/HtmlDumper.php',
+        'Symfony\\Component\\VarDumper\\Dumper\\ServerDumper' => __DIR__ . '/..' . '/symfony/var-dumper/Dumper/ServerDumper.php',
+        'Symfony\\Component\\VarDumper\\Exception\\ThrowingCasterException' => __DIR__ . '/..' . '/symfony/var-dumper/Exception/ThrowingCasterException.php',
+        'Symfony\\Component\\VarDumper\\Server\\Connection' => __DIR__ . '/..' . '/symfony/var-dumper/Server/Connection.php',
+        'Symfony\\Component\\VarDumper\\Server\\DumpServer' => __DIR__ . '/..' . '/symfony/var-dumper/Server/DumpServer.php',
+        'Symfony\\Component\\VarDumper\\Test\\VarDumperTestTrait' => __DIR__ . '/..' . '/symfony/var-dumper/Test/VarDumperTestTrait.php',
+        'Symfony\\Component\\VarDumper\\VarDumper' => __DIR__ . '/..' . '/symfony/var-dumper/VarDumper.php',
         'Symfony\\Component\\Yaml\\Command\\LintCommand' => __DIR__ . '/..' . '/symfony/yaml/Command/LintCommand.php',
         'Symfony\\Component\\Yaml\\Dumper' => __DIR__ . '/..' . '/symfony/yaml/Dumper.php',
         'Symfony\\Component\\Yaml\\Escaper' => __DIR__ . '/..' . '/symfony/yaml/Escaper.php',
@@ -4108,6 +4201,7 @@ class ComposerStaticInit10066bb4892bc5c5098ed2d9d1155382
         'Symfony\\Flex\\Unpack\\Result' => __DIR__ . '/..' . '/symfony/flex/src/Unpack/Result.php',
         'Symfony\\Flex\\Unpacker' => __DIR__ . '/..' . '/symfony/flex/src/Unpacker.php',
         'Symfony\\Polyfill\\Mbstring\\Mbstring' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/Mbstring.php',
+        'Symfony\\Polyfill\\Php72\\Php72' => __DIR__ . '/..' . '/symfony/polyfill-php72/Php72.php',
         'Symfony\\Requirements\\PhpConfigRequirement' => __DIR__ . '/..' . '/symfony/requirements-checker/src/PhpConfigRequirement.php',
         'Symfony\\Requirements\\Requirement' => __DIR__ . '/..' . '/symfony/requirements-checker/src/Requirement.php',
         'Symfony\\Requirements\\RequirementCollection' => __DIR__ . '/..' . '/symfony/requirements-checker/src/RequirementCollection.php',
